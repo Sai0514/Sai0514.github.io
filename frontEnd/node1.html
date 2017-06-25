@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="一、基础知识Node三要素： 异步I/O、事件驱动、单线程
+1、    异步I/O
+
+异步IO操作，在前端是一个常见的场景。
+
+例如：发起ajax请求，我们知道回调函数会在异步请求结束之后执行，但并不知道具体的时间点。
+
+在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>Li RuoNan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、基础知识Node三要素： 异步I/O、事件驱动、单线程 1、    异步I/O  异步IO操作，在前端是一个常见的场景。  例如：发起ajax请求，我们知道回调函数会在异步请求结束之后执行，但并不知道具体的时间点。  在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API。  例如：从文件读取到网络请求等。 2、    事件与回调函数-Node将前端浏览器中的很多事件引">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Li RuoNan">
+<meta property="og:url" content="http://www.liruonan.tech/frontEnd/node1.html">
+<meta property="og:site_name" content="Li RuoNan">
+<meta property="og:description" content="一、基础知识Node三要素： 异步I/O、事件驱动、单线程 1、    异步I/O  异步IO操作，在前端是一个常见的场景。  例如：发起ajax请求，我们知道回调函数会在异步请求结束之后执行，但并不知道具体的时间点。  在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API。  例如：从文件读取到网络请求等。 2、    事件与回调函数-Node将前端浏览器中的很多事件引">
+<meta property="og:updated_time" content="2017-06-25T15:14:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Li RuoNan">
+<meta name="twitter:description" content="一、基础知识Node三要素： 异步I/O、事件驱动、单线程 1、    异步I/O  异步IO操作，在前端是一个常见的场景。  例如：发起ajax请求，我们知道回调函数会在异步请求结束之后执行，但并不知道具体的时间点。  在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API。  例如：从文件读取到网络请求等。 2、    事件与回调函数-Node将前端浏览器中的很多事件引">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Li RuoNan" rel="home">Li RuoNan</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">一枚行走在前端道路上的程序媛 ~</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">首页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/Sai0514">仓库</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/frontEnd">前端</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/algorithm">算法</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/project">项目</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="/frontEnd/node1.html#comments" class="leave-reply">评论</a>
+            
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/node1.html" data-id="cj4cuvqmr0007gzzbj3kyai8e" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h2><p>Node三要素： <strong><code>异步I/O、事件驱动、单线程</code></strong></p>
+<h3 id="1、-异步I-O"><a href="#1、-异步I-O" class="headerlink" title="1、    异步I/O"></a>1、    异步I/O</h3><blockquote>
+<ul>
+<li>异步IO操作，在前端是一个常见的场景。</li>
+</ul>
+<p>例如：发起ajax请求，我们知道回调函数会在异步请求结束之后执行，但并不知道具体的时间点。</p>
+<ul>
+<li>在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API。</li>
+</ul>
+<p>例如：从文件读取到网络请求等。</p>
+<h3 id="2、-事件与回调函数"><a href="#2、-事件与回调函数" class="headerlink" title="2、    事件与回调函数"></a>2、    事件与回调函数</h3><p>-Node将前端浏览器中的很多事件引入后端，配合异步I/O，将事件点暴露给业务逻辑。</p>
+<p>例如：Node创建一个Web服务器，并侦听8080端口。对于服务器，为其绑定request事件；对于request请求对象，为其绑定data事件和end事件。</p>
+<h3 id="3、-单线程"><a href="#3、-单线程" class="headerlink" title="3、    单线程"></a>3、    单线程</h3><p>Node保持了javascript在浏览器中单线程的特点。</p>
+<p>Node采用了与Web Workers相同的思路来解决单线程中的大计算量问题：child_process.<br>原理：Web Workers — </p>
+<h3 id="4、-应用场景"><a href="#4、-应用场景" class="headerlink" title="4、    应用场景"></a>4、    应用场景</h3><p>I/O密集型：node利用事件循环的处理能力，而不是启动每个线程为每一个请求服务。</p>
+</blockquote>
+<h2 id="二、模块机制"><a href="#二、模块机制" class="headerlink" title="二、模块机制"></a>二、模块机制</h2><blockquote>
+<p>详见js模块化编程之ES5。</p>
+</blockquote>
+<h2 id="三、Node模块实现"><a href="#三、Node模块实现" class="headerlink" title="三、Node模块实现"></a>三、Node模块实现</h2><h3 id="1、路径分析"><a href="#1、路径分析" class="headerlink" title="1、路径分析"></a>1、路径分析</h3><p>浏览器会对引入的模块进行缓存，以减少二次引入时的开销。</p>
+<ul>
+<li>模块标识符<blockquote>
+<ul>
+<li>核心模块，如：http、fs、path等</li>
+<li>. 或 .. 开始的相对路径文件模块</li>
+<li>以 / 开始的绝对路径文件模块</li>
+<li>非路径形式的文件模块，如自定义的connect模块</li>
+</ul>
+<ul>
+<li>核心模块的优先级仅次于缓存加载，因为其在Node的源代码中已经编译为二进制文件。</li>
+<li>. 或 .. 开始的相对路径文件模块和 - 以 / 开始的绝对路径文件模块.require将其转化为真实路径，并以真实路径为索引，将编译执行后的结果存放到缓存中。</li>
+<li>自定义模块，需要查询模块路径，逐个尝试路径地址，直到找到目标文件。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h3 id="2、文件定位"><a href="#2、文件定位" class="headerlink" title="2、文件定位"></a>2、文件定位</h3><ul>
+<li><p>文件扩展名分析</p>
+<blockquote>
+<p>require()分析标识符，会按照.js、.json、.node顺序补足扩展名依次尝试，建议.node和.json带上扩展名。</p>
+</blockquote>
+</li>
+<li><p>目录分析和包</p>
+<blockquote>
+<p>Node在当前目录下查找package.json文件，通过JSON.parse()解析出包描述，取出main属性指定的文件名进行定位。如果缺少扩展名，则进入扩展名分析的步骤。</p>
+<h3 id="3、编译执行"><a href="#3、编译执行" class="headerlink" title="3、编译执行"></a>3、编译执行</h3><p>模块编译一般指文件模块，即用户自己编写的模块。</p>
+</blockquote>
+</li>
+<li><p>.js文件的模块编译</p>
+<blockquote>
+<p>1 Node对获取的js文件进行包装，(function (exports, require, module, _filename, _dirname){}</p>
+</blockquote>
+<p>  (function (exports, require, module, _filename, _dirname){</p>
+<pre><code>// 例如： math模块
+var math = require(&apos;math&apos;);
+exports.area = function(radius){
+    return Math.PI * radius * radius;
+};
+</code></pre><p>  });<br>&gt;</p>
+<blockquote>
+<p>2 包装之后的代码通过vm原生模块的runInThisContext()方法执行，返回一个具体的function对象。</p>
+<p>3 执行之后，模块的exports属性被返回给了调用方，exports属性上的任何属性和方法都可以被外部调用。</p>
+</blockquote>
+</li>
+<li><p>.node文件的模块编译</p>
+<blockquote>
+<p>Node调用process.dlopen()方法进行加载和执行，通过中间层libuv兼容跨平台。<br>.node模块文件是C/C++模块扩展编译而来，只需要加载和执行。</p>
+</blockquote>
+</li>
+<li><p>.json文件的模块编译</p>
+<blockquote>
+<p>Node利用fs模块同步读取json文件，调用JSON.parse()方法得到对象，然后将它赋给模块对象的exports。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="四、NPM包管理"><a href="#四、NPM包管理" class="headerlink" title="四、NPM包管理"></a>四、NPM包管理</h2><ul>
+<li>包结构</li>
+<li>包描述</li>
+<li>功能<ul>
+<li>安装： 全局 or 本地</li>
+<li>钩子命令： scripts</li>
+<li>发布过程<ul>
+<li>编写模块——&gt; 初始化包描述文件 ——&gt; 注册包帐户仓库 ——&gt; 上传包 ——&gt; 安装包 ——&gt; 包权限</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="五、实战小练习"><a href="#五、实战小练习" class="headerlink" title="五、实战小练习"></a>五、实战小练习</h2><p>一个基于Node的spider小程序：<a href="https://github.com/Sai0514/spider" target="_blank" rel="external">spider</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/frontEnd/node1.html">
+    <time datetime="2017-06-25T15:14:11.000Z" class="entry-date">
+        2017-06-25
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+<section id="comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/node1.html"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:'flhexo'};
+    (function() {
+	  var ds = document.createElement('script');
+	  ds.type = 'text/javascript';ds.async = true;
+	  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	  ds.charset = 'UTF-8';
+	  (document.getElementsByTagName('head')[0]
+	   || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+</section>
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <audio src="http://music.163.com/#/outchain/2/1075482/m/use/html" controls="controls"
+             style="width:100%">
+        您的浏览器不支持 audio 标签。
+      </audio>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/">Welcome to My Blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 Li RuoNan
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

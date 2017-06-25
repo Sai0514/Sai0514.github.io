@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   
   
+  <meta name="description" content="模块化1、CommonJS
+CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。
+
+module.id 模块的识别符，通常是带" />
+  
 
   
   
@@ -11,15 +16,18 @@
   
   
   
-  <title>project | Li RuoNan</title>
+  <title>Li RuoNan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="project">
-<meta property="og:url" content="http://www.liruonan.tech/project/index.html">
+  <meta name="description" content="模块化1、CommonJS CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。  module.id 模块的识别符，通常是带有绝对路径的模块文件名。 module.exports 表示模块对外输出的值。 module.fil">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Li RuoNan">
+<meta property="og:url" content="http://www.liruonan.tech/frontEnd/module.html">
 <meta property="og:site_name" content="Li RuoNan">
-<meta property="og:updated_time" content="2017-06-16T07:28:40.000Z">
+<meta property="og:description" content="模块化1、CommonJS CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。  module.id 模块的识别符，通常是带有绝对路径的模块文件名。 module.exports 表示模块对外输出的值。 module.fil">
+<meta property="og:updated_time" content="2017-06-16T14:56:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="project">
+<meta name="twitter:title" content="Li RuoNan">
+<meta name="twitter:description" content="模块化1、CommonJS CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。  module.id 模块的识别符，通常是带有绝对路径的模块文件名。 module.exports 表示模块对外输出的值。 module.fil">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -73,32 +81,44 @@
 
       <header class="entry-header">
         
-        
-  
-    <h1 class="entry-title article-title">
-      project
-    </h1>
-  
-
-        
         <div class="comments-link">
             
-            <a href="/project/index.html#comments" class="leave-reply">评论</a>
+            <a href="/frontEnd/module.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/project/index.html" data-id="cj4cuvqmv0008gzzbal9glzyd" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/module.html" data-id="cj4cuvqmq0006gzzbyola3kpi" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        
+        <h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h3 id="1、CommonJS"><a href="#1、CommonJS" class="headerlink" title="1、CommonJS"></a>1、CommonJS</h3><blockquote>
+<p>CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。<strong>加载某个模块，其实就是加载该模块的module.exports属性</strong>。</p>
+<ul>
+<li>module.id 模块的识别符，通常是带有绝对路径的模块文件名。</li>
+<li>module.exports 表示模块对外输出的值。</li>
+<li>module.filename 模块的文件名，带有绝对路径。</li>
+<li>module.loaded 返回一个布尔值，表示模块是否已经完成加载。</li>
+<li>module.parent 返回一个对象，表示调用该模块的模块。</li>
+<li>module.children 返回一个数组，表示该模块要用到的其他模块。</li>
+</ul>
+</blockquote>
+<h3 id="2、AMD规范"><a href="#2、AMD规范" class="headerlink" title="2、AMD规范"></a>2、AMD规范</h3><blockquote>
+<p>CommonJS： 模块同步加载，只有模块加载完成，才能执行后面的工作。module.exports定义模块。</p>
+<p>AMD： 模块异步加载，适用于浏览器加载服务器模块文件。define定义模块，可兼容CommonJS规范。</p>
+<p><strong>Node服务器编程，本地加载模块文件，使用CommonJS规范即可。</strong></p>
+</blockquote>
+<h3 id="3、require"><a href="#3、require" class="headerlink" title="3、require"></a>3、require</h3><ul>
+<li>Node使用CommonJS模块规范，<strong>内置的require命令用于加载模块文件</strong>。</li>
+<li>如果模块输出的是一个函数，那就不能定义在exports对象上面，而要定义在module.exports变量上面。require命令调用自身，等于是执行module.exports<h3 id="4、import"><a href="#4、import" class="headerlink" title="4、import"></a>4、import</h3></li>
+</ul>
+
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/project/index.html">
-    <time datetime="2017-06-16T07:28:40.000Z" class="entry-date">
-        2017-06-16
+    <a href="/frontEnd/module.html">
+    <time datetime="2017-06-25T15:11:58.000Z" class="entry-date">
+        2017-06-25
     </time>
 </a>
     
@@ -115,7 +135,7 @@
 
 <section id="comments">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="page-undefined" data-title="project" data-url="http://www.liruonan.tech/project/index.html"></div>
+  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/module.html"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">

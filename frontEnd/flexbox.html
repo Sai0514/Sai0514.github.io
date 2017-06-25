@@ -4,6 +4,16 @@
   <meta charset="utf-8">
   
   
+  <meta name="description" content="Flex1.Flex布局
+任何一个容器都可以指定为Flex布局，行内元素也可以使用Flex布局，Webkit内核浏览器，必须加上-webkit前缀。
+.box{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+
+2.基本概念
+采用Fl" />
+  
 
   
   
@@ -11,15 +21,18 @@
   
   
   
-  <title>frontEnd | Li RuoNan</title>
+  <title>Li RuoNan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="frontEnd">
-<meta property="og:url" content="http://www.liruonan.tech/frontEnd/index.html">
+  <meta name="description" content="Flex1.Flex布局 任何一个容器都可以指定为Flex布局，行内元素也可以使用Flex布局，Webkit内核浏览器，必须加上-webkit前缀。 .box{   display: -webkit-flex; /* Safari */   display: flex; }  2.基本概念 采用Flex布局的元素，成为Flex容器，其所有子元素自动成为容器成员，成为flex item，简称项目。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Li RuoNan">
+<meta property="og:url" content="http://www.liruonan.tech/frontEnd/flexbox.html">
 <meta property="og:site_name" content="Li RuoNan">
-<meta property="og:updated_time" content="2017-06-16T07:28:16.000Z">
+<meta property="og:description" content="Flex1.Flex布局 任何一个容器都可以指定为Flex布局，行内元素也可以使用Flex布局，Webkit内核浏览器，必须加上-webkit前缀。 .box{   display: -webkit-flex; /* Safari */   display: flex; }  2.基本概念 采用Flex布局的元素，成为Flex容器，其所有子元素自动成为容器成员，成为flex item，简称项目。">
+<meta property="og:updated_time" content="2017-05-17T08:15:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="frontEnd">
+<meta name="twitter:title" content="Li RuoNan">
+<meta name="twitter:description" content="Flex1.Flex布局 任何一个容器都可以指定为Flex布局，行内元素也可以使用Flex布局，Webkit内核浏览器，必须加上-webkit前缀。 .box{   display: -webkit-flex; /* Safari */   display: flex; }  2.基本概念 采用Flex布局的元素，成为Flex容器，其所有子元素自动成为容器成员，成为flex item，简称项目。">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -73,32 +86,58 @@
 
       <header class="entry-header">
         
-        
-  
-    <h1 class="entry-title article-title">
-      frontEnd
-    </h1>
-  
-
-        
         <div class="comments-link">
             
-            <a href="/frontEnd/index.html#comments" class="leave-reply">评论</a>
+            <a href="/frontEnd/flexbox.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/index.html" data-id="cj4cu3wxm00030czb0a5ey29v" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/flexbox.html" data-id="cj4cuvqmn0005gzzbxbhqy8ly" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        
+        <h1 id="Flex"><a href="#Flex" class="headerlink" title="Flex"></a>Flex</h1><h2 id="1-Flex布局"><a href="#1-Flex布局" class="headerlink" title="1.Flex布局"></a>1.Flex布局</h2><blockquote>
+<p>任何一个容器都可以指定为Flex布局，行内元素也可以使用Flex布局，Webkit内核浏览器，必须加上-webkit前缀。</p>
+<pre><code>.box{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+</code></pre></blockquote>
+<h2 id="2-基本概念"><a href="#2-基本概念" class="headerlink" title="2.基本概念"></a>2.基本概念</h2><ul>
+<li>采用Flex布局的元素，成为Flex容器，其所有子元素自动成为容器成员，成为flex item，简称项目。</li>
+<li>容器默认两根轴：水平的主轴(main axis)和垂直的交叉轴(cross axis)。项目默认沿主轴排列。</li>
+</ul>
+<h2 id="3-容器属性"><a href="#3-容器属性" class="headerlink" title="3.容器属性"></a>3.容器属性</h2><ul>
+<li>display:flex;</li>
+<li>flex-direction: row|row-reverse|column|column-reverse;</li>
+<li>flex-wrap:nowrap|wrap|wrap-reverse;</li>
+<li>flex-flow:&lt;’flex-direction’&gt;||&lt;’flex-wrap’&gt; // 同时定义主轴和交叉轴;</li>
+<li></li>
+<li>justify-content:flex-start|flex-end|center|space-between|space-around;</li>
+<li>align-items:flex-start|flex-end|center|stretch|baseline//交叉轴</li>
+<li>align-content:flex-start|flex-end|center|stretch|space-between|space-around</li>
+</ul>
+<h2 id="4-项目属性"><a href="#4-项目属性" class="headerlink" title="4.项目属性"></a>4.项目属性</h2><ul>
+<li>order: <integer> // 当前item的顺序</integer></li>
+<li>flex-grow:<number> //当前item的增长倍数</number></li>
+<li>flex-shrink:<number> //当前item的收缩倍数</number></li>
+<li>flex-basis: <length> | auto; /<em> default auto </em>/</length></li>
+<li>flex: none | [ &lt;’flex-grow’&gt; &lt;’flex-shrink’&gt;? || &lt;’flex-basis’&gt; </li>
+<li>align-self: auto | flex-start | flex-end | center | baseline | stretch; // 当前item的位置</li>
+</ul>
+<h2 id="5-兼容性"><a href="#5-兼容性" class="headerlink" title="5.兼容性"></a>5.兼容性</h2><ul>
+<li>new -&gt; display:flex</li>
+<li>tweener -&gt; display:flexbox(IE10)</li>
+<li>old -&gt; display:box</li>
+</ul>
+
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/frontEnd/index.html">
-    <time datetime="2017-06-16T07:28:16.000Z" class="entry-date">
-        2017-06-16
+    <a href="/frontEnd/flexbox.html">
+    <time datetime="2017-06-25T15:11:58.000Z" class="entry-date">
+        2017-06-25
     </time>
 </a>
     
@@ -115,7 +154,7 @@
 
 <section id="comments">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="page-undefined" data-title="frontEnd" data-url="http://www.liruonan.tech/frontEnd/index.html"></div>
+  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/flexbox.html"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">
@@ -147,7 +186,7 @@
   <aside class="widget">
     <h3 class="widget-title">Music</h3>
     <div class="widget-content">
-      <audio src="http://music.163.com/#/outchain/2/473940488/" controls="controls"
+      <audio src="http://music.163.com/#/outchain/2/1075482/m/use/html" controls="controls"
              style="width:100%">
         您的浏览器不支持 audio 标签。
       </audio>
@@ -164,7 +203,7 @@
       <ul>
         
           <li>
-            <a href="/title/">Welcome to My Blog</a>
+            <a href="/">Welcome to My Blog</a>
           </li>
         
       </ul>
