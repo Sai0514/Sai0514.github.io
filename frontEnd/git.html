@@ -4,10 +4,15 @@
   <meta charset="utf-8">
   
   
-  <meta name="description" content="模块化1、CommonJS
-CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。
+  <meta name="description" content="git 常用命令
 
-module.id 模块的识别符，通常是带" />
+git status // 查看分支状态，查看文件状态
+
+git add . // 把要提交的所有修改放到暂存区（Stage）
+
+git commit -m ‘add new info’  //可以一次性把暂存区的所有修改提交到分支 
+
+git pull –rebase 分支 /" />
   
 
   
@@ -18,16 +23,16 @@ module.id 模块的识别符，通常是带" />
   
   <title>Li RuoNan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="模块化1、CommonJS CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。  module.id 模块的识别符，通常是带有绝对路径的模块文件名。 module.exports 表示模块对外输出的值。 module.fil">
+  <meta name="description" content="git 常用命令  git status // 查看分支状态，查看文件状态  git add . // 把要提交的所有修改放到暂存区（Stage）  git commit -m ‘add new info’  //可以一次性把暂存区的所有修改提交到分支   git pull –rebase 分支 // 解决冲突的过程  git push origin [自己的分支名称]:refs/for/[自己的">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Li RuoNan">
-<meta property="og:url" content="http://www.liruonan.tech/frontEnd/module.html">
+<meta property="og:url" content="http://www.liruonan.tech/frontEnd/git.html">
 <meta property="og:site_name" content="Li RuoNan">
-<meta property="og:description" content="模块化1、CommonJS CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。  module.id 模块的识别符，通常是带有绝对路径的模块文件名。 module.exports 表示模块对外输出的值。 module.fil">
-<meta property="og:updated_time" content="2017-06-25T15:54:15.000Z">
+<meta property="og:description" content="git 常用命令  git status // 查看分支状态，查看文件状态  git add . // 把要提交的所有修改放到暂存区（Stage）  git commit -m ‘add new info’  //可以一次性把暂存区的所有修改提交到分支   git pull –rebase 分支 // 解决冲突的过程  git push origin [自己的分支名称]:refs/for/[自己的">
+<meta property="og:updated_time" content="2017-06-15T03:28:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
-<meta name="twitter:description" content="模块化1、CommonJS CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。  module.id 模块的识别符，通常是带有绝对路径的模块文件名。 module.exports 表示模块对外输出的值。 module.fil">
+<meta name="twitter:description" content="git 常用命令  git status // 查看分支状态，查看文件状态  git add . // 把要提交的所有修改放到暂存区（Stage）  git commit -m ‘add new info’  //可以一次性把暂存区的所有修改提交到分支   git pull –rebase 分支 // 解决冲突的过程  git push origin [自己的分支名称]:refs/for/[自己的">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -83,51 +88,49 @@ module.id 模块的识别符，通常是带" />
         
         <div class="comments-link">
             
-            <a href="/frontEnd/module.html#comments" class="leave-reply">评论</a>
+            <a href="/frontEnd/git.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/module.html" data-id="cj4mu3mr7000bnuzbwj9kzm0i" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/git.html" data-id="cj4mu3mr50009nuzb0vqkh77v" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h3 id="1、CommonJS"><a href="#1、CommonJS" class="headerlink" title="1、CommonJS"></a>1、CommonJS</h3><blockquote>
-<p>CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。<strong>加载某个模块，其实就是加载该模块的module.exports属性</strong>。</p>
+        <p>git 常用命令</p>
 <ul>
-<li>module.id 模块的识别符，通常是带有绝对路径的模块文件名。</li>
-<li>module.exports 表示模块对外输出的值。</li>
-<li>module.filename 模块的文件名，带有绝对路径。</li>
-<li>module.loaded 返回一个布尔值，表示模块是否已经完成加载。</li>
-<li>module.parent 返回一个对象，表示调用该模块的模块。</li>
-<li>module.children 返回一个数组，表示该模块要用到的其他模块。</li>
+<li><p>git status // 查看分支状态，查看文件状态</p>
+</li>
+<li><p>git add . // 把要提交的所有修改放到暂存区（Stage）</p>
+</li>
+<li><p>git commit -m ‘add new info’  //可以一次性把暂存区的所有修改提交到分支 </p>
+</li>
+<li><p>git pull –rebase 分支 // 解决冲突的过程</p>
+</li>
+<li><p>git push origin [自己的分支名称]:refs/for/[自己的分支名称]%r=评审人邮</p>
+</li>
+<li><p>git checkout -b dev // 创建dev分支，然后切换到dev分支</p>
+<blockquote>
+<p>等价于</p>
+<ul>
+<li>git branch dev  //创建分支</li>
 </ul>
 </blockquote>
-<h3 id="2、AMD规范"><a href="#2、AMD规范" class="headerlink" title="2、AMD规范"></a>2、AMD规范</h3><blockquote>
-<p>CommonJS： 模块同步加载，只有模块加载完成，才能执行后面的工作。module.exports定义模块。</p>
-<p>AMD： 模块异步加载，适用于浏览器加载服务器模块文件。define定义模块，可兼容CommonJS规范。</p>
-<p><strong>Node服务器编程，本地加载模块文件，使用CommonJS规范即可。</strong></p>
-</blockquote>
-<h3 id="3、require"><a href="#3、require" class="headerlink" title="3、require"></a>3、require</h3><ul>
-<li>Node使用CommonJS模块规范，<strong>内置的require命令用于加载模块文件</strong>。</li>
-<li>如果模块输出的是一个函数，那就不能定义在exports对象上面，而要定义在module.exports变量上面。require命令调用自身，等于是执行module.exports</li>
+</li>
+<li>git checkout dev //切换分支</li>
+<li><p>git branch //查看分支状态</p>
+</li>
+<li><p>git log // 查看历史记录</p>
+</li>
+<li>git merge dev 把dev分支的工作成果合并到master分支上</li>
 </ul>
-<h3 id="4、import"><a href="#4、import" class="headerlink" title="4、import"></a>4、import</h3><pre><code>import defaultMember from &quot;module-name&quot;;
-import * as name from &quot;module-name&quot;;
-import { member } from &quot;module-name&quot;;
-import { member as alias } from &quot;module-name&quot;;
-import { member1 , member2 } from &quot;module-name&quot;;
-import { member1 , member2 as alias2 , [...] } from &quot;module-name&quot;;
-import defaultMember, { member [ , [...] ] } from &quot;module-name&quot;;
-import defaultMember, * as name from &quot;module-name&quot;;
-import &quot;module-name&quot;;
-</code></pre>
+
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/frontEnd/module.html">
-    <time datetime="2017-06-25T15:54:15.000Z" class="entry-date">
-        2017-06-25
+    <a href="/frontEnd/git.html">
+    <time datetime="2017-07-02T14:41:51.000Z" class="entry-date">
+        2017-07-02
     </time>
 </a>
     
@@ -144,7 +147,7 @@ import &quot;module-name&quot;;
 
 <section id="comments">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/module.html"></div>
+  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/git.html"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">

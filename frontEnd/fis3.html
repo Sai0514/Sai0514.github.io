@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="FIS3官网
+FIS3操作1.安装先安装nodejs(有版本要求version&amp;lt;7)，再使用npm install -g fis3 全局安装
+2.配置match
+fis.match(selector, props); // 配置接口，匹配css，js，less，png等资源，通过pros配置规" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>Li RuoNan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="FIS3官网 FIS3操作1.安装先安装nodejs(有版本要求version&amp;lt;7)，再使用npm install -g fis3 全局安装 2.配置match fis.match(selector, props); // 配置接口，匹配css，js，less，png等资源，通过pros配置规则。配置规则如： useHash:true;  release:’/dist/$0’; 等  fis">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Li RuoNan">
+<meta property="og:url" content="http://www.liruonan.tech/frontEnd/fis3.html">
+<meta property="og:site_name" content="Li RuoNan">
+<meta property="og:description" content="FIS3官网 FIS3操作1.安装先安装nodejs(有版本要求version&amp;lt;7)，再使用npm install -g fis3 全局安装 2.配置match fis.match(selector, props); // 配置接口，匹配css，js，less，png等资源，通过pros配置规则。配置规则如： useHash:true;  release:’/dist/$0’; 等  fis">
+<meta property="og:updated_time" content="2017-07-02T14:32:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Li RuoNan">
+<meta name="twitter:description" content="FIS3官网 FIS3操作1.安装先安装nodejs(有版本要求version&amp;lt;7)，再使用npm install -g fis3 全局安装 2.配置match fis.match(selector, props); // 配置接口，匹配css，js，less，png等资源，通过pros配置规则。配置规则如： useHash:true;  release:’/dist/$0’; 等  fis">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Li RuoNan" rel="home">Li RuoNan</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">一枚行走在前端道路上的程序媛 ~</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">首页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/Sai0514">仓库</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/frontEnd">前端</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/algorithm">算法</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/project">项目</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="/frontEnd/fis3.html#comments" class="leave-reply">评论</a>
+            
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/fis3.html" data-id="cj4mu3mqt0004nuzb7ryzplmi" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="FIS3"><a href="#FIS3" class="headerlink" title="FIS3"></a>FIS3</h1><p><a href="http://fis.baidu.com/" target="_blank" rel="external">官网</a></p>
+<h2 id="FIS3操作"><a href="#FIS3操作" class="headerlink" title="FIS3操作"></a>FIS3操作</h2><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>先安装nodejs(有版本要求version&lt;7)，再使用npm install -g fis3 全局安装</p>
+<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h3><p><strong>match</strong></p>
+<p>fis.match(selector, props); // 配置接口，匹配css，js，less，png等资源，通过pros配置规则。配置规则如： useHash:true;  release:’/dist/$0’; 等</p>
+<ul>
+<li>fis.match(‘*.{js,css,png}’, { useHash: true }); // 文件指纹，加md5戳</li>
+<li>fis.match(‘*.js’,{ optimizer: fis.plugin(‘uglify-js’) }); // js压缩</li>
+<li>fis.match(‘*.css’, { optimizer: fis.plugin(‘clean-css’) }); // css压缩</li>
+<li>fis.match(‘*.png’, { optimizer: fis.plugin(‘png-compressor’) }); // png压缩</li>
+<li>fis.match(‘::package’, { spriter: fis.plugin(‘csssprites’) }); // 启用 fis-spriter-csssprites 插件</li>
+<li>fis.match(‘*.css’, { useSprite: true }); // 对CSS进行图片合并</li>
+</ul>
+<p><strong>release</strong></p>
+<p>fis3 release -d <path></path>   // 构建发布到指定目录</p>
+<ul>
+<li>fis3 release -d ./output  // 构建发布到项目目录的output目录</li>
+<li>fis3 release -d ../dist  // 构建发布到项目父级目录下的dist子目录</li>
+<li>fis3 release    // 构建发布到fis内置server下</li>
+<li>fis3 release -debug -wL  // 构建发布到debug环境下，并实现监听和自动刷新</li>
+</ul>
+<p><strong>server</strong></p>
+<p>fis3 server -h  // 启动参数</p>
+<ul>
+<li>fis3 server open  // 打开内置server根目录</li>
+<li>fis3 server start // 启动内置server</li>
+<li>fis3 server start – type node  // 使用后端模板node，启动内置server</li>
+<li>fis3 server start – type smarty // 使用后端模板smarty，启动内置server</li>
+</ul>
+<h2 id="FIS3应用"><a href="#FIS3应用" class="headerlink" title="FIS3应用"></a>FIS3应用</h2><p>.1. 安装插件</p>
+<blockquote>
+<p>npm install  -g  插件名</p>
+<pre><code>npm install -g fis-parser-less  // 引入less预处理插件
+npm install -g fis3-postpackager-loader // 散列文件合并
+</code></pre></blockquote>
+<p>.2. 预处理</p>
+<blockquote>
+<p> parser: fis.plugin(插件名)    </p>
+<pre><code>fis.match(&apos;*.less&apos;, {
+  parser: fis.plugin(&apos;less&apos;),  // fis-parser-less插件进行解析
+  rExt: &apos;.css&apos;  // .less文件后缀构建后被改成.css文件
+})
+</code></pre></blockquote>
+<p>.3. 简单合并</p>
+<blockquote>
+<p>基于整个项目打包  </p>
+<pre><code>fis.match(&apos;::package&apos;, {
+  postpackager: fis.plugin(&apos;loader&apos;)
+})；
+fis.match(&apos;*.{less,css}&apos;, {  // .less先预处理再合并
+    packTo: &apos;/static/aio.css&apos;
+});
+fis.match(&apos;*.js&apos;, {
+    packTo: &apos;/static/aio.js&apos;
+});
+</code></pre><p>基于页面的打包</p>
+<pre><code>fis.match(&apos;::package&apos;, {
+  postpackager: fis.plugin(&apos;loader&apos;, {
+    allInOne: true
+  })
+});
+</code></pre></blockquote>
+<p>.4. 构建调试</p>
+<blockquote>
+<p>进入 demo 目录，执行命令，构建即发布到本地测试服务根目录下：<br><code>fis3 release</code>  // 按需发布到指定环境</p>
+<p>fis3 server start –type smarty // 启动内置server预览，考虑后端模板</p>
+<p>fis3 release debug -wc // 发布到调试环境，-wc实时监听</p>
+</blockquote>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/frontEnd/fis3.html">
+    <time datetime="2017-07-02T14:41:51.000Z" class="entry-date">
+        2017-07-02
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+<section id="comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/fis3.html"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:'flhexo'};
+    (function() {
+	  var ds = document.createElement('script');
+	  ds.type = 'text/javascript';ds.async = true;
+	  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	  ds.charset = 'UTF-8';
+	  (document.getElementsByTagName('head')[0]
+	   || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+</section>
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <audio src="http://music.163.com/#/outchain/2/1075482/m/use/html" controls="controls"
+             style="width:100%">
+        您的浏览器不支持 audio 标签。
+      </audio>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/">Welcome to My Blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 Li RuoNan
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

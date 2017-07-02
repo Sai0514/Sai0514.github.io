@@ -4,10 +4,13 @@
   <meta charset="utf-8">
   
   
-  <meta name="description" content="模块化1、CommonJS
-CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。
+  <meta name="description" content="1. DP初始化配置window.alogObjectConfig = {
 
-module.id 模块的识别符，通常是带" />
+    sample: &amp;apos;1&amp;apos;, //配置整体抽样率
+    product: &amp;apos;733&amp;apos;, //DP平台产品线id
+    page: pageId,  // DP平台页面id
+
+" />
   
 
   
@@ -18,16 +21,16 @@ module.id 模块的识别符，通常是带" />
   
   <title>Li RuoNan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="模块化1、CommonJS CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。  module.id 模块的识别符，通常是带有绝对路径的模块文件名。 module.exports 表示模块对外输出的值。 module.fil">
+  <meta name="description" content="1. DP初始化配置window.alogObjectConfig = {      sample: &amp;apos;1&amp;apos;, //配置整体抽样率     product: &amp;apos;733&amp;apos;, //DP平台产品线id     page: pageId,  // DP平台页面id      // 性能     speed: {         sample: &amp;apos;1&amp;apo">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Li RuoNan">
-<meta property="og:url" content="http://www.liruonan.tech/frontEnd/module.html">
+<meta property="og:url" content="http://www.liruonan.tech/frontEnd/dp.html">
 <meta property="og:site_name" content="Li RuoNan">
-<meta property="og:description" content="模块化1、CommonJS CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。  module.id 模块的识别符，通常是带有绝对路径的模块文件名。 module.exports 表示模块对外输出的值。 module.fil">
-<meta property="og:updated_time" content="2017-06-25T15:54:15.000Z">
+<meta property="og:description" content="1. DP初始化配置window.alogObjectConfig = {      sample: &amp;apos;1&amp;apos;, //配置整体抽样率     product: &amp;apos;733&amp;apos;, //DP平台产品线id     page: pageId,  // DP平台页面id      // 性能     speed: {         sample: &amp;apos;1&amp;apo">
+<meta property="og:updated_time" content="2017-06-05T07:04:30.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
-<meta name="twitter:description" content="模块化1、CommonJS CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。加载某个模块，其实就是加载该模块的module.exports属性。  module.id 模块的识别符，通常是带有绝对路径的模块文件名。 module.exports 表示模块对外输出的值。 module.fil">
+<meta name="twitter:description" content="1. DP初始化配置window.alogObjectConfig = {      sample: &amp;apos;1&amp;apos;, //配置整体抽样率     product: &amp;apos;733&amp;apos;, //DP平台产品线id     page: pageId,  // DP平台页面id      // 性能     speed: {         sample: &amp;apos;1&amp;apo">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -83,51 +86,64 @@ module.id 模块的识别符，通常是带" />
         
         <div class="comments-link">
             
-            <a href="/frontEnd/module.html#comments" class="leave-reply">评论</a>
+            <a href="/frontEnd/dp.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/module.html" data-id="cj4mu3mr7000bnuzbwj9kzm0i" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/dp.html" data-id="cj4mu3mr50008nuzb2u400shm" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h3 id="1、CommonJS"><a href="#1、CommonJS" class="headerlink" title="1、CommonJS"></a>1、CommonJS</h3><blockquote>
-<p>CommonJS规范规定，每个模块内部，module变量代表当前模块。这个变量是一个对象，其exports属性（即module.exports）是对外的接口。<strong>加载某个模块，其实就是加载该模块的module.exports属性</strong>。</p>
-<ul>
-<li>module.id 模块的识别符，通常是带有绝对路径的模块文件名。</li>
-<li>module.exports 表示模块对外输出的值。</li>
-<li>module.filename 模块的文件名，带有绝对路径。</li>
-<li>module.loaded 返回一个布尔值，表示模块是否已经完成加载。</li>
-<li>module.parent 返回一个对象，表示调用该模块的模块。</li>
-<li>module.children 返回一个数组，表示该模块要用到的其他模块。</li>
-</ul>
+        <h3 id="1-DP初始化配置"><a href="#1-DP初始化配置" class="headerlink" title="1. DP初始化配置"></a>1. DP初始化配置</h3><pre><code>window.alogObjectConfig = {
+
+    sample: &apos;1&apos;, //配置整体抽样率
+    product: &apos;733&apos;, //DP平台产品线id
+    page: pageId,  // DP平台页面id
+
+    // 性能
+    speed: {
+        sample: &apos;1&apos;  // 抽样率，0~1,建议采样的pv控制在100万以内
+    },
+
+    // 访问和点击
+    monkey: {
+        sample: &apos;1&apos;   //抽样率，0~1,建议采样的pv控制在50万以内
+    },
+
+    // js异常，配合FIS插件可以自动加try/catch监控
+    exception: {    
+        sample: &apos;1&apos;
+    },
+
+    // 浏览器新特性(H5/CSS3)
+    feature: {
+        sample: &apos;1&apos;
+    },
+
+    // 自定义事件
+    cus: {
+        sample: &apos;1&apos;
+    }
+};
+</code></pre><h3 id="2-DP监控模块"><a href="#2-DP监控模块" class="headerlink" title="2. DP监控模块"></a>2. DP监控模块</h3><h3 id="3-PV、UV、IP"><a href="#3-PV、UV、IP" class="headerlink" title="3. PV、UV、IP"></a>3. PV、UV、IP</h3><h4 id="PV"><a href="#PV" class="headerlink" title="PV"></a>PV</h4><blockquote>
+<p>PV(page view): 页面浏览量或者点击量，是衡量一个网站或网页用户访问量。PV值就是所有访问者在24小时(0点到24点)内看了某个网站多少个页面或某个网页多少次。PV即页面刷新的次数，每一次页面刷新，就算做一个次PV流量。</p>
+<p><strong>度量方法:</strong> 从浏览器发出一个网络服务器的请求(Request)，网络服务器接到这个请求之后，会将该请求对应的一个网页(Page)发送到浏览器，从而产生了一个PV。因此，只要是这个请求发送给了浏览器，无论这个页面是否完全打卡(下载完成)，那么都是应当计为1个PV。</p>
 </blockquote>
-<h3 id="2、AMD规范"><a href="#2、AMD规范" class="headerlink" title="2、AMD规范"></a>2、AMD规范</h3><blockquote>
-<p>CommonJS： 模块同步加载，只有模块加载完成，才能执行后面的工作。module.exports定义模块。</p>
-<p>AMD： 模块异步加载，适用于浏览器加载服务器模块文件。define定义模块，可兼容CommonJS规范。</p>
-<p><strong>Node服务器编程，本地加载模块文件，使用CommonJS规范即可。</strong></p>
+<h4 id="UV"><a href="#UV" class="headerlink" title="UV"></a>UV</h4><blockquote>
+<p>UV（unique visitor）即独立访客数，指访问某个站点或点击某个网页的不同IP地址的人数。在同一天内，UV只记录第一次进入网站的具有独立IP的访问者，在同一天内再次访问该网站则不计数。</p>
+<p>UV提供了一定时间内不同观众数量的统计指标，而没有反应出网站的全面活动。通过IP和cookie是判断UV值的两种方式。</p>
 </blockquote>
-<h3 id="3、require"><a href="#3、require" class="headerlink" title="3、require"></a>3、require</h3><ul>
-<li>Node使用CommonJS模块规范，<strong>内置的require命令用于加载模块文件</strong>。</li>
-<li>如果模块输出的是一个函数，那就不能定义在exports对象上面，而要定义在module.exports变量上面。require命令调用自身，等于是执行module.exports</li>
-</ul>
-<h3 id="4、import"><a href="#4、import" class="headerlink" title="4、import"></a>4、import</h3><pre><code>import defaultMember from &quot;module-name&quot;;
-import * as name from &quot;module-name&quot;;
-import { member } from &quot;module-name&quot;;
-import { member as alias } from &quot;module-name&quot;;
-import { member1 , member2 } from &quot;module-name&quot;;
-import { member1 , member2 as alias2 , [...] } from &quot;module-name&quot;;
-import defaultMember, { member [ , [...] ] } from &quot;module-name&quot;;
-import defaultMember, * as name from &quot;module-name&quot;;
-import &quot;module-name&quot;;
-</code></pre>
+<h4 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h4><blockquote>
+<p>IP可以理解为独立IP的访问用户，指1天内使用不同IP地址的用户访问网站的数量，同一IP无论访问了几个页面，独立IP数均为1。但是假如说两台机器访问而使用的是同一个IP，那么只能算是一个IP的访问。</p>
+</blockquote>
+
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/frontEnd/module.html">
-    <time datetime="2017-06-25T15:54:15.000Z" class="entry-date">
-        2017-06-25
+    <a href="/frontEnd/dp.html">
+    <time datetime="2017-07-02T14:41:51.000Z" class="entry-date">
+        2017-07-02
     </time>
 </a>
     
@@ -144,7 +160,7 @@ import &quot;module-name&quot;;
 
 <section id="comments">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/module.html"></div>
+  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/dp.html"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">
