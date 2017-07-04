@@ -22,16 +22,16 @@
   
   <title>Li RuoNan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、基础知识Node三要素： 异步I/O、事件驱动、单线程 1、    异步I/O  异步IO操作，在前端是一个常见的场景。  例如：发起ajax请求，我们知道回调函数会在异步请求结束之后执行，但并不知道具体的时间点。  在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API。  例如：从文件读取到网络请求等。 2、    事件与回调函数-Node将前端浏览器中的很多事件引">
+  <meta name="description" content="一、基础知识Node三要素： 异步I/O、事件驱动、单线程 1、    异步I/O  异步IO操作，在前端是一个常见的场景。  例如：发起ajax请求，我们知道回调函数会在异步请求结束之后执行，但并不知道具体的时间点。  在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API。  例如：从文件读取到网络请求等。  2、    事件与回调函数 -Node将前端浏览器中的很多事">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Li RuoNan">
 <meta property="og:url" content="http://www.liruonan.tech/frontEnd/node1.html">
 <meta property="og:site_name" content="Li RuoNan">
-<meta property="og:description" content="一、基础知识Node三要素： 异步I/O、事件驱动、单线程 1、    异步I/O  异步IO操作，在前端是一个常见的场景。  例如：发起ajax请求，我们知道回调函数会在异步请求结束之后执行，但并不知道具体的时间点。  在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API。  例如：从文件读取到网络请求等。 2、    事件与回调函数-Node将前端浏览器中的很多事件引">
-<meta property="og:updated_time" content="2017-07-02T14:33:58.000Z">
+<meta property="og:description" content="一、基础知识Node三要素： 异步I/O、事件驱动、单线程 1、    异步I/O  异步IO操作，在前端是一个常见的场景。  例如：发起ajax请求，我们知道回调函数会在异步请求结束之后执行，但并不知道具体的时间点。  在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API。  例如：从文件读取到网络请求等。  2、    事件与回调函数 -Node将前端浏览器中的很多事">
+<meta property="og:updated_time" content="2017-07-04T15:30:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
-<meta name="twitter:description" content="一、基础知识Node三要素： 异步I/O、事件驱动、单线程 1、    异步I/O  异步IO操作，在前端是一个常见的场景。  例如：发起ajax请求，我们知道回调函数会在异步请求结束之后执行，但并不知道具体的时间点。  在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API。  例如：从文件读取到网络请求等。 2、    事件与回调函数-Node将前端浏览器中的很多事件引">
+<meta name="twitter:description" content="一、基础知识Node三要素： 异步I/O、事件驱动、单线程 1、    异步I/O  异步IO操作，在前端是一个常见的场景。  例如：发起ajax请求，我们知道回调函数会在异步请求结束之后执行，但并不知道具体的时间点。  在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API。  例如：从文件读取到网络请求等。  2、    事件与回调函数 -Node将前端浏览器中的很多事">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -89,7 +89,7 @@
             
             <a href="/frontEnd/node1.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/node1.html" data-id="cj4mu89hc000aqnzbb6lwhbu0" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/node1.html" data-id="cj4pqja8d000b4ezbde6wbe7u" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -105,11 +105,17 @@
 <li>在Node中，大部分操作是异步的。因此，node底层构建了很多异步IO的API。</li>
 </ul>
 <p>例如：从文件读取到网络请求等。</p>
-<h3 id="2、-事件与回调函数"><a href="#2、-事件与回调函数" class="headerlink" title="2、    事件与回调函数"></a>2、    事件与回调函数</h3><p>-Node将前端浏览器中的很多事件引入后端，配合异步I/O，将事件点暴露给业务逻辑。</p>
+</blockquote>
+<h3 id="2、-事件与回调函数"><a href="#2、-事件与回调函数" class="headerlink" title="2、    事件与回调函数"></a>2、    事件与回调函数</h3><blockquote>
+<p>-Node将前端浏览器中的很多事件引入后端，配合异步I/O，将事件点暴露给业务逻辑。</p>
 <p>例如：Node创建一个Web服务器，并侦听8080端口。对于服务器，为其绑定request事件；对于request请求对象，为其绑定data事件和end事件。</p>
-<h3 id="3、-单线程"><a href="#3、-单线程" class="headerlink" title="3、    单线程"></a>3、    单线程</h3><p>Node保持了javascript在浏览器中单线程的特点。</p>
+</blockquote>
+<h3 id="3、-单线程"><a href="#3、-单线程" class="headerlink" title="3、    单线程"></a>3、    单线程</h3><blockquote>
+<p>Node保持了javascript在浏览器中单线程的特点。</p>
 <p>Node采用了与Web Workers相同的思路来解决单线程中的大计算量问题：child_process.<br>原理：Web Workers — </p>
-<h3 id="4、-应用场景"><a href="#4、-应用场景" class="headerlink" title="4、    应用场景"></a>4、    应用场景</h3><p>I/O密集型：node利用事件循环的处理能力，而不是启动每个线程为每一个请求服务。</p>
+</blockquote>
+<h3 id="4、-应用场景"><a href="#4、-应用场景" class="headerlink" title="4、    应用场景"></a>4、    应用场景</h3><blockquote>
+<p>I/O密集型：node利用事件循环的处理能力，而不是启动每个线程为每一个请求服务。</p>
 </blockquote>
 <h2 id="二、Node模块实现"><a href="#二、Node模块实现" class="headerlink" title="二、Node模块实现"></a>二、Node模块实现</h2><h3 id="1、路径分析"><a href="#1、路径分析" class="headerlink" title="1、路径分析"></a>1、路径分析</h3><p>浏览器会对引入的模块进行缓存，以减少二次引入时的开销。</p>
 <ul>
@@ -180,15 +186,15 @@ exports.area = function(radius){
 </ul>
 </li>
 </ul>
-<h2 id="五、实战小练习"><a href="#五、实战小练习" class="headerlink" title="五、实战小练习"></a>五、实战小练习</h2><p>一个基于Node的spider小程序：<a href="https://github.com/Sai0514/spider" target="_blank" rel="external">spider</a></p>
+<h2 id="四、实战小练习"><a href="#四、实战小练习" class="headerlink" title="四、实战小练习"></a>四、实战小练习</h2><p>一个基于Node的spider小程序：<a href="https://github.com/Sai0514/spider" target="_blank" rel="external">spider</a></p>
 
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
     <a href="/frontEnd/node1.html">
-    <time datetime="2017-07-02T14:33:58.000Z" class="entry-date">
-        2017-07-02
+    <time datetime="2017-07-04T15:30:16.000Z" class="entry-date">
+        2017-07-04
     </time>
 </a>
     

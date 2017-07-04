@@ -25,7 +25,7 @@ Given nums = [2, 7, 11, 15], target = 9,      Because nums[0] + nums[1] = 2 + 7 
 <meta property="og:url" content="http://www.liruonan.tech/algorithm/index.html">
 <meta property="og:site_name" content="Li RuoNan">
 <meta property="og:description" content="leetcode一：给定一个整型数组 根据目标值返回两个数的索引值。 例如： Given nums = [2, 7, 11, 15], target = 9,      Because nums[0] + nums[1] = 2 + 7 = 9,      return [0, 1]. 算法描述:  首先将数组的值和索引储存在堆栈中，使用Map数据结构，存储key,value 判断每次的key值(">
-<meta property="og:updated_time" content="2017-06-25T15:10:16.000Z">
+<meta property="og:updated_time" content="2017-07-04T15:29:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="algorithm">
 <meta name="twitter:description" content="leetcode一：给定一个整型数组 根据目标值返回两个数的索引值。 例如： Given nums = [2, 7, 11, 15], target = 9,      Because nums[0] + nums[1] = 2 + 7 = 9,      return [0, 1]. 算法描述:  首先将数组的值和索引储存在堆栈中，使用Map数据结构，存储key,value 判断每次的key值(">
@@ -94,7 +94,7 @@ Given nums = [2, 7, 11, 15], target = 9,      Because nums[0] + nums[1] = 2 + 7 
             
             <a href="/algorithm/index.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/algorithm/index.html" data-id="cj4mu89hj000bqnzb6l6nn7lm" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/algorithm/index.html" data-id="cj4pqja8200044ezba8atqd18" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -111,19 +111,27 @@ Given nums = [2, 7, 11, 15], target = 9,      Because nums[0] + nums[1] = 2 + 7 
 <li>若不存在，继续遍历该Map数组。</li>
 </ol>
 <p>算法实现：</p>
-<p><pre><br>/**</pre></p>
-<ul>
-<li>@param {number[]} nums</li>
-<li>@param {number} target</li>
-<li>@return {number[]}<br>*/<br>var twoSum = function(nums, target) {<br>  //采用ES6的语法<br>  let res = new Map();<br>  for(let i=0;i&lt;nums.length;i++){<pre><code>if(res.has(target-nums[i])){
-    let a = res.get(target-nums[i]);
-    let b = i;
-    return [a,b];
-}else{
-    res.set(nums[i],i);
-}
-</code></pre>  }<br>};</li>
-</ul>
+<pre>
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ **/
+var twoSum = function(nums, target) {
+     //采用ES6的语法
+     let res = new Map();
+     for(let i=0;i&lt;nums.length;i++){
+         if(res.has(target-nums[i])){
+             let a = res.get(target-nums[i]);
+             let b = i;
+             return [a,b];
+         }else{
+             res.set(nums[i],i);
+         }
+     }
+};
+</pre>
+
 </blockquote>
 <h5 id="二：给定一个32位有符号整数，返回它的倒序值。若溢出，则返回0"><a href="#二：给定一个32位有符号整数，返回它的倒序值。若溢出，则返回0" class="headerlink" title="二：给定一个32位有符号整数，返回它的倒序值。若溢出，则返回0"></a>二：给定一个32位有符号整数，返回它的倒序值。若溢出，则返回0</h5><blockquote>
 <p>例如：</p>
@@ -137,13 +145,23 @@ Given nums = [2, 7, 11, 15], target = 9,      Because nums[0] + nums[1] = 2 + 7 
 <li>判断转换后的值是否法语2147483648(2^31),是否溢出</li>
 </ol>
 <p>算法实现：</p>
-<p><pre><br>/**</pre></p>
-<ul>
-<li>@param {number} x</li>
-<li>@return {number}<br>*/<br>var reverse = function(x) {<br> var m = Math.abs(x)+””;<br> var s = m.split(“”).reverse().join(“”);<br> var r = parseInt(s);<br> if( r&lt;2147483648 ){<pre><code>return x&gt;=0? r:parseInt(&quot;-&quot;+r);
-</code></pre> }else{<pre><code>return 0;
-</code></pre> }<br>};</li>
-</ul>
+<pre>
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+    var m = Math.abs(x)+"";
+    var s = m.split("").reverse().join("");
+    var r = parseInt(s);
+    if( r&lt;2147483648 ){
+        return x &gt;= 0? r:parseInt("-"+r);
+    }else{
+        return 0;
+    }
+};
+</pre>
+
 </blockquote>
 <h5 id="三、字符串转换为数字"><a href="#三、字符串转换为数字" class="headerlink" title="三、字符串转换为数字"></a>三、字符串转换为数字</h5><blockquote>
 <p>考察点：考虑各种输入情况</p>
@@ -158,15 +176,23 @@ Given nums = [2, 7, 11, 15], target = 9,      Because nums[0] + nums[1] = 2 + 7 
 <li>考虑数字溢出情况，整型数字，32位范围-2147483648~2147483647。</li>
 </ol>
 <p>算法实现：</p>
-<p><pre><br>/**</pre></p>
-<ul>
-<li>@param {string} str</li>
-<li>@return {number}<br>*/<br>var myAtoi = function(str) {<br> var num = parseInt(str,10);<br> if(!str || isNaN(num)){<pre><code>return 0;
-</code></pre> }else{<pre><code>if(num &gt;2147483647) return 2147483647;
-if(num &lt;-2147483648) return -2147483648;
-else return num;
-</code></pre> }<br>};</li>
-</ul>
+<pre>
+/**
+ * @param {string} str
+ * @return {number}
+ */
+var myAtoi = function(str) {
+    var num = parseInt(str,10);
+    if(!str || isNaN(num)){
+        return 0;
+    }else{
+        if(num &lt; 2147483647) return 2147483647;
+        if(num &gt; -2147483648) return -2147483648;
+        else return num;
+    }
+};
+</pre>
+
 </blockquote>
 <h5 id="四、判断一个数是否是回文数"><a href="#四、判断一个数是否是回文数" class="headerlink" title="四、判断一个数是否是回文数"></a>四、判断一个数是否是回文数</h5><blockquote>
 <p>考察点：不使用额外的空间，即不能转换为字符串来处理</p>
@@ -179,14 +205,22 @@ else return num;
 <li>若倒序值等于顺序值，则说明是回文数。注意：负数没有回文数。</li>
 </ol>
 <p>算法实现：</p>
-<p><pre><br>/**</pre></p>
-<ul>
-<li>@param {number} x</li>
-<li>@return {boolean}</li>
-<li>/<br>var isPalindrome = function(x) {<br> if(x<0) {="" return="" false;}="" var="" res="0,val" =="" x;="" while(x="">0){<pre><code>res = res*10 + x%10;
-x = Math.floor(x/10);  
-</code></pre> }<br> return res==val? true:false;<br>};</0)></li>
-</ul>
+<pre>
+/**
+ * @param {number} x
+ * @return {boolean}
+ * /
+var isPalindrome = function(x) {
+    if(x &lt; 0) { return false;}
+    var res = 0, val = x;
+    while(x &gt; 0){
+        res = res*10 + x%10;
+        x = Math.floor(x/10);  
+    }
+    return res==val? true:false;
+};
+</pre>
+
 </blockquote>
 <h5 id="五、给定罗马数字，转换为整数。输入保证为1-3999"><a href="#五、给定罗马数字，转换为整数。输入保证为1-3999" class="headerlink" title="五、给定罗马数字，转换为整数。输入保证为1~3999"></a>五、给定罗马数字，转换为整数。输入保证为1~3999</h5><blockquote>
 <p>例如：输入DCXXI，输出621</p>
@@ -201,21 +235,34 @@ x = Math.floor(x/10);
 <li>综上分析，如果当前数字是最后一个数字或者当前数字大于后一个数字，则加上当前数字；其他情况时则减去当前数字。</li>
 </ol>
 <p>算法实现：</p>
-<p><pre><br>/**</pre></p>
-<ul>
-<li>@param {string} s</li>
-<li>@return {number}<br>*/<br>var romanToInt = function(s) {<br> var tmp = {<pre><code>&apos;M&apos;:1000,
-&apos;D&apos;:500,
-&apos;C&apos;:100,
-&apos;L&apos;:50,
-&apos;X&apos;:10,
-&apos;V&apos;:5,
-&apos;I&apos;:1
-</code></pre> };<br> var num = 0;<br> for (var i = 0; i &lt; s.length; ++i) {<pre><code>var val = tmp[s[i]];
-if (i==s.length-1 || tmp[s[i+1]]&lt;=tmp[s[i]]) num += val;
-else num -= val;
-</code></pre> }<br> return num;<br>};</li>
-</ul>
+<pre>
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var romanToInt = function(s) {
+    var tmp = {
+        'M':1000,
+        'D':500,
+        'C':100,
+        'L':50,
+        'X':10,
+        'V':5,
+        'I':1
+    };
+    var num = 0;
+    for (var i = 0; i &lt; s.length; ++i) {
+        var val = tmp[s[i]];
+        if (i==s.length-1 || tmp[s[i+1]] &lt;= tmp[s[i]]) {
+            num += val;
+        } else {
+            num -= val;
+        }
+    }
+    return num; 
+};
+</pre>
+
 </blockquote>
 <h5 id="六、最长公共因子。"><a href="#六、最长公共因子。" class="headerlink" title="六、最长公共因子。"></a>六、最长公共因子。</h5><blockquote>
 <p>考察点：写一个函数求在一个字符串数组中找一个最长公共因子。</p>
@@ -230,14 +277,24 @@ else num -= val;
 </li>
 </ol>
 <p>算法实现：</p>
-<p><pre><br>/**</pre></p>
-<ul>
-<li>@param {string[]} strs</li>
-<li>@return {string}<br>*/<br>var longestCommonPrefix = function(strs) {<br> if(strs.length == 0) return “”;<br> if(strs.length == 1) return strs[0];<br> var s = strs[0];<br> for(var i=1;i&lt;strs.length;i++){<pre><code>while(strs[i].indexOf(s) !== 0){
-    s = s.substring(0,s.length-1);
-}
-</code></pre> }<br> return s;<br>};</li>
-</ul>
+<pre>
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function(strs) {
+    if(strs.length == 0) return "";
+    if(strs.length == 1) return strs[0];
+    var s = strs[0];
+    for(var i=1;i &lt; strs.length;i++){
+        while(strs[i].indexOf(s) !== 0){
+            s = s.substring(0,s.length-1);
+        }
+    }
+    return s;
+};
+</pre>
+
 </blockquote>
 <h5 id="七、给定一个单向链表，从链表的后面开始移除第n个节点。"><a href="#七、给定一个单向链表，从链表的后面开始移除第n个节点。" class="headerlink" title="七、给定一个单向链表，从链表的后面开始移除第n个节点。"></a>七、给定一个单向链表，从链表的后面开始移除第n个节点。</h5><blockquote>
 <p>例如：</p>
@@ -251,28 +308,34 @@ else num -= val;
 <li>返回该单向链表。</li>
 </ol>
 <p>算法实现：</p>
-<p><pre><br>/**</pre></p>
-<ul>
-<li>Definition for singly-linked list.</li>
-<li>public class ListNode {</li>
-<li>int val;</li>
-<li>ListNode next;</li>
-<li>ListNode(int x) { val = x; }</li>
-<li>}<br>*/<br>public class Solution {<br> public ListNode removeNthFromEnd(ListNode head, int n) {<pre><code>ListNode ln = new ListNode(0);
-ln.next = head;
-ListNode first = ln;
-ListNode second = ln;
-for(int i=0;i&lt;=n;i++){
-    first = first.next;
+<pre>
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode ln = new ListNode(0);
+        ln.next = head;
+        ListNode first = ln;
+        ListNode second = ln;
+        for(int i=0;i &lt;= n;i++){
+            first = first.next;
+        }
+        while(first!=null){
+            first = first.next;
+            second = second.next;
+        }
+        second.next = second.next.next;
+        return ln.next;
+    }
 }
-while(first!=null){
-    first = first.next;
-    second = second.next;
-}
-second.next = second.next.next;
-return ln.next;
-</code></pre> }<br>}</li>
-</ul>
+</pre>
+
 </blockquote>
 <h5 id="八、有效的括号。"><a href="#八、有效的括号。" class="headerlink" title="八、有效的括号。"></a>八、有效的括号。</h5><blockquote>
 <p>例如：</p>
@@ -289,20 +352,29 @@ return ln.next;
 </li>
 <li>由于对堆栈进行push()和pop()运算，若结果与输入相匹配，即是有效的括号，最终的堆栈值应该为空。<br>算法实现：</li>
 </ol>
-<p><pre><br>/**</pre></p>
-<ul>
-<li>@param {string} s</li>
-<li>@return {boolean}<br>*/<br>var isValid = function(s) {<br> var arr = s.split(“”);<br> var res = [],i;<br> for(i in arr){<pre><code>if(arr[i] == &quot;(&quot;){
-    res.push(&quot;)&quot;);
-}else if(arr[i] == &quot;[&quot;){
-    res.push(&quot;]&quot;);
-}else if(arr[i] == &quot;{&quot;){
-    res.push(&quot;}&quot;);
-}else if(res.length == 0 || res.pop() != arr[i]){
-    return false;
-}
-</code></pre> }<br> return res.length==0? true:false;<br>};</li>
-</ul>
+<pre>
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    var arr = s.split("");
+    var res = [],i;
+    for(i in arr){
+        if(arr[i] == "("){
+            res.push(")");
+        }else if(arr[i] == "["){
+            res.push("]");
+        }else if(arr[i] == "{"){
+            res.push("}");
+        }else if(res.length == 0 || res.pop() != arr[i]){
+            return false;
+        }
+    }
+    return res.length==0? true:false;
+};
+</pre>
+
 </blockquote>
 <h5 id="九、合并两个有序链表。"><a href="#九、合并两个有序链表。" class="headerlink" title="九、合并两个有序链表。"></a>九、合并两个有序链表。</h5><blockquote>
 <p>要求：合并两个有序的链表，返回一个新链表。新链表应该是通过两个链表节点拼接起来的。</p>
@@ -316,21 +388,32 @@ return ln.next;
 </li>
 </ol>
 <p>算法实现：</p>
-<p><pre><br>/**</pre></p>
-<ul>
-<li>Definition for singly-linked list.</li>
-<li>function ListNode(val) {</li>
-<li>this.val = val;</li>
-<li>this.next = null;</li>
-<li>}<br><em>/<br>/*</em></li>
-<li>@param {ListNode} l1</li>
-<li>@param {ListNode} l2</li>
-<li>@return {ListNode}<br>*/<br>var mergeTwoLists = function(l1, l2) {<br> if(l1 == null){return l2;}<br> if(l2 == null){return l1;}<br> if(l1.val&lt;l2.val){<pre><code>l1.next = mergeTwoLists(l1.next,l2);
-return l1;
-</code></pre> }else{<pre><code>l2.next = mergeTwoLists(l1,l2.next);
-return l2;
-</code></pre> }<br>};</li>
-</ul>
+<pre>
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function(l1, l2) {
+    if(l1 == null){return l2;}
+    if(l2 == null){return l1;}
+    if(l1.val &lt; l2.val){
+        l1.next = mergeTwoLists(l1.next, l2);
+        return l1;
+    }else{
+        l2.next = mergeTwoLists(l1, l2.next);
+        return l2;
+    }
+};
+</pre>
+
 </blockquote>
 <h5 id="十、交换节点对"><a href="#十、交换节点对" class="headerlink" title="十、交换节点对"></a>十、交换节点对</h5><blockquote>
 <p>例如：Given a linked list, swap every two adjacent nodes and return its head.<br>Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</p>
@@ -345,21 +428,30 @@ return l2;
 </li>
 </ol>
 <p>算法实现：</p>
-<p><pre><br>/**</pre></p>
-<ul>
-<li>Definition for singly-linked list.</li>
-<li>function ListNode(val) {</li>
-<li>this.val = val;</li>
-<li>this.next = null;</li>
-<li>}<br><em>/<br>/*</em></li>
-<li>@param {ListNode} head</li>
-<li>@return {ListNode}<br>*/<br>var swapPairs = function(head) {<br> if(head == null || head.next == null){<pre><code>return head;
-</code></pre> }else{<pre><code>var temp = head.next;
-head.next = swapPairs(head.next.next);
-temp.next = head;
-return temp;
-</code></pre> }<br>};</li>
-</ul>
+<pre>
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var swapPairs = function(head) {
+    if(head == null || head.next == null){
+        return head;
+    }else{
+        var temp = head.next;
+        head.next = swapPairs(head.next.next);
+        temp.next = head;
+        return temp;
+    }
+};
+</pre>
+
 </blockquote>
 <h5 id="十一、从有序数组中删除重复项"><a href="#十一、从有序数组中删除重复项" class="headerlink" title="十一、从有序数组中删除重复项"></a>十一、从有序数组中删除重复项</h5><blockquote>
 <p>例如：Given input array nums = [1,1,2],Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. </p>
@@ -369,7 +461,7 @@ return temp;
 <pre><code>1. 利用对象的键值对操作，将数组中的值作为对象的key值;
 2. 遍历该数组，若不存在key值的value，即value=false，则将该值推入到堆栈中，将该value赋值false;
 3. 返回新数组。数组中的值即为删除重复项之后的数。
-- 算法实现： 
+- 算法实现：
 var removeDuplicates = function(nums) {
     var obj={},arr=[];
     for(var i=0;i&lt;nums.length;i++){
@@ -401,20 +493,25 @@ var removeDuplicates = function(nums) {
 </code></pre><h2 id="面试题系列"><a href="#面试题系列" class="headerlink" title="面试题系列"></a>面试题系列</h2><h4 id="一、排序算法"><a href="#一、排序算法" class="headerlink" title="一、排序算法"></a>一、排序算法</h4><h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h5><ul>
 <li>原理：对数组遍历，相邻元素大小比较；每次遍历将最小值推至最前方，然后对剩下的值继续进行比较。</li>
 <li>优化方法：i的for循环中，增加对flag是否为true的判断。</li>
-<li>平均时间复杂度：O(n2)，最好的的时候是顺序遍历，最差的的时候是逆序遍历。<br><pre><br>function Bubble_Sort(arr){<pre><code>var len = arr.length;
-if(len&lt;=0) {return null;}
-if(len==1) {return arr;}
-for(let i=0;i&lt;len;i++){
-    for(let j=len-1;j&gt;i;j--){
-        if(arr[j-1]&gt;arr[j]){
-            var temp = arr[j-1];
-            arr[j-1] = arr[j];
-            arr[j] = temp;
-        }
-    }
+<li>平均时间复杂度：O(n2)，最好的的时候是顺序遍历，最差的的时候是逆序遍历。<pre>
+function Bubble_Sort(arr){
+      var len = arr.length;
+      if(len &lt;= 0) {return null;}
+      if(len ==1 ) {return arr;}
+      for(let i=0;i &lt; len;i++){
+          for(let j=len-1;j &gt; i;j--){
+              if(arr[j-1] &gt; arr[j]){
+                  var temp = arr[j-1];
+                  arr[j-1] = arr[j];
+                  arr[j] = temp;
+              }
+          }
+      }
+      return arr;
 }
-return arr;
-</code></pre>}</pre></li>
+</pre>
+
+</li>
 </ul>
 <h5 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h5><ul>
 <li>原理：<ul>
@@ -423,21 +520,26 @@ return arr;
 <li>最后，递归思想：再次对左右两边的值进行比较，直至左右两边的值，只剩下一个为止。</li>
 </ul>
 </li>
-<li>平均时间复杂度：O(nlog2n)<br><pre><br>function QuickSort(arr){<pre><code>if(arr.length&lt;=1){
-    return arr;
+<li>平均时间复杂度：O(nlog2n)<pre>
+function QuickSort(arr){
+  if(arr.length &lt; =1){
+          return arr;
+  }
+  var left=[],right=[];
+  var mid = Math.floor(arr.length/2);
+  var num = arr.splice(mid,1);
+  for(let i=0;i &lt; arr.length;i++){
+      if(arr[i] &lt; num){
+          left.push(arr[i]);
+      }else{
+          right.push(arr[i]);
+      }
+  }
+  return Quick_Sort(left).concat(num,Quick_Sort(right));
 }
-var left=[],right=[];
-var mid = Math.floor(arr.length/2);
-var num = arr.splice(mid,1);
-for(let i=0;i&lt;arr.length;i++){
-    if(arr[i]&lt;num){
-        left.push(arr[i]);
-    }else{
-        right.push(arr[i]);
-    }
-}
-return Quick_Sort(left).concat(num,Quick_Sort(right));
-</code></pre>}</pre></li>
+</pre>
+
+</li>
 </ul>
 <h5 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h5><ul>
 <li>原理：<ul>
@@ -445,19 +547,22 @@ return Quick_Sort(left).concat(num,Quick_Sort(right));
 <li>若有值比min小，则与min进行交换，否则进行第二个开始的遍历。</li>
 </ul>
 </li>
-<li>平均时间复杂度：O(n2)<br><pre><br>function Select_Sort(arr){<pre><code>var len = arr.length; 
-var min; // 最小记录
-for(let i=0;i&lt;len-1;i++){
-    for(let j=i+1;j&lt;=len-1;j++){
-        if(arr[j]&gt;arr[min])
-            min = j;   //将最小值与后面的n-i个记录做比较
-        }
-        if(min != i){
-            swap(arr[min],arr[i]);
-        }
-    }
+<li>平均时间复杂度：O(n2)<pre>
+function Select_Sort(arr){
+  var len = arr.length; 
+  var min; // 最小记录
+  for(let i=0;i<len-1;i++){ for(let="" j="i+1;j<=len-1;j++){" if(arr[j]="">arr[min])
+              min = j;   //将最小值与后面的n-i个记录做比较
+          }
+          if(min != i){
+              swap(arr[min],arr[i]);
+          }
+      }
+  }
 }
-</code></pre>}</pre></li>
+</len-1;i++){></pre>
+
+</li>
 </ul>
 <h5 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h5><ul>
 <li>原理：<ul>
@@ -491,7 +596,15 @@ function Merge(a,b){
             result[k++] = b[j++];
         }
     }
-    while (i<&lt;la) {="" result[k++]="a[i++];" }="" while="" (j&lt;lb)="" return="" result;="" <="" pre="">
+    while (i&lt;la) {
+        result[k++] = a[i++];
+    }
+    while (j&lt;lb) {
+        result[k++] = b[j++];
+    }
+    return result;
+}
+</pre>
 
 <h5 id="删除重复元素"><a href="#删除重复元素" class="headerlink" title="删除重复元素"></a>删除重复元素</h5><p><strong>方法一</strong></p>
 <pre>
@@ -526,15 +639,175 @@ Array.prototype.distinct = function(){
 }
 </pre>
 
-<h3 id="经典代码片段"><a href="#经典代码片段" class="headerlink" title="经典代码片段"></a>经典代码片段</h3><p><pre><br><strong>// 通过类名获取dom节点</strong><br>function getClassName(node,classname){<br>    if(node.getElementsByClassName){<br>        return node.getElementsByClassName(classname);<br>    }else{<br>        var elems = node.getElementsByTagName(“*”);<br>        var elements = [];<br>        for(var i=0;i&lt;elems.length;i++){<br>            if(elems.className.indexOf(classname) != -1){<br>                elements.push(elems[i]);<br>            }<br>        }<br>        return elements;<br>    }<br>}</pre></p>
-<p><strong>// 类数组转化为数组</strong><br>function convertToArray(nodes){<br>    var array = null;<br>    try{  // try-catch 块捕获错误，然后手动创建数组<br>        array = Array.prototype.slice.call(nodes,0);<br>    }catch(ex){<br>        array = new Array();<br>        for(var i=0;i&lt;nodes.length;i++){<br>            array.push(nodes[i]);<br>        }<br>        return array;<br>    }<br>}</p>
-<p><strong>// 获取视口大小</strong><br>function getViewPort(){<br>    if(document.compatMode == “BackCompat”){  //标准兼容模式关闭<br>        return {<br>            width: document.body.clientWidth,<br>            height:document.body.clientHeight<br>        };<br>    }else{<br>        return {<br>            width: document.documentElement.clientWidth,<br>            height:document.documentElement.clientHeight<br>        };<br>    }<br>}</p>
-<p><strong>// 封装事件处理</strong><br>var EventUtil = {<br>    addHandler: function(element,type,handler){<br>        if(element.addEventListener){<br>            element.addEventListener(type,handler,false);<br>        }else if(element.attachEvent){<br>            element.attachEvent(“on”+type,handler);<br>        }else{<br>            element[“on”+type] = handler;<br>        }<br>    },<br>    removeHandler: function(element,type,handler){<br>        if(element.removeEventListener){<br>            element.removeEventListener(type,handler,false);<br>        }else if(element.detachEvent){<br>            element.detachEvent(“on”+type,handler);<br>        }else{<br>            element[“on”+type] = null;<br>        }<br>    },<br>    getEvent: function(event){<br>        return event ? event:window.event;<br>    },<br>    getType: function(event){<br>        return event.type;<br>    },<br>    getTarget: function(event){<br>        return event.target || event.srcElement;<br>    },<br>    preventDefault: function(event){<br>        if(event.preventDefault){<br>            event.preventDefault();<br>        }else{<br>            event.returnValue = false;<br>        }<br>    },<br>    stopPropagation: function(event){<br>        if(event.stopPropagation){<br>            event.stopPropagation();<br>        }else{<br>            event.cancalBubble = true;<br>        }<br>    }<br>}</p>
-<p><strong>// 通过原型创建新对象</strong><br>[不是将对象作为参数传入，是将继承对象传入函数，当函数读取继承对象的属性时，实际上读取的是继承来的值，因此只影响继承对象本身]<br>var createObject = function(proto){<br>    if(proto == null) throw TypeError();<br>    if(Object.create) return Object.create(proto);<br>    var t =type of proto;<br>    if(t !== “object” &amp;&amp; t != “function”) throw TypeError();<br>    function f(){};<br>    f.prototype = proto;<br>    return new f();<br>}</p>
-<p><strong>// 封装数组方法map() [ 对每个数组元素调用函数f() ]</strong><br>var map = Array.prototype.map? function(a,f){ return a.map(f);} : function(a,f){<br>    var results = [],<br>    for(var i=0,len=a.length;i&lt;len;i++){<br>        if(i in a){<br>            results[i] = f.call(null,a[i],i,a)<br>        }<br>    }<br>}</p>
-<p><strong>// 封装数组方法reduce() [ 使用函数f()和可选的初始值将数组a减至一个值 ]</strong><br>var reduce = Array.prototype.reduce? function(a,f,initial){<br>    if(arguments.length&gt;2)<br>        return a.reduce(f,initial);<br>    else<br>        return a.reduce(f);<br>    }<br>: function(a,f,initial){<br>    var i=0,len=a.length,accumulator;<br>    if(arguments.length&gt;2) accumulator=initial;<br>    else{<br>        if(len==0) throw TypeError();<br>        while (i&lt;len) {<br>            if(i in a){<br>                accumulator = a[i++];<br>                break;<br>            }else{<br>                i++;<br>            }<br>        }<br>        if(i==len) throw TypeError();<br>    }<br>    while (i&lt;len) {<br>        if(i in a){<br>            accumulator = f.call(undefined,accumulator,a[i],i,a);<br>            i++;<br>        }<br>    }<br>    return accumulator;<br>}</p>
-<p><strong>// 封装记忆函数</strong><br>function memorize(f){<br>    var cache = {}; //将值保存在闭包中<br>    return function(){<br>        // 将实参转化为字符串形式，将其用做缓存的键<br>        //var key = arguments.length + Array.prototype.join.call(arguments,”,”);<br>        var key = Array.prototype.join.call(arguments,”,”);<br>        if(key in cache) return cache[key];<br>        else return cache[key] = f.apply(this,arguments);<br>    };<br>}</p>
-</&lt;la)></pre>
+<h3 id="经典代码片段"><a href="#经典代码片段" class="headerlink" title="经典代码片段"></a>经典代码片段</h3><p><strong>通过类名获取dom节点</strong></p>
+<pre>
+function getClassName(node,classname){
+    if(node.getElementsByClassName){
+        return node.getElementsByClassName(classname);
+    }else{
+        var elems = node.getElementsByTagName("*");
+        var elements = [];
+        for(var i=0;i &lt; elems.length;i++){
+            if(elems.className.indexOf(classname) != -1){
+                elements.push(elems[i]);
+            }
+        }
+        return elements;
+    }
+}
+</pre>
+
+<p><strong>类数组转化为数组</strong></p>
+<pre>
+function convertToArray(nodes){
+    var array = null;
+    try{  // try-catch 块捕获错误，然后手动创建数组
+        array = Array.prototype.slice.call(nodes,0);
+    }catch(ex){
+        array = new Array();
+        for(var i=0;i &lt; nodes.length;i++){
+            array.push(nodes[i]);
+        }
+        return array;
+    }
+}
+</pre>
+
+<p><strong>获取视口大小</strong></p>
+<pre>
+function getViewPort(){
+    if(document.compatMode == "BackCompat"){  //标准兼容模式关闭
+        return {
+            width: document.body.clientWidth,
+            height: document.body.clientHeight
+        };
+    }else{
+        return {
+            width: document.documentElement.clientWidth,
+            height: document.documentElement.clientHeight
+        };
+    }
+}
+</pre>
+
+<p><strong>封装事件处理</strong></p>
+<pre>
+var EventUtil = {
+    addHandler: function(element,type,handler){
+        if(element.addEventListener){
+            element.addEventListener(type,handler,false);
+        }else if(element.attachEvent){
+            element.attachEvent("on"+type,handler);
+        }else{
+            element["on"+type] = handler;
+        }
+    },
+    removeHandler: function(element,type,handler){
+        if(element.removeEventListener){
+            element.removeEventListener(type,handler,false);
+        }else if(element.detachEvent){
+            element.detachEvent("on"+type,handler);
+        }else{ 
+            element["on"+type] = null;
+        }
+    },
+    getEvent: function(event){
+        return event ? event:window.event;
+    },
+    getType: function(event){
+        return event.type;
+    },
+    getTarget: function(event){
+        return event.target || event.srcElement;
+    },
+    preventDefault: function(event){
+        if(event.preventDefault){
+            event.preventDefault();
+        }else{
+            event.returnValue = false;
+        }
+    },
+    stopPropagation: function(event){
+        if(event.stopPropagation){
+            event.stopPropagation();
+        }else{
+            event.cancalBubble = true;
+        }
+    }
+}
+</pre>
+
+<p><strong>通过原型创建新对象</strong><br>[不是将对象作为参数传入，是将继承对象传入函数，当函数读取继承对象的属性时，实际上读取的是继承来的值，因此只影响继承对象本身]</p>
+<pre>
+var createObject = function (proto){
+    if(proto == null) throw TypeError();
+    if(Object.create) return Object.create(proto);
+    var t = type of proto;
+    if(t !== "object" && t != "function") throw TypeError();
+    function f(){};
+    f.prototype = proto;
+    return new f();
+}
+</pre>
+
+<p><strong>封装数组方法map() [ 对每个数组元素调用函数f() ]</strong></p>
+<pre>
+var map = Array.prototype.map? function(a, f){ return a.map(f);} : function(a, f){
+    var results = [],
+    for(var i=0, len=a.length; i &lt; len; i++){
+        if(i in a){
+            results[i] = f.call(null, a[i], i, a)
+        }
+    }
+}
+</pre>
+
+<p><strong>封装数组方法reduce() [ 使用函数f()和可选的初始值将数组a减至一个值 ]</strong></p>
+<pre>
+var reduce = Array.prototype.reduce? function(a, f, initial){
+    if(arguments.length>2)
+        return a.reduce(f, initial);
+    else
+        return a.reduce(f);
+    }
+: function(a, f, initial){
+    var i=0, len = a.length, accumulator;
+    if(arguments.length &gt; 2) accumulator=initial;
+    else{
+        if(len == 0) throw TypeError();
+        while (i &lt; len) {
+            if(i in a){
+                accumulator = a[i++];
+                break;
+            }else{
+                i++;
+            }
+        }
+        if(i == len) throw TypeError();
+    }
+    while (i &lt; len) {
+        if(i in a){
+            accumulator = f.call(undefined, accumulator, a[i],i, a);
+            i++;
+        }
+    }
+    return accumulator;
+}
+</pre>
+
+<p><strong>封装记忆函数</strong></p>
+<pre>
+function memorize(f){
+    var cache = {}; //将值保存在闭包中
+    return function(){
+        // 将实参转化为字符串形式，将其用做缓存的键
+        //var key = arguments.length + Array.prototype.join.call(arguments,",");
+        var key = Array.prototype.join.call(arguments,",");
+        if(key in cache) return cache[key];
+        else return cache[key] = f.apply(this, arguments);
+    };
+}
+</pre>
       
     </div><!-- .entry-content -->
 
