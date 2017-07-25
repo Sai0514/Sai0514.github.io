@@ -25,7 +25,7 @@ hre" />
 <meta property="og:url" content="http://www.liruonan.tech/frontEnd/index.html">
 <meta property="og:site_name" content="Li RuoNan">
 <meta property="og:description" content="Day1 盒子模型  网页中元素占有空间的大小由4个部分组成，包括元素的内容content,元素的内边框padding,元素的边框border，元素的外边距margin。这四个部分，content表示显示的内容，padding表示填充区域，border是边框，margin用来分隔相邻区域。  href和src  href指向网络资源所在位置，建立和当前元素或当前文档之间的链接，用于超链接。src指">
-<meta property="og:updated_time" content="2017-07-25T13:23:45.000Z">
+<meta property="og:updated_time" content="2017-07-25T15:58:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
 <meta name="twitter:description" content="Day1 盒子模型  网页中元素占有空间的大小由4个部分组成，包括元素的内容content,元素的内边框padding,元素的边框border，元素的外边距margin。这四个部分，content表示显示的内容，padding表示填充区域，border是边框，margin用来分隔相邻区域。  href和src  href指向网络资源所在位置，建立和当前元素或当前文档之间的链接，用于超链接。src指">
@@ -86,7 +86,7 @@ hre" />
             
             <a href="/frontEnd/index.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/index.html" data-id="cj5jpwz69000auszbuqejmyyy" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/index.html" data-id="cj5jrs856000ajczb64bc2vyk" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -318,7 +318,8 @@ hre" />
  }
 
  // 同时让我想到了数组去重的方法：[...new Set(array)], hashMap, indexOf
- </b.length;i++){></pre></li>
+ </b.length;i++){></pre>
+</li>
 <li><p>时间格式化输出</p>
  <pre>
  function formatDate(oDate, sFormation) {
@@ -390,7 +391,7 @@ hre" />
 <p> 内存泄漏指任何对象在不被拥有或需要它之后还仍然存在。</p>
 <p> 垃圾回收器定时扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为0(没有其他对象引用过该对象)，或对该对象的唯一引用时循环的，则该对象的内存即可回收。</p>
 <p> setTimeout的第一个参数，使用字符串而非函数的话，会引发内存泄漏。</p>
-<p> 闭包、控制台日志、循环(两个对象彼此引用且彼此保留时，会产生一个循环)    </p>
+<p> 闭包、控制台日志、循环(两个对象彼此引用且彼此保留时，会产生一个循环)</p>
 </li>
 <li><p>对Node的优缺点提出自己的看法:</p>
 <p> 优点：Node是基于事件驱动和非阻塞的，适合处理并发请求。</p>
@@ -423,8 +424,10 @@ hre" />
          return str
      }
  }
- </pre></li>
-<li>将字符串转换为驼峰格式 <pre>
+ </pre>
+</li>
+<li><p>将字符串转换为驼峰格式</p>
+ <pre>
  function cssStyle2DomStyle(sName) {
      var arr = sName.split('-');
      if(arr.indexOf('') == 0){
@@ -435,8 +438,10 @@ hre" />
      }
         return arr.join('')
  }
- </pre></li>
-<li>求二次方 <pre>
+ </pre>
+</li>
+<li><p>求二次方</p>
+ <pre>
  // map
  function square(arr) {
      return arr.map(function(item, index, arr){
@@ -571,14 +576,14 @@ hre" />
 <p> 但是有一个原则，那就是this指的是调用函数的那个对象。</p>
 <p> this一般情况下： 是全局对象Global。作为方法调用，this就是指这个对象。</p>
 </li>
-</ol>
-<h2 id="Day7"><a href="#Day7" class="headerlink" title="Day7"></a>Day7</h2><ol>
 <li><p>JavaScript作用域链</p>
 </li>
 <li><p>JavaScript原型链</p>
 </li>
 <li><p>JavaScript如何实现继承</p>
-<h2 id="Day8"><a href="#Day8" class="headerlink" title="Day8"></a>Day8</h2></li>
+</li>
+</ol>
+<h2 id="Day7"><a href="#Day7" class="headerlink" title="Day7"></a>Day7</h2><ol>
 <li><p>清除浮动有哪些方式？</p>
 <ul>
 <li>父级div定义height</li>
@@ -609,21 +614,60 @@ hre" />
 <p> WebAssembly是为Web而设计的、可以生成浏览器可执行的二进制文件的编程语言。其主要目标就是“快”，主要是因为它的静态类型特性和方便优化特性。asm.js已经比较接近这一个目标了，但是WebAssembly进一步缩短和本地执行速度之间的差距。</p>
 </li>
 <li><p>页面导入样式时，使用link和@import有什么区别？</p>
+<ul>
+<li>(1) link属于XHTML标签，除了加载CSS外，还能用于定义RSS，定义rel连接属性等作用；而@import是css提供的，只能用于加载css；</li>
+<li>(2) 页面被加载时，link会同时被加载，而@import引用的css会等到页面被加载完毕后再加载</li>
+<li>(3) import是css2.1提出的，只IE5以上才能被识别，而link是XHTML标签，无兼容问题。</li>
+</ul>
 </li>
 <li><p>说说对浏览器内核的理解</p>
+<p> 主要分为两部分： 渲染引擎(layout/render engineer)和JS引擎</p>
+<blockquote>
+<p>渲染引擎：</p>
+<p>负责取得网页的内容(例如：HTML,XML,图像等)、整理讯息(例如：加入CSS等)，以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核不同对于网页的语法解释也不同。所有网页浏览器、电子邮箱客户端以及其他需要编辑、显示网络内容的应用程序都需要内核。</p>
+<p>JS引擎： 解析和执行js来显示网页的动态效果。</p>
+</blockquote>
+<p> 最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于指渲染引擎。</p>
 </li>
 <li><p>IE和DOM事件流的区别</p>
+<ul>
+<li>执行顺序不一样</li>
+<li>参数不一样</li>
+<li>事件加不加on</li>
+<li>this指向问题</li>
+</ul>
 </li>
-</ol>
-<h2 id="Day9"><a href="#Day9" class="headerlink" title="Day9"></a>Day9</h2><ol>
 <li><p>哪些地方会出现css阻塞，哪些地方会出现js阻塞？</p>
+<p> css阻塞特性：css本来是可以并行下载的，在什么情况下回出现阻塞加载了(IE6下CSS都是阻塞加载) 当css后面跟着嵌入的js时候，该css就会出现阻塞后面资源下载的情况。当把嵌入js放到css前面，就不会出现阻塞的情况。</p>
+<p> 由于浏览器会维持html中的css和js的顺序，样式表必须在嵌入的js执行前先加载、解析完。而嵌入的JS会阻塞后面的资源加载，所以会出现上面css阻塞下载的情况。</p>
+<p> js阻塞特性：所有浏览器在下载js的时候，会阻塞一切其他活动，比如其他资源的下载，内容的渲染等等。直到js下载、解析、执行完毕后才开始继续并行下载其他资源并呈现内容。为了提高用户体验，新一代浏览器都支持并行下载JS，但是js下载仍然会阻塞其他资源的下载(例如: 图片，css文件等)</p>
+<p> 由于浏览器为了防止出现JS修改DOM树，需要重新构建DOM树情况，所以就会阻塞其他的下载和呈现。嵌入JS会阻塞所有内容的显示，2种方式都会阻塞其后面资源的下载。也就是说外部样式不会阻塞外部脚本的加载，但是会阻塞外部脚本的执行。</p>
 </li>
 <li><p>css选择符有哪些？哪些属性可以继承？优先级算法如何计算？</p>
+<p>标签选择符、类选择符、id选择符</p>
+<p>继承不如指定 id &gt; class &gt; 标签选择</p>
+<p>内联和important相比，后者优先级更高</p>
 </li>
 <li><p>js闭包的理解？好处？应该注意些什么？</p>
+<p>闭包：函数嵌套函数，内部函数可以引用外部函数的参数和变量，变量和参数不会被垃圾机制所回收</p>
+<p>优点： </p>
+<p>(1) 封装私有成员，避免全局污染； (2) 保存变量，使得变量长期在内存中</p>
+<p>缺点：可能会造成内存泄漏</p>
+<p>如何解决内存泄漏的情况：</p>
 </li>
-<li><p>如何阻止事件冒泡和默认事件？</p>
-</li>
+</ol>
+<ol>
+<li>如何阻止事件冒泡和默认事件？<pre>
+function stopBubble(e){
+    e = e|| window.event
+    if(e && e.stopPropagation){
+        e.stopPropagation();
+    } else {
+        e.cancelBubble = true;
+    }
+    return false;
+}
+</pre></li>
 </ol>
 
       
@@ -631,7 +675,7 @@ hre" />
 
     <footer class="entry-meta">
     <a href="/frontEnd/index.html">
-    <time datetime="2017-07-25T15:08:58.000Z" class="entry-date">
+    <time datetime="2017-07-25T15:58:51.000Z" class="entry-date">
         2017-07-25
     </time>
 </a>
