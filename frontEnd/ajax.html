@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="异步请求之总结1. 当有两个异步请求发过来的时候，如何判断两个请求都成功？方法一：
+
+传统解法，定义一个标志位 flag
+
+const AJAX_NUM = 2;
+$.ajax({},function A(){
+    if (success) AJAX_NUM --;
+    if (AJAX_N" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>Li RuoNan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="异步请求之总结1. 当有两个异步请求发过来的时候，如何判断两个请求都成功？方法一：  传统解法，定义一个标志位 flag  const AJAX_NUM = 2; $.ajax({},function A(){     if (success) AJAX_NUM --;     if (AJAX_NUM === 0) {renderPage();}  }) $.ajax({},function B">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Li RuoNan">
+<meta property="og:url" content="http://www.liruonan.tech/frontEnd/ajax.html">
+<meta property="og:site_name" content="Li RuoNan">
+<meta property="og:description" content="异步请求之总结1. 当有两个异步请求发过来的时候，如何判断两个请求都成功？方法一：  传统解法，定义一个标志位 flag  const AJAX_NUM = 2; $.ajax({},function A(){     if (success) AJAX_NUM --;     if (AJAX_NUM === 0) {renderPage();}  }) $.ajax({},function B">
+<meta property="og:updated_time" content="2017-07-25T02:21:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Li RuoNan">
+<meta name="twitter:description" content="异步请求之总结1. 当有两个异步请求发过来的时候，如何判断两个请求都成功？方法一：  传统解法，定义一个标志位 flag  const AJAX_NUM = 2; $.ajax({},function A(){     if (success) AJAX_NUM --;     if (AJAX_NUM === 0) {renderPage();}  }) $.ajax({},function B">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Li RuoNan" rel="home">Li RuoNan</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">一枚行走在前端道路上的程序媛 ~</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">首页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/Sai0514">仓库</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/frontEnd">前端</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/algorithm">算法</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/project">项目</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="/frontEnd/ajax.html#comments" class="leave-reply">评论</a>
+            
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/ajax.html" data-id="cj5iyi0m100039zzbyokj7hyd" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h2 id="异步请求之总结"><a href="#异步请求之总结" class="headerlink" title="异步请求之总结"></a>异步请求之总结</h2><h3 id="1-当有两个异步请求发过来的时候，如何判断两个请求都成功？"><a href="#1-当有两个异步请求发过来的时候，如何判断两个请求都成功？" class="headerlink" title="1. 当有两个异步请求发过来的时候，如何判断两个请求都成功？"></a>1. 当有两个异步请求发过来的时候，如何判断两个请求都成功？</h3><p>方法一：</p>
+<blockquote>
+<p>传统解法，定义一个标志位 flag</p>
+<pre>
+const AJAX_NUM = 2;
+$.ajax({},function A(){
+    if (success) AJAX_NUM --;
+    if (AJAX_NUM === 0) {renderPage();} 
+})
+$.ajax({},function B(){
+    if (success) AJAX_NUM --;
+    if (AJAX_NUM === 0) {renderPage();}
+})
+</pre>
+
+</blockquote>
+<p>方法二：</p>
+<blockquote>
+<p>$.ajax()操作完成后，如果使用的是低于1.5.0版本的jQuery，返回的是XHR对象，你没法进行链式操作；如果高于1.5.0版本，返回的是deferred对象，可以进行链式操作。</p>
+</blockquote>
+<p>(1) 指定同一操作的多个回调函数<br>deferred对象的一大好处，就是它允许你自由添加多个回调函数。done<br>表示传统的XHR对象里面的success，fail表示error。</p>
+<pre>
+$.ajax("test.html")
+　　.done(function(){ alert("哈哈，成功了！");} )
+　　.fail(function(){ alert("出错啦！"); } )
+　　.done(function(){ alert("第二个回调函数！");} );
+</pre>
+
+<p>(2) deferred对象的另一大好处，就是它允许你为多个事件指定一个回调函数，这是传统写法做不到的。<strong>$.when</strong></p>
+<pre>
+$.when($.ajax("test1.html"), $.ajax("test2.html"))
+　　.done(function(){ alert("哈哈，成功了！"); })
+　　.fail(function(){ alert("出错啦！"); });
+</pre>
+
+
+<p>综上，分析完毕，我们可以知道，使用$.when可以实现多个事件实现同一个回调函数。如上题：</p>
+<pre>
+$.when($.ajax(),$ajax()).done(renderPage())
+</pre>
+
+<h3 id="2-页面链接跳转URL不记录处理"><a href="#2-页面链接跳转URL不记录处理" class="headerlink" title="2. 页面链接跳转URL不记录处理"></a>2. 页面链接跳转URL不记录处理</h3><blockquote>
+<p>当执行Ajax操作的时候，会往浏览器<code>history</code>中塞入一个地址(使用pushState)这是无刷新的；</p>
+<p>浏览器的前进与后退，会触发window.onpopstate事件，通过绑定popstate事件，就可以根据当前URL地址中的查询内容让对应的菜单执行ajax载入，实现ajax前进与后退效果；</p>
+<p>页面首次载入的时候，如果没有查询到信息或信息不匹配，则使用第一个菜单的ajax地址的查询内容，并使用history.replaceState更改当前的浏览器历史，然后触发ajax请求。</p>
+</blockquote>
+<p>我们的策略是：当页面加载的时候，使用history.replaceState替换当前的状态，保证前进和后退不保存历史记录。其中，history.replaceState({},title,url)参数url带入时间戳来表示唯一性。</p>
+<pre>
+history.replaceState(null, document.title, prefix + 'nocache=' + time);
+</pre>
+
+
+
+<p>附：大牛的博客</p>
+<p><a href="http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html</a><br><a href="http://www.zhangxinxu.com/wordpress/2013/06/html5-history-api-pushstate-replacestate-ajax/" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/2013/06/html5-history-api-pushstate-replacestate-ajax/</a><br><a href="http://www.zhangxinxu.com/wordpress/2017/02/page-link-url-history-null-not-record/" target="_blank" rel="external">http://www.zhangxinxu.com/wordpress/2017/02/page-link-url-history-null-not-record/</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/frontEnd/ajax.html">
+    <time datetime="2017-07-25T02:21:50.000Z" class="entry-date">
+        2017-07-25
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+<section id="comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/ajax.html"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:'flhexo'};
+    (function() {
+	  var ds = document.createElement('script');
+	  ds.type = 'text/javascript';ds.async = true;
+	  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	  ds.charset = 'UTF-8';
+	  (document.getElementsByTagName('head')[0]
+	   || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+</section>
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <audio src="http://7u2hdm.com1.z0.glb.clouddn.com/bg.mp3" controls="controls"
+             style="width:100%">
+        您的浏览器不支持 audio 标签。
+      </audio>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/">Welcome to My Blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 Li RuoNan
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
