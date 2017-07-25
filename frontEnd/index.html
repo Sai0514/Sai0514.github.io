@@ -25,7 +25,7 @@ hre" />
 <meta property="og:url" content="http://www.liruonan.tech/frontEnd/index.html">
 <meta property="og:site_name" content="Li RuoNan">
 <meta property="og:description" content="Day1 盒子模型  网页中元素占有空间的大小由4个部分组成，包括元素的内容content,元素的内边框padding,元素的边框border，元素的外边距margin。这四个部分，content表示显示的内容，padding表示填充区域，border是边框，margin用来分隔相邻区域。  href和src  href指向网络资源所在位置，建立和当前元素或当前文档之间的链接，用于超链接。src指">
-<meta property="og:updated_time" content="2017-07-25T07:58:44.000Z">
+<meta property="og:updated_time" content="2017-07-25T13:23:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
 <meta name="twitter:description" content="Day1 盒子模型  网页中元素占有空间的大小由4个部分组成，包括元素的内容content,元素的内边框padding,元素的边框border，元素的外边距margin。这四个部分，content表示显示的内容，padding表示填充区域，border是边框，margin用来分隔相邻区域。  href和src  href指向网络资源所在位置，建立和当前元素或当前文档之间的链接，用于超链接。src指">
@@ -86,7 +86,7 @@ hre" />
             
             <a href="/frontEnd/index.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/index.html" data-id="cj5jao33w000ajpzbj7tcssxp" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/index.html" data-id="cj5jpwz69000auszbuqejmyyy" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -175,13 +175,11 @@ hre" />
 <li><p>ajax在客户端运行，承担了一部分由服务器承担的工作，减少了大用户量下的服务器负载</p>
 <p>ajax特点：</p>
 </li>
-<li><p>实现动态不刷新(局部刷新)</p>
-</li>
+<li>实现动态不刷新(局部刷新)</li>
 <li><p>readyState属性： 状态有5个可取值： 0 = 未初始化； 1 = 启动； 2 = 发送； 3 = 接收； 4 = 完成</p>
 <p>ajax缺点：</p>
 </li>
-<li><p>不支持浏览器back按钮</p>
-</li>
+<li>不支持浏览器back按钮</li>
 <li>安全问题ajax暴露了与服务器交互的细节</li>
 <li>对搜索引擎的支持比较弱</li>
 <li>破坏了程序的异常机制</li>
@@ -203,7 +201,7 @@ hre" />
 <li><p>添加元素</p>
 <p> 在数据arr末尾添加元素item，不要直接修改数组arr，结果返回新的数组。</p>
  <pre>
- // 使用slice浅拷贝+push组合 
+ /* 使用slice浅拷贝+push组合 */
  var append = function(arr, item) {
      var newArr = arr.slice(0);
      newArr.push(item);
@@ -218,11 +216,11 @@ hre" />
 <li><p>删除数组第一个元素</p>
 <p> 删除数组的第一个元素，结果返回新数组</p>
  <pre>
- // 使用slice 
+ /* 使用slice */
  function curtail(arr){
      return arr.slice(1)
  }
- // 使用filter 
+ /* 使用filter */
  function curtail(arr){
      return arr.filter( function(v,i){
          return i!= 0;
@@ -239,11 +237,11 @@ hre" />
 <li><p>插入元素</p>
 <p> 在数组的index位置处添加元素item，结果返回新数组</p>
  <pre>
- // 使用slice+concat 
+ /* 使用slice+concat */
  function insert(arr, item, index){
      return arr.slice(0,index).concat(item,arr.slice(index));
  }
- // 使用slice/concat+splice 
+ /* 使用slice/concat+splice */
  function insert(arr, item, index){
      // var newArr=arr.slice(0)
      var newArr = arr.concat();
@@ -266,10 +264,10 @@ hre" />
 <p> 伪数组：无法调用数组方法或期望length属性有特殊行为，但仍可以对真正数组遍历方法来遍历它们。典型的是arguments参数，还有document.getElementByTagName, document.childNodes之类的，它们都返回NodeList对象。</p>
 <p> 转化成标准数组：</p>
  <pre>
- // 使用ES5 
+ /* 使用ES5 */
  Array.prototype.slice.call(fakeArray)
  Array.prototype.slice.apply(this,fakeArray)
- // 使用ES6 
+ /* 使用ES6 */
  Array.from(fakeArray)
  </pre>
 </li>
@@ -312,16 +310,15 @@ hre" />
          b[arr[i]] ++;
      }
  }
- for(var i=0;i&lt;b.length;i++){
-     if(b[i] > 1){
+ for(var i=0;i<b.length;i++){ if(b[i]=""> 1){
          a.push(i)
      }
  }
  return a
  }
- // 同时让我想到了数组去重的方法：
- [...new Set(array)], hashMap, indexOf
- </pre></li>
+
+ // 同时让我想到了数组去重的方法：[...new Set(array)], hashMap, indexOf
+ </b.length;i++){></pre></li>
 <li><p>时间格式化输出</p>
  <pre>
  function formatDate(oDate, sFormation) {
@@ -365,13 +362,276 @@ hre" />
 
 </li>
 </ol>
-<h2 id="Day4"><a href="#Day4" class="headerlink" title="Day4"></a>Day4</h2>
+<h2 id="Day4"><a href="#Day4" class="headerlink" title="Day4"></a>Day4</h2><ol>
+<li><p>null和undefined的区别    </p>
+<p> null- 表示一个”无”的对象，转化为数值是为0；</p>
+<blockquote>
+<p>null 用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。</p>
+<p>(1) 作为函数的参数，表示该函数的参数不是对象。</p>
+<p>(2) 作为对象原型链的终点。</p>
+</blockquote>
+<p> undefined- 表示一个”无”的原始值，转化为数值是为NaN</p>
+<blockquote>
+<p>undefined 表示‘缺少值’，即此处应有值，但未定义。</p>
+<p>(1) 变量被声明了，但没有赋值。</p>
+<p>(2) 调用函数时，应该提供的参数没有提供。</p>
+<p>(3) 对象没有赋值的属性，该属性的值为undefined。</p>
+<p>(4) 函数没有返回值时，默认返回undefined。</p>
+</blockquote>
+</li>
+<li><p>new 操作符具体干了什么？</p>
+<ul>
+<li>创建一个空对象，并且this变量引用该对象，同时还继承了该函数的原型。</li>
+<li>属性和方法被加入到this引用的对象</li>
+<li>新创建的对象由this引用，并且最后隐式返回this</li>
+</ul>
+</li>
+<li><p>哪些操作会造成内存泄漏？</p>
+<p> 内存泄漏指任何对象在不被拥有或需要它之后还仍然存在。</p>
+<p> 垃圾回收器定时扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为0(没有其他对象引用过该对象)，或对该对象的唯一引用时循环的，则该对象的内存即可回收。</p>
+<p> setTimeout的第一个参数，使用字符串而非函数的话，会引发内存泄漏。</p>
+<p> 闭包、控制台日志、循环(两个对象彼此引用且彼此保留时，会产生一个循环)    </p>
+</li>
+<li><p>对Node的优缺点提出自己的看法:</p>
+<p> 优点：Node是基于事件驱动和非阻塞的，适合处理并发请求。</p>
+<p> 缺点： 缺少足够多的第三方库支持，因此还不够稳定。</p>
+</li>
+<li><p>如何对网站的文件和资源进行优化:</p>
+<ul>
+<li>文件合并</li>
+<li>文件最小化/文件压缩</li>
+<li>使用CDN托管</li>
+<li>缓存的使用</li>
+</ul>
+</li>
+<li><p>颜色字符串转换</p>
+ <pre>
+ function rgb2hex(sRGB){
+     var regexp = /rgb\((\d+),\s*(\d+),\s*(\d+)\)/;
+     var ret = sRGB.match(regexp);
+     if(!ret) return sRGB
+     else{
+         var str = '#';
+         for(var i=1;i&lt;=3;i++){
+             var m = parseInt(ret[i]);
+             if(m&gt;=255 && m&lt;=0){
+                 str += (m&lt;16? "0"+m.toString(16): m.toString(16));
+             } else {
+                 return sRGB
+             }
+         }
+         return str
+     }
+ }
+ </pre></li>
+<li>将字符串转换为驼峰格式 <pre>
+ function cssStyle2DomStyle(sName) {
+     var arr = sName.split('-');
+     if(arr.indexOf('') == 0){
+             arr.splice(0,1)
+     }
+     for(var i=1;i&lt;arr.length;i++){
+             arr[i] = arr[i].slice(0,1).toUpperCase() + arr[i].slice(1)
+     }
+        return arr.join('')
+ }
+ </pre></li>
+<li>求二次方 <pre>
+ // map
+ function square(arr) {
+     return arr.map(function(item, index, arr){
+             return item * item
+     })
+ }
+ // forEach
+ function square(arr){
+     var a = [];
+     arr.forEach(function(item, index, arr){
+         a.push(item*item)
+     });
+     return a;
+ }
+ </pre>
+
+</li>
+</ol>
+<h2 id="Day5"><a href="#Day5" class="headerlink" title="Day5"></a>Day5</h2><ol>
+<li><p>页面从输入URL到页面加载完成的过程</p>
+<p> (1) 当发送一个URL请求时，不管这个URL是Web页面的URL还是Web页面上每个资源的URL，浏览器都会开启一个线程来处理这个请求，同时在远程DNS服务器上启动一个DNS查询。使得浏览器获得请求对应的IP地址。</p>
+<p> (2) 浏览器与远程Web服务器通过TCP三次握手协商来建立一个TCP/IP连接。该握手包括一个同步报文、一个同步-应答报文和一个应答报文，这三个报文在浏览器和服务器之间传递。该握手首先由客户端尝试建立起通信，而后服务器应答并接受客户端的请求，最后由客户端发出该请求已经被接受的报文。</p>
+<p> (3) 一旦TCP/IP连接建立，浏览器会通过该连接向远程服务器发送HTTP请求。远程服务器找到资源并使用HTTP响应返回该资源，值为200的HTTP响应状态表示正确的响应。</p>
+<p> (4) 此时，Web服务器提供资源服务，客户端开始下载资源。</p>
+</li>
+<li><p>HTTP状态码</p>
+<p> 100 continue 继续，一般在发送post请求时，已发送了http header之后服务端将返回该信息</p>
+<p> 200 OK  正常返回信息</p>
+<p> 201 Created 请求成功并且服务器创建了新的资源</p>
+<p> 202 Accepted 服务器已接受请求，但尚未处理</p>
+<p> 301 Moved Permanently 永久重定向</p>
+<p> 302 Foud 临时重定向</p>
+<p> 303 See Other 临时重定向，且总是使用GET请求新的URL</p>
+<p> 304 Not Modified 请求未修改</p>
+<p> 400 Bad Request 客户端错误</p>
+<p> 401 Unauthorized 请求未授权</p>
+<p> 403 Forbidden 禁止访问</p>
+<p> 404 Not Found 找不到与URL匹配的资源</p>
+<p> 500 Internal Sever Error 服务器错误</p>
+<p> 503  Service Unavailable 服务器暂时无法处理请求</p>
+</li>
+<li><p>Javascript的同源策略</p>
+<p> 同源策略是客户端脚本的重要的安全标准，其目的是防止某个文档或脚本从多个不同源装载。这里的同源策略指得是：协议、域名、端口相同，同源策略是一种安全协议，指一段脚本只能读取来自同一个来源的窗口和文档的属性。</p>
+</li>
+<li><p>GET和POST的区别，何时使用POST？</p>
+<p> GET:</p>
+<p> 一般用于信息获取，使用URL传递参数，对所发送信息的数量也有限制，一般在2000个字符；</p>
+<p> POST:</p>
+<p> 一般用于修改服务器上的资源，对所发送的信息数量没有限制。 </p>
+<p> 使用POST的场景：</p>
+<ul>
+<li>无法使用缓存文件(更新服务器上的文件或数据库)</li>
+<li>向服务器发送大量的数据(POST没有数据量限制)</li>
+<li>发送包含未知字符的用户输入时，POST比GET更稳定更可靠</li>
+</ul>
+</li>
+<li><p>AJAX请求时get和post的区别？</p>
+<p> 区别：<br> get： 参数在ur后面；有大小限制；安全问题；适用于只请求数据的场景 </p>
+<p> post： 参数封装在请求主体里面；适应于请求并修改数据的场景，如：修改密码。</p>
+</li>
+<li><p>Web前端密码加密是否有意义？</p>
+<p> 首先， HTTPS才是最安全的方式；</p>
+<p> 其次， HTTP环境下，无论如何都可能劫持流量，不管做不做加密，都会被轻易成功登录。但是，从用户角度，用户多站点共享密码是现状，如果能够保护密码明文，至少降低了部分风险。</p>
+</li>
+<li><p>计时器</p>
+ <pre>
+ function count(start, end){
+     console.log(start++)
+     var timer = setInterval(function(){
+         if(start &lt;= end){
+             console.log(start++)
+         } else {
+             clearInterval(timer)
+         }
+     },100);
+     return {
+         cancel: function(){
+             clearInterval(timer)
+         }
+     }
+ }
+ </pre>
+
+</li>
+</ol>
+<h2 id="Day6"><a href="#Day6" class="headerlink" title="Day6"></a>Day6</h2><ol>
+<li><p>XHTML和HTML的区别？</p>
+<p> HTML是一种基本的WEB网页设计语言</p>
+<p> XHTML是一个基于XML的置标语言</p>
+<p> 最主要的不同：</p>
+<p> XHTML元素必须被正确地嵌套；必须被关闭；标签名必须小写；必须拥有根元素。</p>
+</li>
+<li><p>什么是语义化HTML？</p>
+<ul>
+<li>直观的认识标签。对于搜索引擎的抓取有好处，用正确的标签做正确的事情。</li>
+<li>html语义化就是让页面的内容结构化，便于浏览器、搜索引擎解析。</li>
+<li>在没有css情况下，也是文档的格式显示，容易阅读。</li>
+<li>搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于SEO。</li>
+<li>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</li>
+</ul>
+</li>
+<li><p>常见的浏览器内核有哪些？</p>
+<p> Trudent内核：IE,MaxThon,TT,360,搜狗<br> Geocko: Netscape6及以上,FF,MozillaSuite/SeaMonkey<br> Preso内核：Opera7及以上<br> Webkit： Safari,Chrome</p>
+</li>
+<li><p>HTML5有哪些新特性、移除了哪些元素？如何处理新标签的浏览器兼容问题？如何区分HTML和HTML5？</p>
+<p> HTML5不基于SGML, 主要关于图像，位置，存储，多任务等功能的增加</p>
+<p> 新特性：</p>
+<p> 绘画canvas、用于媒体回放的video和audio等、sessionStorage会话级存储、localStorage持久化存储、语义化更好的内容元素(article,header,footer,nav,section)、表单控件(calendar,date,time,email,url,search)、webworker、websocket、Geolocation    </p>
+<p> 移除元素：</p>
+<p> 纯表现元素： basefont,big,center,font,s,strike,tt,u;对可用性产生负面影响的元素： frame,frameset,noframes;</p>
+</li>
+<li><p>经典轮子</p>
+<p> 异步控制工具、模板引擎、重构：各种promise，EventEmitter，Module，Loader，数据结构，类工厂，MVC,Lodash等</p>
+</li>
+<li><p>常用布局无法用纯css实现的？</p>
+<ul>
+<li>多行文字溢出显示省略号</li>
+<li>最大行数</li>
+<li>更好用的Flex</li>
+<li>元素查询</li>
+<li>CSS分页滚动</li>
+<li>非矩形布局</li>
+<li>流式Grid布局</li>
+</ul>
+</li>
+<li><p>cookies，sessionStorage和localStorage的区别？</p>
+<p> cookies在浏览器和服务器来回传递，sessionStorage和localStorage都是本地存储。</p>
+<p> sessionStorage和localStorage具有更多丰富易用的接口；各自独立的更大的存储空间。</p>
+</li>
+<li><p>This对象的理解</p>
+<p> this是js的一个关键字，随着函数使用场合不同，this的值会发生变化。</p>
+<p> 但是有一个原则，那就是this指的是调用函数的那个对象。</p>
+<p> this一般情况下： 是全局对象Global。作为方法调用，this就是指这个对象。</p>
+</li>
+</ol>
+<h2 id="Day7"><a href="#Day7" class="headerlink" title="Day7"></a>Day7</h2><ol>
+<li><p>JavaScript作用域链</p>
+</li>
+<li><p>JavaScript原型链</p>
+</li>
+<li><p>JavaScript如何实现继承</p>
+<h2 id="Day8"><a href="#Day8" class="headerlink" title="Day8"></a>Day8</h2></li>
+<li><p>清除浮动有哪些方式？</p>
+<ul>
+<li>父级div定义height</li>
+<li>结尾处加空div标签clear:both</li>
+<li>父级div定义伪类:after和zoom   //推荐方法</li>
+<li>父级div定义overflow:hidden</li>
+<li>父级div定义overflow:auto</li>
+<li>父级div也浮动，需要定义宽度</li>
+<li>父级div定义display:table</li>
+<li>结尾处加br标签clear:both</li>
+</ul>
+</li>
+<li><p>box-sizing常用的属性有哪些？分别有什么作用？</p>
+<p> box-sizing:content-box|border-box|inherit</p>
+<p> content-box： 宽度和高度分别应用到元素的内容框，在宽度和高度之外绘制元素的内边距和边框。</p>
+<p> border-box: 元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制，通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。</p>
+</li>
+<li><p>Doctype作用？标准模式与兼容模式的区别？</p>
+<p> &lt;!Doctype&gt;告知浏览器的解析器用什么文档标准解析这个文档。Doctype不存在或格式不正确会导致文档以兼容模式呈现。</p>
+<p> 标准模式的排版和JS运行模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作。</p>
+</li>
+<li><p>如何视觉隐藏网页内容，只允许在屏幕阅读器中可用？</p>
+<p> display:none 的缺陷是搜索引擎可能认为被隐藏的文字属于垃圾信息而被忽略屏幕阅读器会忽略被隐藏的文字。</p>
+<p> visibility:hidden 的缺陷是隐藏的内容会占据他所应该占据物理空间</p>
+<p> overflow:hidden;width:0;height:0  将宽度和高度设为0,超过部分隐藏,既弥补了上述一二方法的缺陷，也达到了隐藏内容的目的。</p>
+</li>
+<li><p>为什么WebAssembly与asm.js快？</p>
+<p> WebAssembly是为Web而设计的、可以生成浏览器可执行的二进制文件的编程语言。其主要目标就是“快”，主要是因为它的静态类型特性和方便优化特性。asm.js已经比较接近这一个目标了，但是WebAssembly进一步缩短和本地执行速度之间的差距。</p>
+</li>
+<li><p>页面导入样式时，使用link和@import有什么区别？</p>
+</li>
+<li><p>说说对浏览器内核的理解</p>
+</li>
+<li><p>IE和DOM事件流的区别</p>
+</li>
+</ol>
+<h2 id="Day9"><a href="#Day9" class="headerlink" title="Day9"></a>Day9</h2><ol>
+<li><p>哪些地方会出现css阻塞，哪些地方会出现js阻塞？</p>
+</li>
+<li><p>css选择符有哪些？哪些属性可以继承？优先级算法如何计算？</p>
+</li>
+<li><p>js闭包的理解？好处？应该注意些什么？</p>
+</li>
+<li><p>如何阻止事件冒泡和默认事件？</p>
+</li>
+</ol>
+
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
     <a href="/frontEnd/index.html">
-    <time datetime="2017-07-25T08:02:19.000Z" class="entry-date">
+    <time datetime="2017-07-25T15:08:58.000Z" class="entry-date">
         2017-07-25
     </time>
 </a>
