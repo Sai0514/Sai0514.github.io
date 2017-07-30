@@ -93,7 +93,7 @@
             
             <a href="/title#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/title" data-id="cj5qe7vnc00006ezbl05o1634" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/title" data-id="cj5qeb85g00018ezbryn8mbp7" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -225,8 +225,6 @@
 </form></aside>
   
     
-  
-    
   <aside class="widget">
     <h3 class="widget-title">Music</h3>
     <div class="widget-content">
@@ -251,15 +249,6 @@
           </li>
         
       </ul>
-    </div>
-  </aside>
-
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget-content">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </aside>
 
