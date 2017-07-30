@@ -15,18 +15,19 @@
   
   
   
-  <title>Li RuoNan</title>
+  <title>Welcome to My Blog | Li RuoNan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="独立之精神，自由之思想">
+  <meta name="description" content="人生得意须尽欢，莫使金樽空对月！小女子byr，前端爱好者，终于要开始自己的博客生涯了~ 以下是自己一年来断断续续的一些感悟，所幸一股脑儿都提交了吧，希望可以与大家共同学习。 最新文章基于ajax的异步请求 最近看项目代码中遇到了疑惑，后来通过查阅资料和请教同事，明白了其中的原理和解决方案，于是乎想写出来，和大家共同讨论。(1)：当有两个异步请求发过来的时候，如何判断两个请求都成功？(2): 页面链">
 <meta name="keywords" content="前端, 程序媛, 热爱技术, H5开发, 北邮人, 百度">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Li RuoNan">
-<meta property="og:url" content="http://www.liruonan.tech/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Welcome to My Blog">
+<meta property="og:url" content="http://www.liruonan.tech/title">
 <meta property="og:site_name" content="Li RuoNan">
-<meta property="og:description" content="独立之精神，自由之思想">
+<meta property="og:description" content="人生得意须尽欢，莫使金樽空对月！小女子byr，前端爱好者，终于要开始自己的博客生涯了~ 以下是自己一年来断断续续的一些感悟，所幸一股脑儿都提交了吧，希望可以与大家共同学习。 最新文章基于ajax的异步请求 最近看项目代码中遇到了疑惑，后来通过查阅资料和请教同事，明白了其中的原理和解决方案，于是乎想写出来，和大家共同讨论。(1)：当有两个异步请求发过来的时候，如何判断两个请求都成功？(2): 页面链">
+<meta property="og:updated_time" content="2017-07-25T02:22:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Li RuoNan">
-<meta name="twitter:description" content="独立之精神，自由之思想">
+<meta name="twitter:title" content="Welcome to My Blog">
+<meta name="twitter:description" content="人生得意须尽欢，莫使金樽空对月！小女子byr，前端爱好者，终于要开始自己的博客生涯了~ 以下是自己一年来断断续续的一些感悟，所幸一股脑儿都提交了吧，希望可以与大家共同学习。 最新文章基于ajax的异步请求 最近看项目代码中遇到了疑惑，后来通过查阅资料和请教同事，明白了其中的原理和解决方案，于是乎想写出来，和大家共同讨论。(1)：当有两个异步请求发过来的时候，如何判断两个请求都成功？(2): 页面链">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -75,17 +76,15 @@
     </nav>
 </header>
       <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main">
-  
-    <article id="post-home" class="post-home post type-post status-publish format-standard hentry">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-home" class="post-home post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
         
         
   
-    <h1 class="entry-title">
-      <a class="article-title" href="/title">Welcome to My Blog</a>
+    <h1 class="entry-title article-title">
+      Welcome to My Blog
     </h1>
   
 
@@ -189,12 +188,31 @@
 </article>
 
 
+    
 
 
 
 
-  
-  
+
+<section id="comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="post-home" data-title="Welcome to My Blog" data-url="http://www.liruonan.tech/title"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:'flhexo'};
+    (function() {
+	  var ds = document.createElement('script');
+	  ds.type = 'text/javascript';ds.async = true;
+	  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	  ds.charset = 'UTF-8';
+	  (document.getElementsByTagName('head')[0]
+	   || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+</section>
+
 
 </div></div>
         <div id="secondary" class="widget-area" role="complementary">
