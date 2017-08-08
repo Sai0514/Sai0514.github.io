@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="独立之精神，自由之思想" />
+  
+
+  
+  <meta name="keywords" content="前端, 程序媛, 热爱技术, H5开发, 北邮人, 百度" />
+  
+  
+  
+  
+  
+  
+  <title>Li RuoNan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Zepto返回的dom集合实际上是一个数组集合。 / 数组方法 /var emptyArray = [],concat = emptyArray.concat,filter = emptyArray.filter,slice = emptyArray.slice,function compact(array) { // 过滤掉null 和 undefined    return filter.ca">
+<meta name="keywords" content="前端, 程序媛, 热爱技术, H5开发, 北邮人, 百度">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Li RuoNan">
+<meta property="og:url" content="http://www.liruonan.tech/frontEnd/zepto2.html">
+<meta property="og:site_name" content="Li RuoNan">
+<meta property="og:description" content="Zepto返回的dom集合实际上是一个数组集合。 / 数组方法 /var emptyArray = [],concat = emptyArray.concat,filter = emptyArray.filter,slice = emptyArray.slice,function compact(array) { // 过滤掉null 和 undefined    return filter.ca">
+<meta property="og:image" content="http://i.imgur.com/Ona0IPz.png">
+<meta property="og:updated_time" content="2017-08-08T15:54:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Li RuoNan">
+<meta name="twitter:description" content="Zepto返回的dom集合实际上是一个数组集合。 / 数组方法 /var emptyArray = [],concat = emptyArray.concat,filter = emptyArray.filter,slice = emptyArray.slice,function compact(array) { // 过滤掉null 和 undefined    return filter.ca">
+<meta name="twitter:image" content="http://i.imgur.com/Ona0IPz.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Li RuoNan" rel="home">Li RuoNan</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">一枚行走在前端道路上的程序媛 ~</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">首页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/frontEnd">前端</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/algorithm">算法</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/project">项目</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于我</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/Sai0514">代码仓库</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="/frontEnd/zepto2.html#comments" class="leave-reply">评论</a>
+            
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/zepto2.html" data-id="cj63rwema000g2czbbd3ave2r" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>Zepto返回的dom集合实际上是一个数组集合。</p>
+<p><pre><br>/<em> 数组方法 </em>/<br>var emptyArray = [],<br>concat = emptyArray.concat,<br>filter = emptyArray.filter,<br>slice = emptyArray.slice,<br>function compact(array) { // 过滤掉null 和 undefined<br>    return filter.call(array, function(item){<br>        // != 都可以将null和undefined转换为false<br>        return item != null<br>    })<br>}<br>function flatten(array) {<br>    // 数组扁平化？// 这个还没太理解到底用来做啥<br>    return array.length &gt; 0 ? $.fn.concat.apply([], array) : array<br>}<br>uniq, // 数组去重<br>uniq = function(array){<br>    return filter.call(array, function(item, idx){<br>        // 匹配item在数组中第一次出现的位置是否与item的位置相同<br>        return array.indexOf(item) == idx<br>    })<br>}<br></pre><br>关于数组去重，我写过好几个版本，感兴趣的可以看看我的博客<a href="http://liruonan.tech/algorithm/" target="_blank" rel="external">liruonan.tech</a>，里面总结了部分leetcode算法。看了zepto源码，觉得人家的数组去重真心赞！</p>
+<p><pre><br>/<em> 字符串方法 </em>/<br>toString = class2type.toString,(class2type={})<br>camelize, // 破折号分隔的字符串转换成驼峰形式<br>camelize = function(str){<br>    return str.replace(/-+(.)?/g, function(match, chr){<br>        //(.) 捕获任意非\n的单字符<br>        return chr?chr.toUpperCase():’’<br>    })<br>}<br>function dasherize(str) { // camelize的逆过程<br>    // 分为四个过程，分别替换字符来一步一步实现转换效果<br>    return str.replace(/::/g, ‘/‘)<br>           // (连续出现一次或多次的大写字母)<em>(连续出现一个大写字母和一个小写字母);<br>           .replace(/([A-Z]+)([A-Z][a-z])/g, ‘$1</em>$2’)<br>           //（一次小写字母或者一次数字）<em>（一次大写字母）<br>           .replace(/([a-z\d])([A-Z])/g, ‘$1</em>$2’)<br>           .replace(/_/g, ‘-‘)<br>           .toLowerCase()<br>}<br></pre><br>正则匹配是个好东西啊，init()里面判断选择器类型时便使用了正则~</p>
+<p><pre><br>/<em> 类型检测 </em>/<br>class2type // 填充class2type对象<br>$.each(“Boolean Number String Function Array Date RegExp Object Error”.split(“ “), function(i, name){<br>    class2type[“[object”+name+”]”] = name.toLowerCase()<br>})<br>function type(obj) { // 构造一个type判断类型函数<br>    return obj == null?String(obj):class2type[toString.call(obj)||”object”]<br>}<br>// 检测是否是数组(instanceof 不能检测iframe，详见 MDN)<br>isArray = Array.isArray || function(object){ return object instanceof Array }<br>// 检测是否是函数<br>function isFunction(value) { return type(value) == “function” }<br>// 检测是否是window对象<br>function isWindow(obj) { return obj != null &amp;&amp; obj == obj.window }<br>// 检测是否是document节点(nodeType属性，用来表明节点类型，9代表DOCUMENT_NODE节点）<br>function isDocument(obj)  { return obj != null &amp;&amp; obj.nodeType == obj.DOCUMENT_NODE }<br>// 检测是否是对象<br>function isObject(obj)     { return type(obj) == “object” }<br>// 检测是否是纯对象？后面会大量被用到<br>function isPlainObject(obj) {<br>    return isObject(obj) &amp;&amp; !isWindow(obj) &amp;&amp; Object.getPrototypeOf(obj) == Object.prototype<br>}<br>// 检测是否是类数组<br>// 去年的版本<br>function likeArray(obj) { return typeof obj.length == ‘number’ }<br>// 今年的版本<br>function likeArray(obj) {<br>    var length = !!obj &amp;&amp; ‘length’ in obj &amp;&amp; obj.length,<br>        type = $.type(obj)<br>          return ‘function’ != type &amp;&amp; !isWindow(obj) &amp;&amp; (‘array’ == type || length === 0 ||<br>        (typeof length == ‘number’ &amp;&amp; length &gt; 0 &amp;&amp; (length - 1) in obj)<br>    )<br>}<br></pre><br>分析—类数组</p>
+<ol>
+<li>首先，公司的代码用的还是去年的版本，只是判断了 对象的长度是数字 </li>
+<li>新版本做了更多的限制判断：先看一下浏览器输出的arguments</li>
+</ol>
+<p><img src="http://i.imgur.com/Ona0IPz.png" alt=""></p>
+<p>所以：类数组满足以下要求</p>
+<ul>
+<li>不是function、window对象</li>
+<li>array属于类数组、length===0(空数组)、length是不为0的数字且obj[length-1]属于obj</li>
+</ul>
+<blockquote>
+<p>【其实，我没咋看懂，不太理解为啥是这样】 等我看懂了再来继续完善这部分。</p>
+</blockquote>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/frontEnd/zepto2.html">
+    <time datetime="2017-08-08T15:54:53.000Z" class="entry-date">
+        2017-08-08
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+
+
+
+
+
+<section id="comments">
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/zepto2.html"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:'flhexo'};
+    (function() {
+	  var ds = document.createElement('script');
+	  ds.type = 'text/javascript';ds.async = true;
+	  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	  ds.charset = 'UTF-8';
+	  (document.getElementsByTagName('head')[0]
+	   || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+  <!-- 多说公共JS代码 end -->
+</section>
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Music</h3>
+    <div class="widget-content">
+      <audio src="http://7u2hdm.com1.z0.glb.clouddn.com/bg.mp3" controls="controls"
+             style="width:100%">
+        您的浏览器不支持 audio 标签。
+      </audio>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/">Welcome to My Blog</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2017 Li RuoNan
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

@@ -24,7 +24,7 @@
 <meta property="og:url" content="http://www.liruonan.tech/frontEnd/zepto1.html">
 <meta property="og:site_name" content="Li RuoNan">
 <meta property="og:description" content="Zepto源码解读之框架结构 var zepto = {}, $ function Z(dom,selector){} zepto.Z = function(dom, selector) {     return new Z(dom, selector) } zepto.isZ = function(object) {     return object instanceof zepto.Z }">
-<meta property="og:updated_time" content="2017-08-07T15:54:42.000Z">
+<meta property="og:updated_time" content="2017-08-08T15:56:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
 <meta name="twitter:description" content="Zepto源码解读之框架结构 var zepto = {}, $ function Z(dom,selector){} zepto.Z = function(dom, selector) {     return new Z(dom, selector) } zepto.isZ = function(object) {     return object instanceof zepto.Z }">
@@ -85,7 +85,7 @@
             
             <a href="/frontEnd/zepto1.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/zepto1.html" data-id="cj62cbcyj000fiqzb6hpdn9r9" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/zepto1.html" data-id="cj63rwem9000f2czb64qtpkbw" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -127,14 +127,23 @@ window.$ === undefined && (window.$ = Zepto)
 <li>$返回的是Z的实例，因此展开可以得到dom的属性，但是如果想使用dom操作方法的话，zepto实例上是没有任何操作的。因此我们只能把$上的方法赋给zepto的原型上，这样在执行的时候就可以使用zepto调用实例方法。$上的方法都是挂载在$.fn = {}上。故，zepto.Z.prototype = Z.prototype = $.fn</li>
 <li>解释一下，为啥会有<code>zepto.Z.prototype = Z.prototype</code>？这里看到了一篇博客，写的很详细。<a href="https://zhuanlan.zhihu.com/p/26185164" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/26185164</a> <br> 我理解这里有点类似于考虑到递归的问题，例如: 传过来的值本身就是zepto.Z的实例，那么就将$.fn赋值给zepto.Z实例的原型上。</li>
 </ol>
+<p>学习一下init()判断选择器,返回dom元素集合</p>
+<p><pre><br>  zepto.init = function(selector, context) {<br>    var dom<br>    // 如果selector为空，则返回$()<br>    if (!selector) return zepto.Z()<br>    // 如果selector为字符串： fragmentRE 正则判断<br>    else if (typeof selector == ‘string’) {<br>      selector = selector.trim()<br>      if (selector[0] == ‘&lt;’ &amp;&amp; fragmentRE.test(selector))<br>        // fragment 返回的是“由html字符串及标签名”组成的html片段 生成的dom节点集合<br>        dom = zepto.fragment(selector, RegExp.$1, context), selector = null<br>      // find 通过调用find函数寻找选择器dom<br>      else if (context !== undefined) return $(context).find(selector)<br>      // qsa 通过querySelectorAll寻找dom<br>      else dom = zepto.qsa(document, selector)<br>    }<br>    // 如果selector为函数： 等dom加载完毕再执行函数<br>    else if (isFunction(selector)) return $(document).ready(selector)<br>    // 如果selector为zepto对象，则直接返回<br>    else if (zepto.isZ(selector)) return selector<br>    else {<br>      // 如果selector为数组，则dom为其扁平化返回值。。。从这句代码可以看出，实际上dom输出的就是数组集合<br>      if (isArray(selector)) dom = compact(selector)<br>      // 如果selector为对象，返回为数组结构<br>      else if (isObject(selector))<br>        dom = [selector], selector = null<br>      else if (fragmentRE.test(selector))<br>        dom = zepto.fragment(selector.trim(), RegExp.$1, context), selector = null<br>      else if (context !== undefined) return $(context).find(selector)<br>      else dom = zepto.qsa(document, selector)<br>    }<br>    return zepto.Z(dom, selector)<br>  }<br></pre><br>看完源码，基本可以明白init()返回的dom元素集合是数组结构。主要有以下几种判断：</p>
+<ul>
+<li>(1) selector 为空，返回$</li>
+<li>(2) selector 为字符串[$(‘p’),$(‘&lt;div&gt;’),$(‘#content’)等等]</li>
+<li>(3) selector 为函数</li>
+<li>(4) selector 为zepto对象[$(‘$(‘p)’)]</li>
+<li>(5) selector 为其他类型[数组？对象？qsa万能查找？]</li>
+</ul>
 
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
     <a href="/frontEnd/zepto1.html">
-    <time datetime="2017-08-07T15:55:24.000Z" class="entry-date">
-        2017-08-07
+    <time datetime="2017-08-08T15:56:25.000Z" class="entry-date">
+        2017-08-08
     </time>
 </a>
     
