@@ -94,7 +94,7 @@
             
             <a href="/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/" data-id="cj6az80sq00007bzb1dwqycub" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/" data-id="cj7ez6m340000j2zbugngtjja" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -105,6 +105,8 @@
 <h2 id="最新文章"><a href="#最新文章" class="headerlink" title="最新文章"></a>最新文章</h2><h3 id="Zepto源码学习系列篇"><a href="#Zepto源码学习系列篇" class="headerlink" title="Zepto源码学习系列篇"></a>Zepto源码学习系列篇</h3><ol>
 <li><a href="http://www.liruonan.tech/frontEnd/zepto1.html">框架结构篇</a></li>
 <li><a href="http://www.liruonan.tech/frontEnd/zepto2.html">内部方法篇</a></li>
+<li>event模块</li>
+<li>callback模块</li>
 </ol>
 <h3 id="基于ajax的异步请求"><a href="#基于ajax的异步请求" class="headerlink" title="基于ajax的异步请求"></a>基于ajax的异步请求</h3><blockquote>
 <p>最近看项目代码中遇到了疑惑，后来通过查阅资料和请教同事，明白了其中的原理和解决方案，于是乎想写出来，和大家共同讨论。<br>(1)：当有两个异步请求发过来的时候，如何判断两个请求都成功？<br>(2): 页面链接跳转URL不记录处理 </p>
@@ -128,8 +130,6 @@
 <p>jquery/zepto 通过对js原生语法的兼容处理和功能封装，完成了常用函数的构建，暴露出针对节点操作的API。因此，jquery和zepto需关注页面中具体的节点。<br>Vue/Angular/React 通过指令完成对节点操作的过程，使开发者更集中于数据层，而无需再关注底层数据是如何变化如何添加及如何实现。</p>
 </blockquote>
 <p><a href="https://github.com/Sai0514/vue2-todos" target="_blank" rel="external">一个基于Vue2.0的TodoList Demo</a></p>
-<h3 id="一个基于Vue的Dialog组件"><a href="#一个基于Vue的Dialog组件" class="headerlink" title="一个基于Vue的Dialog组件"></a>一个基于Vue的Dialog组件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">关于组件化，我想说点啥</div></pre></td></tr></table></figure>
-<p><a href="https://www.github.com/Sai0514" target="_blank" rel="external">Read More</a></p>
 <h3 id="js模块化"><a href="#js模块化" class="headerlink" title="js模块化"></a>js模块化</h3><blockquote>
 <p>最近接触的项目里，曾经移动端模块化加载方式采用的是modjs，modjs原理其实是基于requireJs的定制化开发，分为require()和require.async()的同步和异步加载模式，于是细细研究了源码，写了些大概的模块化加载原理和思路。</p>
 </blockquote>
@@ -139,6 +139,32 @@
 <li>移动端事件: <a href="http://www.liruonan.tech/frontEnd/Mevent.html">从touch事件到渲染优化</a></li>
 <li>flexible源码: <a href="http://www.liruonan.tech/frontEnd/flexible.html">h5页面的适配原理分析</a></li>
 </ul>
+<h3 id="Zepto击穿问题"><a href="#Zepto击穿问题" class="headerlink" title="Zepto击穿问题"></a>Zepto击穿问题</h3><h5 id="击穿现象："><a href="#击穿现象：" class="headerlink" title="击穿现象："></a>击穿现象：</h5><ol>
+<li>同页面tap点击弹出弹层，弹层中也有一个button，正好重叠的时候，会出现击穿 tap事件点击。</li>
+<li>当前页面tap点击页面跳转，新页面中同位置也有一个按钮，会出现击穿。</li>
+</ol>
+<h5 id="击穿原因："><a href="#击穿原因：" class="headerlink" title="击穿原因："></a>击穿原因：</h5><p>Zepto的插件touch.js中的tap事件，可以解决移动浏览器中300ms延迟的问题。但是会导致击穿现象。<br>&gt;</p>
+<blockquote>
+<p>click 事件有延迟（大概是300ms，为了实现safari的双击事件），所以在执行完 tap 事件之后，弹出层立即隐藏，此时 click 事件还在延迟的 300ms 之中。当 300ms 到来的时候，click 点击到的其实是隐藏元素下方的元素。</p>
+<p>如果正下方的元素有绑定 click 事件，此时便会触发，如果没有绑定 click 事件的话就不发生。如果正下方的是 input 输入框（或 select / radio / checkbox），点击默认 focus 而弹出输入键盘，也会出现击穿现象。</p>
+</blockquote>
+<h5 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h5><ol>
+<li><p>使用fastclick.js解决移动端浏览器300ms问题；</p>
+<blockquote>
+<p>fastclick.js实现思路是，取消click事件，用touchend模拟快速点击行为<br>FastClick.attach(document.body)</p>
+</blockquote>
+</li>
+<li><p>遮挡</p>
+<blockquote>
+<p>click事件的滞后性导致的击穿问题。因此可以给元素的消失做一个fade效果，类似jQuery里的fadeOut，并设置动画duration大于300ms，这样当延迟的click触发时，就不会“穿透”到下方的元素了。<br>setTimeout(function(){},350)</p>
+</blockquote>
+</li>
+<li><p>pointer-events</p>
+<blockquote>
+<p>pointer-events是CSS3中的属性，它有很多取值，有用的主要是auto和none。<br>这种方案没有在项目中用过，下次可以尝试一下。</p>
+</blockquote>
+</li>
+</ol>
 <h3 id="3D建模的一些事儿"><a href="#3D建模的一些事儿" class="headerlink" title="3D建模的一些事儿"></a>3D建模的一些事儿</h3><p><a href="https://github.com/Boodo-FE/SkyNote" target="_blank" rel="external">具体详见Github</a></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">基于Three.js的小游戏</div><div class="line">1. 创建一个场景</div><div class="line">	<span class="function"><span class="title">createScene</span></span>() &#123;</div><div class="line">   		this.scene = new THREE.Scene()</div><div class="line">    	// this.scene.fog = new THREE.Fog(0xf7d9aa, 100, 900)</div><div class="line">    	this.camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 2000)</div><div class="line">    	this.camera.position.x = 0;</div><div class="line">    	this.camera.position.z = 200;</div><div class="line">    	this.camera.position.y = 100;</div><div class="line"></div><div class="line">    	this.renderer = new THREE.WebGLRenderer(&#123; alpha: <span class="literal">true</span>, antialias: <span class="literal">true</span> &#125;)</div><div class="line">    	this.renderer.setSize(window.innerWidth, window.innerHeight)</div><div class="line">    	this.renderer.shadowMap.enabled = <span class="literal">true</span></div><div class="line">    	this.world = document.querySelector(<span class="string">'.world'</span>)</div><div class="line">    	this.world.appendChild(this.renderer.domElement)</div><div class="line">    	// document.body.appendChild(this.renderer.domElement)</div><div class="line">    	this.render()</div><div class="line"></div><div class="line">    	window.addEventListener(<span class="string">'resize'</span>, this.handleWindowResize.bind(this), <span class="literal">false</span>)</div><div class="line">  &#125;</div><div class="line">2. 建立一个模型</div><div class="line">	class Sphere&#123;</div><div class="line">		<span class="function"><span class="title">constructor</span></span>()&#123;</div><div class="line">			this.mesh = new THREE.Object3D();</div><div class="line">			this.geometry = new THREE.SphereGeometry(8,16,16)</div><div class="line">			this.material = new THREE.MeshPhongMaterial(&#123;</div><div class="line">				color: 0x156289,</div><div class="line">				emissive: 0x072534,</div><div class="line">				opacity: .1</div><div class="line">				//wireframe: <span class="literal">true</span> </div><div class="line">			&#125;)</div><div class="line">			<span class="built_in">let</span> me = new THREE.Mesh( this.geometry, this.material)</div><div class="line">			this.mesh.position.z = -100</div><div class="line">			this.mesh.position.x = -300 // mesh最高点</div><div class="line">			this.mesh.position.y = 73  // mesh最低点</div><div class="line">			this.mesh.add(me)</div><div class="line">		&#125;</div><div class="line">		<span class="function"><span class="title">getMesh</span></span>()&#123;</div><div class="line">			<span class="built_in">return</span> this.mesh</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">3. 渲染场景</div><div class="line">	<span class="function"><span class="title">render</span></span>() &#123;</div><div class="line">    	requestAnimationFrame(() =&gt; &#123;</div><div class="line">      		this.render()</div><div class="line">    	&#125;)</div><div class="line">    	...</div><div class="line">    &#125;</div><div class="line">4.动起来</div><div class="line">	<span class="function"><span class="title">update</span></span>()&#123;</div><div class="line">		<span class="built_in">let</span> l = this.mesh.children.length;</div><div class="line">		<span class="keyword">for</span>(<span class="built_in">let</span> i=0;i&lt;l;i++)&#123;</div><div class="line">			<span class="built_in">let</span> m = this.mesh.children[i]</div><div class="line">			<span class="keyword">if</span>(m.position.y &lt;= 30)&#123;</div><div class="line">				m.position.y += 0.3</div><div class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(m.position.y&gt;= 400)&#123;</div><div class="line">				m.position.y = 60</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				m.position.y += 0.3</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
 <h3 id="网站的术语总结"><a href="#网站的术语总结" class="headerlink" title="网站的术语总结"></a><a href="http://www.liruonan.tech/frontEnd/dp.html">网站的术语总结</a></h3><p>在百度实习期间，接触到了网页统计的一些术语，作为埋点统计的一种方法，例如DP统计，DP监控。如下总结了一部分方法和术语，作为简单的总结。</p>
