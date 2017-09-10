@@ -24,7 +24,7 @@
 <meta property="og:url" content="http://www.liruonan.tech/frontEnd/index.html">
 <meta property="og:site_name" content="Li RuoNan">
 <meta property="og:description" content="Day1 盒子模型  网页中元素占有空间的大小由4个部分组成，包括元素的内容content,元素的内边框padding,元素的边框border，元素的外边距margin。这四个部分，content表示显示的内容，padding表示填充区域，border是边框，margin用来分隔相邻区域。  href和src  href指向网络资源所在位置，建立和当前元素或当前文档之间的链接，用于超链接。src指">
-<meta property="og:updated_time" content="2017-07-30T07:28:01.000Z">
+<meta property="og:updated_time" content="2017-09-10T17:50:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
 <meta name="twitter:description" content="Day1 盒子模型  网页中元素占有空间的大小由4个部分组成，包括元素的内容content,元素的内边框padding,元素的边框border，元素的外边距margin。这四个部分，content表示显示的内容，padding表示填充区域，border是边框，margin用来分隔相邻区域。  href和src  href指向网络资源所在位置，建立和当前元素或当前文档之间的链接，用于超链接。src指">
@@ -85,7 +85,7 @@
             
             <a href="/frontEnd/index.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/index.html" data-id="cj7ezkkex000cpkzbuvnee4d0" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/index.html" data-id="cj7f1cps5000aj4zbgyl5fmnx" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -185,9 +185,21 @@
 <li>安全问题ajax暴露了与服务器交互的细节</li>
 <li>对搜索引擎的支持比较弱</li>
 <li>破坏了程序的异常机制</li>
-<li>不容易调试</li>
+<li><p>不容易调试</p>
+<p>ajax跨域</p>
+</li>
+<li><p>JSONP包含两部分：回调函数和数据【当通过script标签请求时，后台会根据相应的参数(json, callback)来生成相应的json数据callback(),最后将这个返回的json数据放到js文件中执行】(只支持get请求)</p>
+</li>
+<li>CORS的思想是使用自定义的HTTP头部让浏览器与服务器进行通信【对于简单请求，浏览器在头信息之中，增加一个Origin字段。服务器响应： Access-Control-Allow-Origin: <a href="http://api.bob.com；Access-Control-Allow-Credentials" target="_blank" rel="external">http://api.bob.com；Access-Control-Allow-Credentials</a>: true<br>Access-Control-Expose-Headers: FooBar；Content-Type: text/html; charset=utf-8。对于非简单请求是那种对服务器有特殊要求的请求，比如请求方法是PUT或DELETE，或者Content-Type字段的类型是application/json，服务器收到”预检”请求以后，检查了Origin、Access-Control-Request-Method和Access-Control-Request-Headers。(详见阮一峰大神的跨域资源共享)】</li>
+<li>postMessage(HTML5中的XMLHttpRequest Level2中的API)【ifr.contentWindow.postMessage(‘hi!’,targetOrigin)};window.addEventListener(‘message’, function(event){}】</li>
+<li>window.name + iframe【window.name的优点：name值在不同的页面（甚至不同域名）加载后依旧存在，并且可以支持非常长的name值】</li>
+<li>web sockets是一种浏览器的API，它的目标是在一个单独的持久连接上提供全双工、双向通信。(同源策略对web sockets不适用)【var socket = new WebSockt(‘ws://www.baidu.com’);socket.send(‘hello WebSockt’);socket.onmessage = function(event){var data = event.data;}】</li>
 </ul>
 </li>
+</ol>
+<p>web sockets原理：在JS创建了web socket之后，会有一个HTTP请求发送到浏览器以发起连接。取得服务器响应后，建立的连接会使用HTTP升级从HTTP协议交换为web sockt协议。</p>
+<p>只有在支持web socket协议的服务器上才能正常工作。</p>
+<ol>
 <li><p>优雅降级和渐进增强</p>
 <p> 渐进增强：</p>
 <p> 针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
@@ -500,9 +512,13 @@
 <li>发送包含未知字符的用户输入时，POST比GET更稳定更可靠</li>
 </ul>
 </li>
-<li><p>AJAX请求时get和post的区别？</p>
-<p> 区别：<br> get： 参数在ur后面；有大小限制；安全问题；适用于只请求数据的场景 </p>
-<p> post： 参数封装在请求主体里面；适应于请求并修改数据的场景，如：修改密码。</p>
+<li><p>Http2.0协议？</p>
+<ul>
+<li>多路复用</li>
+<li>HEAD 压缩</li>
+<li>服务器推送</li>
+<li>优先级请求</li>
+</ul>
 </li>
 <li><p>Web前端密码加密是否有意义？</p>
 <p> 首先， HTTPS才是最安全的方式；</p>
@@ -676,8 +692,8 @@ function stopBubble(e){
 
     <footer class="entry-meta">
     <a href="/frontEnd/index.html">
-    <time datetime="2017-07-30T07:28:01.000Z" class="entry-date">
-        2017-07-30
+    <time datetime="2017-09-10T17:50:40.000Z" class="entry-date">
+        2017-09-11
     </time>
 </a>
     
