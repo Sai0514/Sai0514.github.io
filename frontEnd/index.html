@@ -24,7 +24,7 @@
 <meta property="og:url" content="http://www.liruonan.tech/frontEnd/index.html">
 <meta property="og:site_name" content="Li RuoNan">
 <meta property="og:description" content="Day1 盒子模型  网页中元素占有空间的大小由4个部分组成，包括元素的内容content,元素的内边框padding,元素的边框border，元素的外边距margin。这四个部分，content表示显示的内容，padding表示填充区域，border是边框，margin用来分隔相邻区域。  href和src  href指向网络资源所在位置，建立和当前元素或当前文档之间的链接，用于超链接。src指">
-<meta property="og:updated_time" content="2017-09-10T17:50:40.000Z">
+<meta property="og:updated_time" content="2017-09-14T15:58:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
 <meta name="twitter:description" content="Day1 盒子模型  网页中元素占有空间的大小由4个部分组成，包括元素的内容content,元素的内边框padding,元素的边框border，元素的外边距margin。这四个部分，content表示显示的内容，padding表示填充区域，border是边框，margin用来分隔相邻区域。  href和src  href指向网络资源所在位置，建立和当前元素或当前文档之间的链接，用于超链接。src指">
@@ -85,7 +85,7 @@
             
             <a href="/frontEnd/index.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/index.html" data-id="cj7h6isge000dsbzbk0rwph60" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/index.html" data-id="cj7knpzbk000dmozbxs7su3cq" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -146,9 +146,76 @@
      })
  }
  </pre>
-
+</li>
+<li><p>回流和重绘</p>
 </li>
 </ol>
+<p>浏览器解析页面</p>
+<blockquote>
+<p>浏览器把获取到的HTML代码解析成DOM树，浏览器把所有样式(用户定义的CSS和用户代理)解析成样式结构体CSSOM，DOM Tree 和样式结构体组合后构建render tree, render tree类似于DOM tree，但区别很大，render tree能识别样式，render tree中每个NODE都有自己的style，而且render tree不包含隐藏的节点。</p>
+<p>render tree –&gt; layout –&gt; painting –&gt; complete</p>
+<p>在layout和painting过程中有多次 reflow 和 repaint过程</p>
+</blockquote>
+<p>reflow</p>
+<blockquote>
+<p>当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建，比如：添加dom节点等，称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。回流会引起性能问题，应尽量避免多次回流。</p>
+</blockquote>
+<p>repaint</p>
+<blockquote>
+<p>当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如background-color。则就叫称为重绘。</p>
+</blockquote>
+<p>回流发生的原因：</p>
+<blockquote>
+<p>回流何时发生 —— 当页面布局和几何属性改变时就需要回流。</p>
+</blockquote>
+<ul>
+<li><ol>
+<li>添加或者删除可见的DOM元素；</li>
+</ol>
+</li>
+<li><ol>
+<li>元素位置改变；</li>
+</ol>
+</li>
+<li><ol>
+<li>元素尺寸改变——边距、填充、边框、宽度和高度</li>
+</ol>
+</li>
+<li><ol>
+<li>内容改变——比如文本改变或者图片大小改变而引起的计算值宽度和高度改变；</li>
+</ol>
+</li>
+<li><ol>
+<li>页面渲染初始化；</li>
+</ol>
+</li>
+<li><ol>
+<li>浏览器窗口尺寸改变——resize事件发生时；</li>
+</ol>
+</li>
+</ul>
+<p>如何减少回流、重绘</p>
+<blockquote>
+<p>减少回流、重绘其实就是需要减少对render tree的操作（合并多次多DOM和样式的修改），并减少对一些style信息的请求。</p>
+</blockquote>
+<ul>
+<li><ol>
+<li>接改变className，如果动态改变样式，则使用cssText</li>
+</ol>
+</li>
+<li><ol>
+<li>让要操作的元素进行”离线处理”，处理完后一起更新</li>
+</ol>
+</li>
+<li><ol>
+<li>不要经常访问会引起浏览器flush队列的属性，如果要访问，利用缓存</li>
+</ol>
+</li>
+<li><ol>
+<li>让元素脱离动画流，减少回流的Render Tree的规模</li>
+</ol>
+</li>
+</ul>
 <h2 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h2><ol>
 <li><p>一次完整的HTTP事务过程</p>
 <ul>
@@ -692,8 +759,8 @@ function stopBubble(e){
 
     <footer class="entry-meta">
     <a href="/frontEnd/index.html">
-    <time datetime="2017-09-10T17:50:40.000Z" class="entry-date">
-        2017-09-11
+    <time datetime="2017-09-14T15:58:59.000Z" class="entry-date">
+        2017-09-14
     </time>
 </a>
     
