@@ -94,7 +94,7 @@
             
             <a href="/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/" data-id="cj7oddye30000lfzbpnmlntcz" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/" data-id="cj7xoxcqa0000zizblwipwm0i" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -102,7 +102,13 @@
       
         <p>人生得意须尽欢，莫使金樽空对月！小女子byr，前端爱好者，终于要开始自己的博客生涯了~</p>
 <p>以下是自己一年来断断续续的一些感悟，所幸一股脑儿都提交了吧，希望可以与大家共同学习。</p>
-<h2 id="最新文章"><a href="#最新文章" class="headerlink" title="最新文章"></a>最新文章</h2><h3 id="基于Node的spider小程序"><a href="#基于Node的spider小程序" class="headerlink" title="基于Node的spider小程序"></a>基于Node的spider小程序</h3><blockquote>
+<h2 id="最新文章"><a href="#最新文章" class="headerlink" title="最新文章"></a>最新文章</h2><h3 id="Zepto源码学习系列篇"><a href="#Zepto源码学习系列篇" class="headerlink" title="Zepto源码学习系列篇"></a>Zepto源码学习系列篇</h3><ol>
+<li><a href="http://www.liruonan.tech/frontEnd/zepto1.html">框架结构篇</a></li>
+<li><a href="http://www.liruonan.tech/frontEnd/zepto2.html">内部方法篇</a></li>
+<li><a href="http://www.liruonan.tech/frontEnd/zepto3.html">event模块</a></li>
+<li>callback模块</li>
+</ol>
+<h3 id="基于Node的spider小程序"><a href="#基于Node的spider小程序" class="headerlink" title="基于Node的spider小程序"></a>基于Node的spider小程序</h3><blockquote>
 <p>说起Node，大家都不陌生。但是，我们为什么要用node? 我们要怎样使用node? 这是一个技术人员应该深思的问题。一开始，我用Node，只是为了使用NPM包管理器，只是为了使用Grunt、Gulp、Webpack构建前端工程，只是为了测试Ajax请求的跨域处理。惭愧地讲，实在是太小儿科了。。。</p>
 </blockquote>
 <ul>
@@ -123,18 +129,17 @@
 <p>项目： <a href="https://github.com/Sai0514/myspider" target="_blank" rel="external">基于Node的spider小程序</a></p>
 <h3 id="基于React的实战练习"><a href="#基于React的实战练习" class="headerlink" title="基于React的实战练习"></a>基于React的实战练习</h3><p>技术栈： React + React-router4.0 + Koa2</p>
 <blockquote>
-<p>项目： <a href="https://github.com/Sai0514/Quotation" target="_blank" rel="external">仿ONE的经典语录集</a></p>
+<ul>
+<li>React：fetch：更语义化；基于标准 Promise 实现，支持 async/await；需引用 polyfill。<a href="https://segmentfault.com/a/1190000003810652" target="_blank" rel="external">fetch</a></li>
+<li>React-router4.0: 4.0之前版本的react-router将history分为三类: hashHistory 老版本浏览器的history; browserHistory h5的history; memoryHistory node环境下的history，存储在memory中.4.0之前版本的在react-router-dom中将这三种history作了内置，即HashRouter、BrowserRouter、MemoryRouter这三种Router。</li>
+<li>koa2： 只提供封装好http上下文、请求、响应，以及基于async/await的中间件容器，利用ES7的async/await的来处理传统回调嵌套问题和代替koa@1的generator。</li>
+</ul>
 </blockquote>
+<p>进度： 需要深入研究ing<br>项目： <a href="https://github.com/Sai0514/Quotation" target="_blank" rel="external">仿ONE的经典语录集</a></p>
 <h3 id="基于Vue的实战练习"><a href="#基于Vue的实战练习" class="headerlink" title="基于Vue的实战练习"></a>基于Vue的实战练习</h3><blockquote>
 <p>jquery/zepto 通过对js原生语法的兼容处理和功能封装，完成了常用函数的构建，暴露出针对节点操作的API。因此，jquery和zepto需关注页面中具体的节点。<br>Vue/Angular/React 通过指令完成对节点操作的过程，使开发者更集中于数据层，而无需再关注底层数据是如何变化如何添加及如何实现。</p>
 </blockquote>
 <p><a href="https://github.com/Sai0514/BookList" target="_blank" rel="external">一个基于Vue2.0的BookList</a></p>
-<h3 id="Zepto源码学习系列篇"><a href="#Zepto源码学习系列篇" class="headerlink" title="Zepto源码学习系列篇"></a>Zepto源码学习系列篇</h3><ol>
-<li><a href="http://www.liruonan.tech/frontEnd/zepto1.html">框架结构篇</a></li>
-<li><a href="http://www.liruonan.tech/frontEnd/zepto2.html">内部方法篇</a></li>
-<li>event模块</li>
-<li>callback模块</li>
-</ol>
 <h3 id="基于ajax的异步请求"><a href="#基于ajax的异步请求" class="headerlink" title="基于ajax的异步请求"></a>基于ajax的异步请求</h3><blockquote>
 <p>最近看项目代码中遇到了疑惑，后来通过查阅资料和请教同事，明白了其中的原理和解决方案，于是乎想写出来，和大家共同讨论。<br>(1)：当有两个异步请求发过来的时候，如何判断两个请求都成功？<br>(2): 页面链接跳转URL不记录处理 </p>
 </blockquote>
@@ -196,52 +201,22 @@
 <p>回流何时发生 —— 当页面布局和几何属性改变时就需要回流。</p>
 </blockquote>
 <ul>
-<li><ol>
 <li>添加或者删除可见的DOM元素；</li>
-</ol>
-</li>
-<li><ol>
 <li>元素位置改变；</li>
-</ol>
-</li>
-<li><ol>
 <li>元素尺寸改变——边距、填充、边框、宽度和高度</li>
-</ol>
-</li>
-<li><ol>
 <li>内容改变——比如文本改变或者图片大小改变而引起的计算值宽度和高度改变；</li>
-</ol>
-</li>
-<li><ol>
 <li>页面渲染初始化；</li>
-</ol>
-</li>
-<li><ol>
 <li>浏览器窗口尺寸改变——resize事件发生时；</li>
-</ol>
-</li>
 </ul>
 <p>如何减少回流、重绘</p>
 <blockquote>
 <p>减少回流、重绘其实就是需要减少对render tree的操作（合并多次多DOM和样式的修改），并减少对一些style信息的请求。</p>
 </blockquote>
 <ul>
-<li><ol>
-<li>接改变className，如果动态改变样式，则使用cssText</li>
-</ol>
-</li>
-<li><ol>
+<li>直接改变className，如果动态改变样式，则使用cssText</li>
 <li>让要操作的元素进行”离线处理”，处理完后一起更新</li>
-</ol>
-</li>
-<li><ol>
 <li>不要经常访问会引起浏览器flush队列的属性，如果要访问，利用缓存</li>
-</ol>
-</li>
-<li><ol>
 <li>让元素脱离动画流，减少回流的Render Tree的规模</li>
-</ol>
-</li>
 </ul>
 <h3 id="js模块化"><a href="#js模块化" class="headerlink" title="js模块化"></a>js模块化</h3><blockquote>
 <p>最近接触的项目里，曾经移动端模块化加载方式采用的是modjs，modjs原理其实是基于requireJs的定制化开发，分为require()和require.async()的同步和异步加载模式，于是细细研究了源码，写了些大概的模块化加载原理和思路。</p>
