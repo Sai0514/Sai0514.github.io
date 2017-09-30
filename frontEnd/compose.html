@@ -24,7 +24,7 @@
 <meta property="og:url" content="http://www.liruonan.tech/frontEnd/compose.html">
 <meta property="og:site_name" content="Li RuoNan">
 <meta property="og:description" content="实现一个compose function compose(middleware) {    if (!Array.isArray(middleware)) throw new TypeError(&apos;输入参数必须为数组&apos;)    for (const fn of middleware) {      if (typeof fn !== &apos;function&apos;) throw new TypeError(">
-<meta property="og:updated_time" content="2017-09-30T03:01:20.000Z">
+<meta property="og:updated_time" content="2017-09-30T03:05:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
 <meta name="twitter:description" content="实现一个compose function compose(middleware) {    if (!Array.isArray(middleware)) throw new TypeError(&apos;输入参数必须为数组&apos;)    for (const fn of middleware) {      if (typeof fn !== &apos;function&apos;) throw new TypeError(">
@@ -85,7 +85,7 @@
             
             <a href="/frontEnd/compose.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/compose.html" data-id="cj86qe8d60007z5zbt9eb8nhv" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/compose.html" data-id="cj86qjrzq00072ozbdivesdq7" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -102,13 +102,13 @@ function compose(middleware) {
      return dispatch(0);
 
      function dispatch(i) {
-       if (i <= index)="" return="" promise.reject(new="" error('next()="" called'))="" index="i;" let="" fn="middleware[i];" if="" (i="=" middleware.length)="" (!fn)="" promise.resolve();="" try="" {="" promise.resolve(fn(ctx,="" function="" next()="" dispatch(i="" +="" 1)="" }))="" }="" catch="" (err)="" promise.reject(err)="" <="" pre=""></=></pre>
+       if (i <= index)="" {="" return="" promise.reject(new="" error('next()="" called'))="" }="" index="i;" let="" fn="middleware[i];" if="" (i="=" middleware.length)="" (!fn)="" promise.resolve();="" try="" promise.resolve(fn(ctx,="" function="" next()="" dispatch(i="" +="" 1)="" }))="" catch="" (err)="" promise.reject(err)="" <="" pre=""></=></pre>
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
     <a href="/frontEnd/compose.html">
-    <time datetime="2017-09-30T03:01:20.000Z" class="entry-date">
+    <time datetime="2017-09-30T03:05:47.000Z" class="entry-date">
         2017-09-30
     </time>
 </a>
