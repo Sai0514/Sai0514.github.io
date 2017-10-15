@@ -17,17 +17,17 @@
   
   <title>Li RuoNan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="FIS3官网 FIS3操作1.安装先安装nodejs(有版本要求version&amp;lt;7)，再使用npm install -g fis3 全局安装 2.配置match fis.match(selector, props); // 配置接口，匹配css，js，less，png等资源，通过pros配置规则。配置规则如： useHash:true;  release:’/dist/$0’; 等  fis">
+  <meta name="description" content="zepto之defered异步请求一般使用Ajax，但是在Zepto的ajax模块中，要用到promise风格，必须引入Deferred模块。 1. 首先，先解释一下Ajax、Promise概念Ajax： 局部刷新，请求异步执行，即要通过回调函数获得响应。 ajax是通过XMLHttpRequest对象封装过程：  var request; if (window.XMLHttpRequest) {">
 <meta name="keywords" content="前端, 程序媛, 热爱技术, H5开发, 北邮人, 百度">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Li RuoNan">
-<meta property="og:url" content="http://www.liruonan.tech/frontEnd/fis3.html">
+<meta property="og:url" content="http://www.liruonan.tech/frontEnd/zepto/zepto5.html">
 <meta property="og:site_name" content="Li RuoNan">
-<meta property="og:description" content="FIS3官网 FIS3操作1.安装先安装nodejs(有版本要求version&amp;lt;7)，再使用npm install -g fis3 全局安装 2.配置match fis.match(selector, props); // 配置接口，匹配css，js，less，png等资源，通过pros配置规则。配置规则如： useHash:true;  release:’/dist/$0’; 等  fis">
-<meta property="og:updated_time" content="2017-07-02T14:32:44.000Z">
+<meta property="og:description" content="zepto之defered异步请求一般使用Ajax，但是在Zepto的ajax模块中，要用到promise风格，必须引入Deferred模块。 1. 首先，先解释一下Ajax、Promise概念Ajax： 局部刷新，请求异步执行，即要通过回调函数获得响应。 ajax是通过XMLHttpRequest对象封装过程：  var request; if (window.XMLHttpRequest) {">
+<meta property="og:updated_time" content="2017-10-15T18:38:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
-<meta name="twitter:description" content="FIS3官网 FIS3操作1.安装先安装nodejs(有版本要求version&amp;lt;7)，再使用npm install -g fis3 全局安装 2.配置match fis.match(selector, props); // 配置接口，匹配css，js，less，png等资源，通过pros配置规则。配置规则如： useHash:true;  release:’/dist/$0’; 等  fis">
+<meta name="twitter:description" content="zepto之defered异步请求一般使用Ajax，但是在Zepto的ajax模块中，要用到promise风格，必须引入Deferred模块。 1. 首先，先解释一下Ajax、Promise概念Ajax： 局部刷新，请求异步执行，即要通过回调函数获得响应。 ajax是通过XMLHttpRequest对象封装过程：  var request; if (window.XMLHttpRequest) {">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -83,89 +83,81 @@
         
         <div class="comments-link">
             
-            <a href="/frontEnd/fis3.html#comments" class="leave-reply">评论</a>
+            <a href="/frontEnd/zepto/zepto5.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/fis3.html" data-id="cj8t3honq00070hzbiutxsxj2" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/zepto/zepto5.html" data-id="cj8t3hoou000g0hzb1pa3qi9u" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h1 id="FIS3"><a href="#FIS3" class="headerlink" title="FIS3"></a>FIS3</h1><p><a href="http://fis.baidu.com/" target="_blank" rel="external">官网</a></p>
-<h2 id="FIS3操作"><a href="#FIS3操作" class="headerlink" title="FIS3操作"></a>FIS3操作</h2><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>先安装nodejs(有版本要求version&lt;7)，再使用npm install -g fis3 全局安装</p>
-<h3 id="2-配置"><a href="#2-配置" class="headerlink" title="2.配置"></a>2.配置</h3><p><strong>match</strong></p>
-<p>fis.match(selector, props); // 配置接口，匹配css，js，less，png等资源，通过pros配置规则。配置规则如： useHash:true;  release:’/dist/$0’; 等</p>
-<ul>
-<li>fis.match(‘*.{js,css,png}’, { useHash: true }); // 文件指纹，加md5戳</li>
-<li>fis.match(‘*.js’,{ optimizer: fis.plugin(‘uglify-js’) }); // js压缩</li>
-<li>fis.match(‘*.css’, { optimizer: fis.plugin(‘clean-css’) }); // css压缩</li>
-<li>fis.match(‘*.png’, { optimizer: fis.plugin(‘png-compressor’) }); // png压缩</li>
-<li>fis.match(‘::package’, { spriter: fis.plugin(‘csssprites’) }); // 启用 fis-spriter-csssprites 插件</li>
-<li>fis.match(‘*.css’, { useSprite: true }); // 对CSS进行图片合并</li>
-</ul>
-<p><strong>release</strong></p>
-<p>fis3 release -d <path></path>   // 构建发布到指定目录</p>
-<ul>
-<li>fis3 release -d ./output  // 构建发布到项目目录的output目录</li>
-<li>fis3 release -d ../dist  // 构建发布到项目父级目录下的dist子目录</li>
-<li>fis3 release    // 构建发布到fis内置server下</li>
-<li>fis3 release -debug -wL  // 构建发布到debug环境下，并实现监听和自动刷新</li>
-</ul>
-<p><strong>server</strong></p>
-<p>fis3 server -h  // 启动参数</p>
-<ul>
-<li>fis3 server open  // 打开内置server根目录</li>
-<li>fis3 server start // 启动内置server</li>
-<li>fis3 server start – type node  // 使用后端模板node，启动内置server</li>
-<li>fis3 server start – type smarty // 使用后端模板smarty，启动内置server</li>
-</ul>
-<h2 id="FIS3应用"><a href="#FIS3应用" class="headerlink" title="FIS3应用"></a>FIS3应用</h2><p>.1. 安装插件</p>
+        <h1 id="zepto之defered"><a href="#zepto之defered" class="headerlink" title="zepto之defered"></a>zepto之defered</h1><p>异步请求一般使用Ajax，但是在Zepto的ajax模块中，要用到promise风格，必须引入Deferred模块。</p>
+<h3 id="1-首先，先解释一下Ajax、Promise概念"><a href="#1-首先，先解释一下Ajax、Promise概念" class="headerlink" title="1. 首先，先解释一下Ajax、Promise概念"></a>1. 首先，先解释一下Ajax、Promise概念</h3><p>Ajax： 局部刷新，请求异步执行，即要通过回调函数获得响应。</p>
+<p>ajax是通过XMLHttpRequest对象封装过程：</p>
+<pre>
+var request;
+if (window.XMLHttpRequest) {
+    request = new XMLHttpRequest();
+} else {
+    request = new ActiveXObject('Microsoft.XMLHTTP');
+}
+
+//  状态发生变化时，函数被回调
+request.onreadystatechange = function() {
+    if (request.readyState === 4) {  // 成功响应
+        if(request.status === 200) {
+            return success(request.responseText)
+        } else {    
+            return fail(request.status)
+        }
+    } else {
+        // HTTP 请求还在继续
+    }
+}
+
+// 发送请求
+request.open('GET',url);
+request.send()
+</pre>
+
+<p>Promise：<a href="https://promisesaplus.com/" target="_blank" rel="external">《Promise/A+》</a>规范</p>
+<p>(1) promise对象具有三种状态，pending进行中，fulfilled已完成，rejected被拒绝。</p>
 <blockquote>
-<p>npm install  -g  插件名</p>
-<pre><code>npm install -g fis-parser-less  // 引入less预处理插件
-npm install -g fis3-postpackager-loader // 散列文件合并
-</code></pre></blockquote>
-<p>.2. 预处理</p>
-<blockquote>
-<p> parser: fis.plugin(插件名)    </p>
-<pre><code>fis.match(&apos;*.less&apos;, {
-  parser: fis.plugin(&apos;less&apos;),  // fis-parser-less插件进行解析
-  rExt: &apos;.css&apos;  // .less文件后缀构建后被改成.css文件
-})
-</code></pre></blockquote>
-<p>.3. 简单合并</p>
-<blockquote>
-<p>基于整个项目打包  </p>
-<pre><code>fis.match(&apos;::package&apos;, {
-  postpackager: fis.plugin(&apos;loader&apos;)
-})；
-fis.match(&apos;*.{less,css}&apos;, {  // .less先预处理再合并
-    packTo: &apos;/static/aio.css&apos;
-});
-fis.match(&apos;*.js&apos;, {
-    packTo: &apos;/static/aio.js&apos;
-});
-</code></pre><p>基于页面的打包</p>
-<pre><code>fis.match(&apos;::package&apos;, {
-  postpackager: fis.plugin(&apos;loader&apos;, {
-    allInOne: true
-  })
-});
-</code></pre></blockquote>
-<p>.4. 构建调试</p>
-<blockquote>
-<p>进入 demo 目录，执行命令，构建即发布到本地测试服务根目录下：<br><code>fis3 release</code>  // 按需发布到指定环境</p>
-<p>fis3 server start –type smarty // 启动内置server预览，考虑后端模板</p>
-<p>fis3 release debug -wc // 发布到调试环境，-wc实时监听</p>
+<p>pending状态可以转换为fulfilled或rejected，但不能逆过程</p>
 </blockquote>
+<p>(2) promise提供一个then方法，来获取其值或原因</p>
+<blockquote>
+<p>promise.then(onFulfilled, onRejected)<br>一个promise的then方法可以掉用很多次，then方法必须返回一个promise。</p>
+</blockquote>
+<h3 id="2-Deferred模块"><a href="#2-Deferred模块" class="headerlink" title="2. Deferred模块"></a>2. Deferred模块</h3><p>下面是研读了zepto中的deferred模块的源码：</p>
+<p>整体结构</p>
+<pre>
+function Deferred(func) {
+    promise = {}
+    deferred = {}
+    promise.promise(deferred)
+    if (func) func.call(deferred, deferred)
+    return deferred    
+}
+$.Deferred = Deferred
+</pre>
+
+<blockquote>
+<p>Deferred 是一个函数，返回一个支持Promise/A+规范的对象。在Deferred构造函数内部，定义了promise对象，deferred对象，$.when方法。</p>
+</blockquote>
+<p>(1) promise对象内部定义了state、always、then、promise方法。</p>
+<ul>
+<li>then方法</li>
+<li>promise方法</li>
+</ul>
 
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/frontEnd/fis3.html">
-    <time datetime="2017-07-02T14:41:51.000Z" class="entry-date">
-        2017-07-02
+    <a href="/frontEnd/zepto/zepto5.html">
+    <time datetime="2017-10-15T18:38:07.000Z" class="entry-date">
+        2017-10-16
     </time>
 </a>
     
@@ -182,7 +174,7 @@ fis.match(&apos;*.js&apos;, {
 
 <section id="comments">
   <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/fis3.html"></div>
+  <div class="ds-thread" data-thread-key="page-undefined" data-title="" data-url="http://www.liruonan.tech/frontEnd/zepto/zepto5.html"></div>
   <!-- 多说评论框 end -->
   <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
   <script type="text/javascript">

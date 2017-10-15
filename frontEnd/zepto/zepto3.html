@@ -17,17 +17,17 @@
   
   <title>Li RuoNan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="zepto之事件">
+  <meta name="description" content="zepto之事件createProxy  创建代理对象 zepto中，事件触发的时候，返回给我们的event都不是原生的event对象，都是代理对象。代理对象的创建方法。  function createProxy(event){     var key, proxy = {originalEvent: event}     for(key in event) {         if(!igno">
 <meta name="keywords" content="前端, 程序媛, 热爱技术, H5开发, 北邮人, 百度">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Li RuoNan">
 <meta property="og:url" content="http://www.liruonan.tech/frontEnd/zepto/zepto3.html">
 <meta property="og:site_name" content="Li RuoNan">
-<meta property="og:description" content="zepto之事件">
-<meta property="og:updated_time" content="2017-09-23T19:10:06.000Z">
+<meta property="og:description" content="zepto之事件createProxy  创建代理对象 zepto中，事件触发的时候，返回给我们的event都不是原生的event对象，都是代理对象。代理对象的创建方法。  function createProxy(event){     var key, proxy = {originalEvent: event}     for(key in event) {         if(!igno">
+<meta property="og:updated_time" content="2017-10-15T18:37:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
-<meta name="twitter:description" content="zepto之事件">
+<meta name="twitter:description" content="zepto之事件createProxy  创建代理对象 zepto中，事件触发的时候，返回给我们的event都不是原生的event对象，都是代理对象。代理对象的创建方法。  function createProxy(event){     var key, proxy = {originalEvent: event}     for(key in event) {         if(!igno">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -85,20 +85,39 @@
             
             <a href="/frontEnd/zepto/zepto3.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/zepto/zepto3.html" data-id="cj8lu5cgl000lhzzbcmgqddkd" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/zepto/zepto3.html" data-id="cj8t3hoov000h0hzbetwe7999" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h1 id="zepto之事件"><a href="#zepto之事件" class="headerlink" title="zepto之事件"></a>zepto之事件</h1>
+        <h1 id="zepto之事件"><a href="#zepto之事件" class="headerlink" title="zepto之事件"></a>zepto之事件</h1><p>createProxy  创建代理对象</p>
+<p>zepto中，事件触发的时候，返回给我们的event都不是原生的event对象，都是代理对象。代理对象的创建方法。</p>
+<pre>
+function createProxy(event){
+    var key, proxy = {originalEvent: event}
+    for(key in event) {
+        if(!ignoreProperties.test(key) && event[key] != undefined)
+            proxy[key] = [key]
+    }
+    // compatible 修正event对象
+    return compatible(proxy, event)
+}
+</pre>
+
+<p>常用的是on,off,trigger方法，on和off主要是调用了add/remove方法，因此，接下来主要分析这两个方法。思想很重要~</p>
+<ul>
+<li>add方法先做了event对象的修正，然后对每个事件进行处理，最后调用<code>element.addEventListener(realEvent(handler.e), handler.proxy, eventCapture(handler, capture))</code> 添加事件</li>
+<li>remove方法同理，最后执行<code>removeEventListener</code>移除事件</li>
+</ul>
+
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
     <a href="/frontEnd/zepto/zepto3.html">
-    <time datetime="2017-09-23T19:10:06.000Z" class="entry-date">
-        2017-09-24
+    <time datetime="2017-10-15T18:37:22.000Z" class="entry-date">
+        2017-10-16
     </time>
 </a>
     
