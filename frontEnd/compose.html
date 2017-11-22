@@ -17,17 +17,17 @@
   
   <title>Li RuoNan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="实现一个compose&amp;gt;    function compose(middleware) {           if (!Array.isArray(middleware)) throw new TypeError(‘输入参数必须为数组’)           for (const fn of middleware) {             if (typeof fn !== ‘fun">
+  <meta name="description" content="实现一个composefunction compose(middleware) {        if (!Array.isArray(middleware)) throw new TypeError(&amp;apos;输入参数必须为数组&amp;apos;)        for (const fn of middleware) {          if (typeof fn !== &amp;apos;funct">
 <meta name="keywords" content="前端, 程序媛, 热爱技术, H5开发, 北邮人, 百度">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Li RuoNan">
 <meta property="og:url" content="http://www.liruonan.tech/frontEnd/compose.html">
 <meta property="og:site_name" content="Li RuoNan">
-<meta property="og:description" content="实现一个compose&amp;gt;    function compose(middleware) {           if (!Array.isArray(middleware)) throw new TypeError(‘输入参数必须为数组’)           for (const fn of middleware) {             if (typeof fn !== ‘fun">
-<meta property="og:updated_time" content="2017-09-30T03:14:01.000Z">
+<meta property="og:description" content="实现一个composefunction compose(middleware) {        if (!Array.isArray(middleware)) throw new TypeError(&amp;apos;输入参数必须为数组&amp;apos;)        for (const fn of middleware) {          if (typeof fn !== &amp;apos;funct">
+<meta property="og:updated_time" content="2017-11-22T09:16:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Li RuoNan">
-<meta name="twitter:description" content="实现一个compose&amp;gt;    function compose(middleware) {           if (!Array.isArray(middleware)) throw new TypeError(‘输入参数必须为数组’)           for (const fn of middleware) {             if (typeof fn !== ‘fun">
+<meta name="twitter:description" content="实现一个composefunction compose(middleware) {        if (!Array.isArray(middleware)) throw new TypeError(&amp;apos;输入参数必须为数组&amp;apos;)        for (const fn of middleware) {          if (typeof fn !== &amp;apos;funct">
   
   
     <link rel="icon" href="/css/images/favicon.ico">
@@ -85,21 +85,50 @@
             
             <a href="/frontEnd/compose.html#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/compose.html" data-id="cj8t3hono00050hzbckapy0jn" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/frontEnd/compose.html" data-id="cjaau5n1z0003adzbbqh0c1a1" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h3 id="实现一个compose"><a href="#实现一个compose" class="headerlink" title="实现一个compose"></a>实现一个compose</h3><p>&gt;<br>    function compose(middleware) {<br>           if (!Array.isArray(middleware)) throw new TypeError(‘输入参数必须为数组’)<br>           for (const fn of middleware) {<br>             if (typeof fn !== ‘function’) throw new TypeError(‘compose必须是数组’)<br>           }<br>           return function(ctx, next) {<br>             let index = -1;<br>             return dispatch(0);<br>            function dispatch(i) {<br>               if (i &lt;= index) {<br>                   return Promise.reject(new Error(‘next called’))<br>               }<br>               index = i;<br>               let fn = middleware[i];<br>               if (i == middleware.length) {<br>                  fn = next;<br>               }<br>               if (!fn) {<br>                  return Promise.resolve();<br>               }<br>               try {<br>                   return Promise.resolve(fn(ctx, function next() {<br>                     return dispatch(i + 1)<br>                   }))<br>               } catch (err) {<br>                   return Promise.reject(err)<br>                  }<br>             }<br>          }<br>    }</p>
-
+        <h3 id="实现一个compose"><a href="#实现一个compose" class="headerlink" title="实现一个compose"></a>实现一个compose</h3><pre><code>function compose(middleware) {
+       if (!Array.isArray(middleware)) throw new TypeError(&apos;输入参数必须为数组&apos;)
+       for (const fn of middleware) {
+         if (typeof fn !== &apos;function&apos;) throw new TypeError(&apos;compose必须是数组&apos;)
+       }
+       return function(ctx, next) {
+         let index = -1;
+         return dispatch(0);
+        function dispatch(i) {
+           if (i &lt;= index) {
+               return Promise.reject(new Error(&apos;next called&apos;))
+           }
+           index = i;
+           let fn = middleware[i];
+           if (i == middleware.length) {
+              fn = next;
+           }
+           if (!fn) {
+              return Promise.resolve();
+           }
+           try {
+               return Promise.resolve(fn(ctx, function next() {
+                 return dispatch(i + 1)
+               }))
+           } catch (err) {
+               return Promise.reject(err)
+              }
+         }
+      }
+}
+</code></pre>
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
     <a href="/frontEnd/compose.html">
-    <time datetime="2017-09-30T03:14:01.000Z" class="entry-date">
-        2017-09-30
+    <time datetime="2017-11-22T09:16:50.000Z" class="entry-date">
+        2017-11-22
     </time>
 </a>
     
