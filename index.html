@@ -94,7 +94,7 @@
             
             <a href="/#comments" class="leave-reply">评论</a>
             
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/" data-id="cjg4qbt060000bhzbnaflg4jz" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
+            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/" data-id="cjg4qfey00000dhzbjj29lzhj" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -182,11 +182,14 @@
 <li>同页面tap点击弹出弹层，弹层中也有一个button，正好重叠的时候，会出现击穿 tap事件点击。</li>
 <li>当前页面tap点击页面跳转，新页面中同位置也有一个按钮，会出现击穿。</li>
 </ol>
-<h5 id="击穿原因："><a href="#击穿原因：" class="headerlink" title="击穿原因："></a>击穿原因：</h5><blockquote>
-<p>Zepto的插件touch.js中的tap事件，可以解决移动浏览器中300ms延迟的问题。但是会导致击穿现象。</p>
-<p>click 事件有延迟（大概是300ms，为了实现safari的双击事件），所以在执行完 tap 事件之后，弹出层立即隐藏，此时 click 事件还在延迟的 300ms 之中。当 300ms 到来的时候，click 点击到的其实是隐藏元素下方的元素。</p>
-<p>如果正下方的元素有绑定 click 事件，此时便会触发，如果没有绑定 click 事件的话就不发生。如果正下方的是 input 输入框（或 select / radio / checkbox），点击默认 focus 而弹出输入键盘，也会出现击穿现象。</p>
-</blockquote>
+<h5 id="击穿原因："><a href="#击穿原因：" class="headerlink" title="击穿原因："></a>击穿原因：</h5><ul>
+<li><p>Zepto的插件touch.js中的tap事件，可以解决移动浏览器中300ms延迟的问题。但是会导致击穿现象。</p>
+</li>
+<li><p>click 事件有延迟（大概是300ms，为了实现safari的双击事件），所以在执行完 tap 事件之后，弹出层立即隐藏，此时 click 事件还在延迟的 300ms 之中。当 300ms 到来的时候，click 点击到的其实是隐藏元素下方的元素。</p>
+</li>
+<li><p>如果正下方的元素有绑定 click 事件，此时便会触发，如果没有绑定 click 事件的话就不发生。如果正下方的是 input 输入框（或 select / radio / checkbox），点击默认 focus 而弹出输入键盘，也会出现击穿现象。</p>
+</li>
+</ul>
 <h5 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h5><ol>
 <li><p>使用fastclick.js解决移动端浏览器300ms问题；</p>
 <blockquote>
