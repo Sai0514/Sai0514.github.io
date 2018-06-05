@@ -7,7 +7,7 @@
     
 
     <title>
-      Height | Li RUONAN 
+      innerHeight、offsetHeight、getBoundingClientRect | Li RUONAN 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,20 +16,20 @@
       <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
     
 
-    <meta name="description" content="This is an example about innerHeight、offsetHeight、getBoundingClientRect  原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150p">
+    <meta name="description" content="原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150px左右的位置。那么？这个150px是怎么计算得到的呢？为什么只与当前tab位置有关？于是，关于这部分我看了下项目的源码，对此进行了简单的计算，并">
 <meta name="keywords" content="前端，可视化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Height | Li RUONAN">
+<meta property="og:title" content="innerHeight、offsetHeight、getBoundingClientRect | Li RUONAN">
 <meta property="og:url" content="http://liruonan.tech/2018/05/30/01height/index.html">
 <meta property="og:site_name" content="Li RUONAN">
-<meta property="og:description" content="This is an example about innerHeight、offsetHeight、getBoundingClientRect  原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150p">
+<meta property="og:description" content="原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150px左右的位置。那么？这个150px是怎么计算得到的呢？为什么只与当前tab位置有关？于是，关于这部分我看了下项目的源码，对此进行了简单的计算，并">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://liruonan.tech/2018/05/30/01height/1.png">
 <meta property="og:image" content="http://liruonan.tech/2018/05/30/01height/2.png">
-<meta property="og:updated_time" content="2018-06-05T04:36:46.000Z">
+<meta property="og:updated_time" content="2018-06-05T05:35:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Height | Li RUONAN">
-<meta name="twitter:description" content="This is an example about innerHeight、offsetHeight、getBoundingClientRect  原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150p">
+<meta name="twitter:title" content="innerHeight、offsetHeight、getBoundingClientRect | Li RUONAN">
+<meta name="twitter:description" content="原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150px左右的位置。那么？这个150px是怎么计算得到的呢？为什么只与当前tab位置有关？于是，关于这部分我看了下项目的源码，对此进行了简单的计算，并">
 <meta name="twitter:image" content="http://liruonan.tech/2018/05/30/01height/1.png">
     
     
@@ -196,7 +196,7 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">Height</h1>
+    <h1 class="post-title">innerHeight、offsetHeight、getBoundingClientRect</h1>
 
     
 
@@ -217,15 +217,14 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p>This is an example about innerHeight、offsetHeight、getBoundingClientRect</p>
-<ul>
+    <ul>
 <li><p>原图片：</p>
 <p><img src="1.png" alt="原图片"></p>
 </li>
 <li><p>修改后图片： </p>
+<p><img src="2.png" alt="新图片"></p>
 </li>
 </ul>
-<p><img src="2.png" alt="新图片"></p>
 <p>下面说说修改的内容和方法：</p>
 <ol>
 <li>原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150px左右的位置。那么？这个150px是怎么计算得到的呢？为什么只与当前tab位置有关？于是，关于这部分我看了下项目的源码，对此进行了简单的计算，并尝试修改算法。</li>
