@@ -1,932 +1,265 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  
-  <meta name="description" content="独立之精神，自由之思想" />
-  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-  
-  <meta name="keywords" content="前端, 程序媛, 热爱技术, H5开发, 北邮人, 百度" />
-  
-  
-  
-  
-  
-  
-  <title>algorithm | Li RuoNan</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="leetcode一：给定一个整型数组 根据目标值返回两个数的索引值。 例如： Given nums = [2, 7, 11, 15], target = 9,      Because nums[0] + nums[1] = 2 + 7 = 9,      return [0, 1]. 算法描述:  首先将数组的值和索引储存在堆栈中，使用Map数据结构，存储key,value 判断每次的key值(">
-<meta name="keywords" content="前端, 程序媛, 热爱技术, H5开发, 北邮人, 百度">
+    
+
+    <title>
+      算法 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+      <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
+    
+
+    <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
+<meta name="keywords" content="前端，可视化">
 <meta property="og:type" content="website">
-<meta property="og:title" content="algorithm">
-<meta property="og:url" content="http://www.liruonan.tech/algorithm/index.html">
-<meta property="og:site_name" content="Li RuoNan">
-<meta property="og:description" content="leetcode一：给定一个整型数组 根据目标值返回两个数的索引值。 例如： Given nums = [2, 7, 11, 15], target = 9,      Because nums[0] + nums[1] = 2 + 7 = 9,      return [0, 1]. 算法描述:  首先将数组的值和索引储存在堆栈中，使用Map数据结构，存储key,value 判断每次的key值(">
-<meta property="og:updated_time" content="2017-07-04T15:45:34.000Z">
+<meta property="og:title" content="算法">
+<meta property="og:url" content="http://liruonan.tech/algorithm/index.html">
+<meta property="og:site_name" content="Li RUONAN">
+<meta property="og:description" content="一枚行走在前端道路上的程序媛 ~~">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-30T07:25:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="algorithm">
-<meta name="twitter:description" content="leetcode一：给定一个整型数组 根据目标值返回两个数的索引值。 例如： Given nums = [2, 7, 11, 15], target = 9,      Because nums[0] + nums[1] = 2 + 7 = 9,      return [0, 1]. 算法描述:  首先将数组的值和索引储存在堆栈中，使用Map数据结构，存储key,value 判断每次的key值(">
-  
-  
-    <link rel="icon" href="/css/images/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
+<meta name="twitter:title" content="算法">
+<meta name="twitter:description" content="一枚行走在前端道路上的程序媛 ~~">
+    
+    
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
 
-  
-  <!-- baidu webmaster push -->
-  <script src='//push.zhanzhang.baidu.com/push.js'></script>
 </head>
-<body class="home blog custom-background custom-font-enabled single-author">
-  <div id="page" class="hfeed site">
-      <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="/" title="Li RuoNan" rel="home">Li RuoNan</a>
-      </h1>
-      
-        <h2 class="site-description">
-          <a href="/" id="subtitle">一枚行走在前端道路上的程序媛 ~</a>
-        </h2>
-      
-    </hgroup>
+<body>
 
-    <nav id="site-navigation" class="main-navigation" role="navigation">
-            <button class="menu-toggle">菜单</button>
-            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
-            <div class="menu-main-container">
-                <ul id="menu-main" class="nav-menu">
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Li RUONAN</a></h1>
+        <hr class="panel-cover__divider" />
+        
+        
+        <p class="panel-cover__description">
+          一枚行走在前端道路上的程序媛 ~~
+        </p>
+        <br/>
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">首页</a></li>
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/project">项目</a></li>
+                <li class="navigation__item"><a href="/algorithm" title="" class="">算法</a></li>
+              
                 
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/algorithm">算法</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/frontEnd">前端基础</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://github.com/Sai0514">代码仓库</a></li>
-                
-                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">关于我</a></li>
-                
-                </ul>
-            </div>
-    </nav>
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/Sai0514" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
 </header>
-      <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="page-undefined" class="page-undefined post type-post status-publish format-standard hentry">
-    <!---->
 
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title article-title">
-      algorithm
-    </h1>
-  
-
-        
-        <div class="comments-link">
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
             
-            <a href="/algorithm/index.html#comments" class="leave-reply">评论</a>
-            
-            <a href="javascript:void(0);" data-url="http://www.liruonan.tech/algorithm/index.html" data-id="cjg4qfwmd0002e0zb57dfae7y" class="leave-reply bdsharebuttonbox" data-cmd="more">分享</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
 
-    <div class="entry-content">
-      
-        <h2 id="leetcode"><a href="#leetcode" class="headerlink" title="leetcode"></a>leetcode</h2><h5 id="一：给定一个整型数组-根据目标值返回两个数的索引值。"><a href="#一：给定一个整型数组-根据目标值返回两个数的索引值。" class="headerlink" title="一：给定一个整型数组 根据目标值返回两个数的索引值。"></a>一：给定一个整型数组 根据目标值返回两个数的索引值。</h5><blockquote>
-<p>例如：</p>
-<p>Given nums = [2, 7, 11, 15], target = 9,<br>      Because nums[0] + nums[1] = 2 + 7 = 9,<br>      return [0, 1].</p>
-<p>算法描述:</p>
-<ol>
-<li>首先将数组的值和索引储存在堆栈中，使用Map数据结构，存储key,value</li>
-<li>判断每次的key值(目标值-当前索引值)是否存在?</li>
-<li>若存在，则将【目标索引值，当前索引值】返回。</li>
-<li>若不存在，继续遍历该Map数组。</li>
-</ol>
-<p>算法实现：</p>
-<pre>
-/**
- * @param {number[]} nums
- * @param {number} target
- * @return {number[]}
- **/
-var twoSum = function(nums, target) {
-     //采用ES6的语法
-     let res = new Map();
-     for(let i=0;i&lt;nums.length;i++){
-         if(res.has(target-nums[i])){
-             let a = res.get(target-nums[i]);
-             let b = i;
-             return [a,b];
-         }else{
-             res.set(nums[i],i);
-         }
-     }
-};
-</pre>
+<article class="post-container post-container--single">
 
-</blockquote>
-<h5 id="二：给定一个32位有符号整数，返回它的倒序值。若溢出，则返回0"><a href="#二：给定一个32位有符号整数，返回它的倒序值。若溢出，则返回0" class="headerlink" title="二：给定一个32位有符号整数，返回它的倒序值。若溢出，则返回0"></a>二：给定一个32位有符号整数，返回它的倒序值。若溢出，则返回0</h5><blockquote>
-<p>例如：</p>
-<p>Example1: x = 123, return 321;<br>Example2: x = -123, return -321</p>
-<p>算法描述：</p>
-<ol>
-<li>使用Array函数的reverse()实现颠倒顺序的操作；</li>
-<li>首先将Number型转换为String()型，然后使用字符串的方法split()分割成数组；</li>
-<li>颠倒顺序之后再使用数组的方法join()拼接成字符串；</li>
-<li>将字符串转发为整数型parseInt()；</li>
-<li>判断转换后的值是否法语2147483648(2^31),是否溢出</li>
-</ol>
-<p>算法实现：</p>
-<pre>
-/**
- * @param {number} x
- * @return {number}
- */
-var reverse = function(x) {
-    var m = Math.abs(x)+"";
-    var s = m.split("").reverse().join("");
-    var r = parseInt(s);
-    if( r&lt;2147483648 ){
-        return x &gt;= 0? r:parseInt("-"+r);
-    }else{
-        return 0;
-    }
-};
-</pre>
-
-</blockquote>
-<h5 id="三、字符串转换为数字"><a href="#三、字符串转换为数字" class="headerlink" title="三、字符串转换为数字"></a>三、字符串转换为数字</h5><blockquote>
-<p>考察点：考虑各种输入情况</p>
-<p>算法描述：</p>
-<ol>
-<li>当字符串为空时，返回0；当字符串转换为NaN时，返回0；</li>
-<li>对比Number()方法和parseInt()方法<ul>
-<li>parseInt将字符串(String)类型转为整数类型。parseInt()和parseFloat()方法只转换第一个无效字符之前的字符串。</li>
-<li>Number()函数把对象(Object)的值转换为数字。用Number()进行强制类型转换将返回NAN，如果字符串值能被完整地转换，Number()将判断是调用parseInt()还是parseFloat()。 </li>
-</ul>
-</li>
-<li>考虑数字溢出情况，整型数字，32位范围-2147483648~2147483647。</li>
-</ol>
-<p>算法实现：</p>
-<pre>
-/**
- * @param {string} str
- * @return {number}
- */
-var myAtoi = function(str) {
-    var num = parseInt(str,10);
-    if(!str || isNaN(num)){
-        return 0;
-    }else{
-        if(num &lt; 2147483647) return 2147483647;
-        if(num &gt; -2147483648) return -2147483648;
-        else return num;
-    }
-};
-</pre>
-
-</blockquote>
-<h5 id="四、判断一个数是否是回文数"><a href="#四、判断一个数是否是回文数" class="headerlink" title="四、判断一个数是否是回文数"></a>四、判断一个数是否是回文数</h5><blockquote>
-<p>考察点：不使用额外的空间，即不能转换为字符串来处理</p>
-<p>算法描述：</p>
-<ol>
-<li>不转换成字符串、数组等，即不能使用reverse()方法</li>
-<li>因此从个位数、十位数、百位数等重新计算该数值</li>
-<li>返回值 = res*10 + x%10; x = Math.floor(x/10)</li>
-<li>当最终的取余值=0的时候，退出循环，此时获得的是x的倒序值</li>
-<li>若倒序值等于顺序值，则说明是回文数。注意：负数没有回文数。</li>
-</ol>
-<p>算法实现：</p>
-<pre>
-/**
- * @param {number} x
- * @return {boolean}
- * /
-var isPalindrome = function(x) {
-    if(x &lt; 0) { return false;}
-    var res = 0, val = x;
-    while(x &gt; 0){
-        res = res*10 + x%10;
-        x = Math.floor(x/10);  
-    }
-    return res==val? true:false;
-};
-</pre>
-
-</blockquote>
-<h5 id="五、给定罗马数字，转换为整数。输入保证为1-3999"><a href="#五、给定罗马数字，转换为整数。输入保证为1-3999" class="headerlink" title="五、给定罗马数字，转换为整数。输入保证为1~3999"></a>五、给定罗马数字，转换为整数。输入保证为1~3999</h5><blockquote>
-<p>例如：输入DCXXI，输出621</p>
-<p>算法描述：</p>
-<ol>
-<li>查表，得到罗马数字表示法，基本字符有7个：I，V，X，L，C，D，M，分别表示1，5，10，50，100，500，1000。</li>
-<li>规则：<ul>
-<li>相同的数字连写，所表示的数等于这些数字相加；小的数字在大的数字右边，所表示的数字等于这些数字相加；</li>
-<li>小的数字(限于I,X,C)在大的数字左边，所表示的数字等于右边的大数减去左边的小数。其中：V和X左边的小数字只能用Ⅰ；L和C左边的小数字只能用X；D和M左边的小数字只能用C。</li>
-</ul>
-</li>
-<li>综上分析，如果当前数字是最后一个数字或者当前数字大于后一个数字，则加上当前数字；其他情况时则减去当前数字。</li>
-</ol>
-<p>算法实现：</p>
-<pre>
-/**
- * @param {string} s
- * @return {number}
- */
-var romanToInt = function(s) {
-    var tmp = {
-        'M':1000,
-        'D':500,
-        'C':100,
-        'L':50,
-        'X':10,
-        'V':5,
-        'I':1
-    };
-    var num = 0;
-    for (var i = 0; i &lt; s.length; ++i) {
-        var val = tmp[s[i]];
-        if (i==s.length-1 || tmp[s[i+1]] &lt;= tmp[s[i]]) {
-            num += val;
-        } else {
-            num -= val;
-        }
-    }
-    return num; 
-};
-</pre>
-
-</blockquote>
-<h5 id="六、最长公共因子。"><a href="#六、最长公共因子。" class="headerlink" title="六、最长公共因子。"></a>六、最长公共因子。</h5><blockquote>
-<p>考察点：写一个函数求在一个字符串数组中找一个最长公共因子。</p>
-<p>算法描述：</p>
-<ol>
-<li>当数组为空时，返回空字符串；</li>
-<li>当数组只有一个时，返回第一个数组值；</li>
-<li>当数组有多个字符串时，进行比较。<ul>
-<li>假设strs[0]是最长的公共因子，即作为参考字符串，其他字符串与之比较，若各字符串的字符与参考字符相同，则属于公共因子；</li>
-<li>若不具有该字符串，则将该字符串的长度减1。遍历至最后，不断的迭代判断是否简短字符串strs[0].</li>
-</ul>
-</li>
-</ol>
-<p>算法实现：</p>
-<pre>
-/**
- * @param {string[]} strs
- * @return {string}
- */
-var longestCommonPrefix = function(strs) {
-    if(strs.length == 0) return "";
-    if(strs.length == 1) return strs[0];
-    var s = strs[0];
-    for(var i=1;i &lt; strs.length;i++){
-        while(strs[i].indexOf(s) !== 0){
-            s = s.substring(0,s.length-1);
-        }
-    }
-    return s;
-};
-</pre>
-
-</blockquote>
-<h5 id="七、给定一个单向链表，从链表的后面开始移除第n个节点。"><a href="#七、给定一个单向链表，从链表的后面开始移除第n个节点。" class="headerlink" title="七、给定一个单向链表，从链表的后面开始移除第n个节点。"></a>七、给定一个单向链表，从链表的后面开始移除第n个节点。</h5><blockquote>
-<p>例如：</p>
-<p>Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2.<br>After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5.</p>
-<p>算法描述：</p>
-<ol>
-<li>由于js没有单向链表，需要使用对象进行构造，此处采用java语言处理该问题。</li>
-<li>定义两个指针，首先第一个指针循环至顺数第n个值时，判断此处该节点是否为空。</li>
-<li>若不为空，则此时两个节点一起开始循环遍历该链表，直至链表遍历结束，即第一个指针指向的节点fisrt == null</li>
-<li>当第一个指针指向链表的尾端时，第二个指针指向的倒数第n-1个节点的位置，此时对第二个指针指向的节点进行处理second.next = second.next.next</li>
-<li>返回该单向链表。</li>
-</ol>
-<p>算法实现：</p>
-<pre>
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
-public class Solution {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode ln = new ListNode(0);
-        ln.next = head;
-        ListNode first = ln;
-        ListNode second = ln;
-        for(int i=0;i &lt;= n;i++){
-            first = first.next;
-        }
-        while(first!=null){
-            first = first.next;
-            second = second.next;
-        }
-        second.next = second.next.next;
-        return ln.next;
-    }
-}
-</pre>
-
-</blockquote>
-<h5 id="八、有效的括号。"><a href="#八、有效的括号。" class="headerlink" title="八、有效的括号。"></a>八、有效的括号。</h5><blockquote>
-<p>例如：</p>
-<p>Given a string containing just the characters ‘(‘, ‘)’, ‘{‘, ‘}’, ‘[‘ and ‘]’, determine if the input string is valid.<br>The brackets must close in the correct order, “()” and “()[]{}” are all valid but “(]” and “([)]” are not.</p>
-<p>算法描述：</p>
-<ol>
-<li>该题用到的数据结构是堆栈，由于js中没有专门的堆栈结构，但是数组Array具有push()、pop()等堆栈方法，还有unshift()、shift()等队列方法。</li>
-<li>将字符串转化为数组，定义一个新数组作为堆栈，用来存储判断值。</li>
-<li>判断规则：<ul>
-<li>如果输入为”(“，则堆栈内存入”)”;同理存入”]”、”}”，</li>
-<li>如果输入的不是这三个值，则判断当前堆栈是否为空或者当前堆栈pop()出来栈顶值，是否不等于堆栈中的值，如果这两个条件任意一个满足，则返回false。因为如果堆栈为空，说明输入的字符串为空；</li>
-<li>再者如果堆栈不为空，但栈顶元素不等于当前输入值，也就是最近的一个值不与”)”、”]”、”}” 相等，说明不匹配。</li>
-</ul>
-</li>
-<li>由于对堆栈进行push()和pop()运算，若结果与输入相匹配，即是有效的括号，最终的堆栈值应该为空。<br>算法实现：</li>
-</ol>
-<pre>
-/**
- * @param {string} s
- * @return {boolean}
- */
-var isValid = function(s) {
-    var arr = s.split("");
-    var res = [],i;
-    for(i in arr){
-        if(arr[i] == "("){
-            res.push(")");
-        }else if(arr[i] == "["){
-            res.push("]");
-        }else if(arr[i] == "{"){
-            res.push("}");
-        }else if(res.length == 0 || res.pop() != arr[i]){
-            return false;
-        }
-    }
-    return res.length==0? true:false;
-};
-</pre>
-
-</blockquote>
-<h5 id="九、合并两个有序链表。"><a href="#九、合并两个有序链表。" class="headerlink" title="九、合并两个有序链表。"></a>九、合并两个有序链表。</h5><blockquote>
-<p>要求：合并两个有序的链表，返回一个新链表。新链表应该是通过两个链表节点拼接起来的。</p>
-<p>算法描述：</p>
-<ol>
-<li>这是一个递归方法。</li>
-<li>遍历链表，开始比较：<ul>
-<li>如果第一个节点小于第二个节点，递归该方法，传入第一个链表的下一个节点和第二个链表的当前节点继续比较。</li>
-<li>反之，比较第一个链表的当前节点和第二个链表的下一个节点。</li>
-</ul>
-</li>
-</ol>
-<p>算法实现：</p>
-<pre>
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-/**
- * @param {ListNode} l1
- * @param {ListNode} l2
- * @return {ListNode}
- */
-var mergeTwoLists = function(l1, l2) {
-    if(l1 == null){return l2;}
-    if(l2 == null){return l1;}
-    if(l1.val &lt; l2.val){
-        l1.next = mergeTwoLists(l1.next, l2);
-        return l1;
-    }else{
-        l2.next = mergeTwoLists(l1, l2.next);
-        return l2;
-    }
-};
-</pre>
-
-</blockquote>
-<h5 id="十、交换节点对"><a href="#十、交换节点对" class="headerlink" title="十、交换节点对"></a>十、交换节点对</h5><blockquote>
-<p>例如：Given a linked list, swap every two adjacent nodes and return its head.<br>Given 1-&gt;2-&gt;3-&gt;4, you should return the list as 2-&gt;1-&gt;4-&gt;3.</p>
-<p>算法描述：</p>
-<ol>
-<li>如果该链表为空，或者只有一个节点的话，则返回该链表。</li>
-<li>链表操作考察的是递归方法的应用。<ul>
-<li>遍历链表时，首先声明一个新链表，将当前链表的下一个节点存入新链表的第一个节点值；</li>
-<li>将当前新链表的下一个节点值递归该交换方法（传入的是下下一个节点值，保证的是每两个节点进行操作）；</li>
-<li>同时，再把当前节点的第一个节点值传入新链表的下一个节点值，完成节点对的交换工作。</li>
-</ul>
-</li>
-</ol>
-<p>算法实现：</p>
-<pre>
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var swapPairs = function(head) {
-    if(head == null || head.next == null){
-        return head;
-    }else{
-        var temp = head.next;
-        head.next = swapPairs(head.next.next);
-        temp.next = head;
-        return temp;
-    }
-};
-</pre>
-
-</blockquote>
-<h5 id="十一、从有序数组中删除重复项"><a href="#十一、从有序数组中删除重复项" class="headerlink" title="十一、从有序数组中删除重复项"></a>十一、从有序数组中删除重复项</h5><blockquote>
-<p>例如：Given input array nums = [1,1,2],Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. </p>
-<p>算法描述：</p>
-</blockquote>
-<p><strong>第一种方法：浏览器测试成功，LeetCode用例失败</strong></p>
-<pre><code>1. 利用对象的键值对操作，将数组中的值作为对象的key值;
-2. 遍历该数组，若不存在key值的value，即value=false，则将该值推入到堆栈中，将该value赋值false;
-3. 返回新数组。数组中的值即为删除重复项之后的数。
-- 算法实现：
-var removeDuplicates = function(nums) {
-    var obj={},arr=[];
-    for(var i=0;i&lt;nums.length;i++){
-        if(obj[nums[i]]!=true) {
-            arr.push(nums[i]);
-            obj[nums[i]]=true;
-        }
-    }
-    return arr.length;
-};
-</code></pre><p><strong>第二种方法：浏览器测试成功，LeetCode用例通过</strong></p>
-<pre><code>1. 使用数组方法splice()方法进行删除;
-2. 遍历给定数组，若当前值恒等于下一值，则splice(i,1)删除当前值;
-3. splice()方法针对数组本身进行删除，因此数组长度会减小，此时一定要做i--处理。
-- 算法实现：
-/**
- * @param {number[]} nums
- * @return {number}
- */
-var removeDuplicates = function(nums) {
-    for(var i=0;i&lt;nums.length;i++){
-        if(nums[i]==nums[i+1]){
-            nums.splice(i,1);
-            i--;
-        }
-    }
-    return nums.length;
-};
-</code></pre><h2 id="面试题系列"><a href="#面试题系列" class="headerlink" title="面试题系列"></a>面试题系列</h2><h4 id="一、排序算法"><a href="#一、排序算法" class="headerlink" title="一、排序算法"></a>一、排序算法</h4><h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h5><ul>
-<li>原理：对数组遍历，相邻元素大小比较；每次遍历将最小值推至最前方，然后对剩下的值继续进行比较。</li>
-<li>优化方法：i的for循环中，增加对flag是否为true的判断。</li>
-<li>平均时间复杂度：O(n2)，最好的的时候是顺序遍历，最差的的时候是逆序遍历。<pre>
-function Bubble_Sort(arr){
-      var len = arr.length;
-      if(len&lt;= 0) {return null;}
-      if(len ==1 ) {return arr;}
-      for(let i=0;i&lt;len;i++){
-          for(let j=len-1;j&gt;i;j--){
-              if(arr[j-1]&gt;arr[j]){
-                  var temp = arr[j-1];
-                  arr[j-1] = arr[j];
-                  arr[j] = temp;
-              }
-          }
-      }
-      return arr;
-}
-</pre>
-
-</li>
-</ul>
-<h5 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h5><ul>
-<li>原理：<ul>
-<li>首先，在给定的数组中选定一个基准值，然后将剩下的值与之进行比较。一般选中间值；</li>
-<li>其次，分治思想：小于基准值的放在左边，大于基准值的放在右边。</li>
-<li>最后，递归思想：再次对左右两边的值进行比较，直至左右两边的值，只剩下一个为止。</li>
-</ul>
-</li>
-<li>平均时间复杂度：O(nlog2n)<pre>
-function QuickSort(arr){
-  if(arr.length&lt;=1){
-          return arr;
-  }
-  var left=[],right=[];
-  var mid = Math.floor(arr.length/2);
-  var num = arr.splice(mid,1);
-  for(let i=0;i&lt;arr.length;i++){
-      if(arr[i]&lt;num){
-          left.push(arr[i]);
-      }else{
-          right.push(arr[i]);
-      }
-  }
-  return Quick_Sort(left).concat(num,Quick_Sort(right));
-}
-</pre>
-
-</li>
-</ul>
-<h5 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h5><ul>
-<li>原理：<ul>
-<li>从第一个开始遍历，将当前值作为min，与其他n-i个值进行比较；</li>
-<li>若有值比min小，则与min进行交换，否则进行第二个开始的遍历。</li>
-</ul>
-</li>
-<li>平均时间复杂度：O(n2)<pre>
-function Select_Sort(arr){
-  var len = arr.length; 
-  var min; // 最小记录
-  for(let i=0;i&lt;len-1;i++){
-      for(let j=i+1;j&lt;=len-1;j++){
-          if(arr[j]&gt;arr[min])
-              min = j;   //将最小值与后面的n-i个记录做比较
-          }
-          if(min != i){
-              swap(arr[min],arr[i]);
-          }
-      }
-  }
-}
-</pre>
-
-</li>
-</ul>
-<h5 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h5><ul>
-<li>原理：<ul>
-<li>假设前n个有序，第n+1个分别与前n个相比较；</li>
-<li>若大于第n个，则直接插入到最后，若小于第n个，则与n—比较。</li>
-</ul>
-</li>
-<li>平均复杂度：O(n2)<pre>
-function Insert_Sort(arr){
-  // 假设第0个元素是一个有序的数列，第1个以后是无序序列
-  // 故，从第1个元素开始将无序数列的元素插入到有序数列中
-  for(var i=1;i&lt;arr.length;i++) {
-      if(arr[i]&lt;arr[i-1]){  //升序
-          var guard = arr[i]; //假设第i个数作为被插入元素
-          var j=i-1;
-          while(j&gt;=0 && arr[j]&gt;guard){
-              var temp = arr[j];
-              arr[j] = arr[j+1];
-              arr[j+1] = temp;
-              j--;
-          }
-          arr[j+1] = guard;
-      }
-  }
-  return arr;
-}
-</pre>
-
-</li>
-</ul>
-<h4 id="二、其他算法"><a href="#二、其他算法" class="headerlink" title="二、其他算法"></a>二、其他算法</h4><h5 id="合并有序数组"><a href="#合并有序数组" class="headerlink" title="合并有序数组"></a>合并有序数组</h5><pre>
-function Merge(a,b){
-    var la = a.length;
-    var lb = b.length;
-    var i=0,j=0;k=0;
-    var result = [];
-    while(i&lt;la && j&lt;lb){
-        if(a[i]&lt;b[j]){
-            result[k++] = a[i++];
-        }else{
-            result[k++] = b[j++];
-        }
-    }
-    while (i&lt;la) {
-        result[k++] = a[i++];
-    }
-    while (j&lt;lb) {
-        result[k++] = b[j++];
-    }
-    return result;
-}
-</pre>
-
-<h5 id="删除重复元素"><a href="#删除重复元素" class="headerlink" title="删除重复元素"></a>删除重复元素</h5><p><strong>方法一</strong></p>
-<pre>
-Array.prototype.removeRepeat = function(){
-    // var arr = this;
-    var newArr = [];
-    var obj = {};
-    for(var i =0;i&lt;this.length;i++){
-         if(obj[this[i]] == undefined){
-               obj[this[i]] = this[i];
-         }else {
-               newArr.push(obj[this[i]]);
-         }
-    }
-    return newArr;
-}
-</pre>
-**方法二**
-<pre>
-Array.prototype.distinct = function(){
-    var res = [];
-    for(var i=0;i&lt;this.length;i++){
-        for(var j=i+1;j&lt;this.length;){
-            if(this[j]===this[i]){
-                res.push(this.splice(j,1)[0]);
-            }else{
-                j++;
-            }
-        }
-    }
-    return res;
-}
-</pre>
-
-<h3 id="经典代码片段"><a href="#经典代码片段" class="headerlink" title="经典代码片段"></a>经典代码片段</h3><p><strong>通过类名获取dom节点</strong></p>
-<pre>
-function getClassName(node,classname){
-    if(node.getElementsByClassName){
-        return node.getElementsByClassName(classname);
-    }else{
-        var elems = node.getElementsByTagName("*");
-        var elements = [];
-        for(var i=0;i&lt;elems.length;i++){
-            if(elems.className.indexOf(classname) != -1){
-                elements.push(elems[i]);
-            }
-        }
-        return elements;
-    }
-}
-</pre>
-
-<p><strong>类数组转化为数组</strong></p>
-<pre>
-function convertToArray(nodes){
-    var array = null;
-    try{  // try-catch 块捕获错误，然后手动创建数组
-        array = Array.prototype.slice.call(nodes,0);
-    }catch(ex){
-        array = new Array();
-        for(var i=0;i&lt;nodes.length;i++){
-            array.push(nodes[i]);
-        }
-        return array;
-    }
-}
-</pre>
-
-<p><strong>获取视口大小</strong></p>
-<pre>
-function getViewPort(){
-    if(document.compatMode == "BackCompat"){  //标准兼容模式关闭
-        return {
-            width: document.body.clientWidth,
-            height: document.body.clientHeight
-        };
-    }else{
-        return {
-            width: document.documentElement.clientWidth,
-            height: document.documentElement.clientHeight
-        };
-    }
-}
-</pre>
-
-<p><strong>封装事件处理</strong></p>
-<pre>
-var EventUtil = {
-    addHandler: function(element,type,handler){
-        if(element.addEventListener){
-            element.addEventListener(type,handler,false);
-        }else if(element.attachEvent){
-            element.attachEvent("on"+type,handler);
-        }else{
-            element["on"+type] = handler;
-        }
-    },
-    removeHandler: function(element,type,handler){
-        if(element.removeEventListener){
-            element.removeEventListener(type,handler,false);
-        }else if(element.detachEvent){
-            element.detachEvent("on"+type,handler);
-        }else{ 
-            element["on"+type] = null;
-        }
-    },
-    getEvent: function(event){
-        return event ? event:window.event;
-    },
-    getType: function(event){
-        return event.type;
-    },
-    getTarget: function(event){
-        return event.target || event.srcElement;
-    },
-    preventDefault: function(event){
-        if(event.preventDefault){
-            event.preventDefault();
-        }else{
-            event.returnValue = false;
-        }
-    },
-    stopPropagation: function(event){
-        if(event.stopPropagation){
-            event.stopPropagation();
-        }else{
-            event.cancalBubble = true;
-        }
-    }
-}
-</pre>
-
-<p><strong>通过原型创建新对象</strong><br>[不是将对象作为参数传入，是将继承对象传入函数，当函数读取继承对象的属性时，实际上读取的是继承来的值，因此只影响继承对象本身]</p>
-<pre>
-var createObject = function (proto){
-    if(proto == null) throw TypeError();
-    if(Object.create) return Object.create(proto);
-    var t = type of proto;
-    if(t !== "object" && t != "function") throw TypeError();
-    function f(){};
-    f.prototype = proto;
-    return new f();
-}
-</pre>
-
-<p><strong>封装数组方法map() [ 对每个数组元素调用函数f() ]</strong></p>
-<pre>
-var map = Array.prototype.map? function(a, f){ return a.map(f);} : function(a, f){
-    var results = [],
-    for(var i=0, len=a.length; i&lt;len; i++){
-        if(i in a){
-            results[i] = f.call(null, a[i], i, a)
-        }
-    }
-}
-</pre>
-
-<p><strong>封装数组方法reduce() [ 使用函数f()和可选的初始值将数组a减至一个值 ]</strong></p>
-<pre>
-var reduce = Array.prototype.reduce? function(a, f, initial){
-    if(arguments.length>2)
-        return a.reduce(f, initial);
-    else
-        return a.reduce(f);
-    }
-: function(a, f, initial){
-    var i=0, len = a.length, accumulator;
-    if(arguments.length&gt;2) accumulator=initial;
-    else{
-        if(len == 0) throw TypeError();
-        while (i&lt;len) {
-            if(i in a){
-                accumulator = a[i++];
-                break;
-            }else{
-                i++;
-            }
-        }
-        if(i == len) throw TypeError();
-    }
-    while (i&lt;len) {
-        if(i in a){
-            accumulator = f.call(undefined, accumulator, a[i],i, a);
-            i++;
-        }
-    }
-    return accumulator;
-}
-</pre>
-
-<p><strong>封装记忆函数</strong></p>
-<pre>
-function memorize(f){
-    var cache = {}; //将值保存在闭包中
-    return function(){
-        // 将实参转化为字符串形式，将其用做缓存的键
-        //var key = arguments.length + Array.prototype.join.call(arguments,",");
-        var key = Array.prototype.join.call(arguments,",");
-        if(key in cache) return cache[key];
-        else return cache[key] = f.apply(this, arguments);
-    };
-}
-</pre>
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/algorithm/index.html">
-    <time datetime="2017-06-16T07:28:28.000Z" class="entry-date">
-        2017-06-16
-    </time>
-</a>
+  <header class="post-header">
     
-    
-    </footer>
+    <h1 class="post-title">算法</h1>
+
+    <section id="post-content" class="article-content post">
+        
+    </section>
+
+
+  </header>
+
 </article>
 
+<div class="archive-meta">
+
+
+
+
+
+
+    <div class="archiveslist">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+
+
+</div>
+            <footer class="footer">
+    
+    <span class="footer__copyright">&copy; 2018 <a href="https://github.com/Sai0514">Li RuoNan</a> | 主题<a href="https://github.com/someus/huno"> Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
 
     
 
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
 
 
-
-
-<section id="comments">
-  <!-- 多说评论框 start -->
-  <div class="ds-thread" data-thread-key="page-undefined" data-title="algorithm" data-url="http://www.liruonan.tech/algorithm/index.html"></div>
-  <!-- 多说评论框 end -->
-  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-  <script type="text/javascript">
-  var duoshuoQuery = {short_name:'flhexo'};
+    
+    <script>
+    var _hmt = _hmt || [];
     (function() {
-	  var ds = document.createElement('script');
-	  ds.type = 'text/javascript';ds.async = true;
-	  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	  ds.charset = 'UTF-8';
-	  (document.getElementsByTagName('head')[0]
-	   || document.getElementsByTagName('body')[0]).appendChild(ds);
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?eafb71e52c7d49e6e0a7be42e10d184f";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
     })();
   </script>
-  <!-- 多说公共JS代码 end -->
-</section>
 
-
-</div></div>
-        <div id="secondary" class="widget-area" role="complementary">
-  
-    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
-    <div>
-        <input type="text" value="" name="s" id="s" />
-        <input type="submit" id="searchsubmit" value="搜索" />
-    </div>
-</form></aside>
-  
     
-  <aside class="widget">
-    <h3 class="widget-title">Music</h3>
-    <div class="widget-content">
-      <audio src="http://7u2hdm.com1.z0.glb.clouddn.com/bg.mp3" controls="controls"
-             style="width:100%">
-        您的浏览器不支持 audio 标签。
-      </audio>
-    </div>
-  </aside>
-
-  
     
-  
-    
-  <aside class="widget">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget-content">
-      <ul>
-        
-          <li>
-            <a href="/">Welcome to My Blog</a>
-          </li>
-        
-      </ul>
-    </div>
-  </aside>
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
 
-  
-    
-  
-    
-  
-    
-  
-</div>
-      </div>
-      <footer id="colophon" role="contentinfo">
-    <p>&copy; 2018 Li RuoNan
-    All rights reserved.</p>
-    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
-</footer>
-    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-<script src="/js/jquery-2.0.3.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-<script src="/js/navigation.js"></script>
-
-<div id="bg"></div>
-
-  </div>
 </body>
 </html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Height | Li RUONAN 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+      <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
+    
+
+    <meta name="description" content="This is an example about innerHeight、offsetHeight、getBoundingClientRect  原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150p">
+<meta name="keywords" content="前端，可视化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Height | Li RUONAN">
+<meta property="og:url" content="http://liruonan.tech/2018/05/30/01height/index.html">
+<meta property="og:site_name" content="Li RUONAN">
+<meta property="og:description" content="This is an example about innerHeight、offsetHeight、getBoundingClientRect  原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150p">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://liruonan.tech/2018/05/30/01height/1.png">
+<meta property="og:image" content="http://liruonan.tech/2018/05/30/01height/2.png">
+<meta property="og:updated_time" content="2018-06-05T04:36:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Height | Li RUONAN">
+<meta name="twitter:description" content="This is an example about innerHeight、offsetHeight、getBoundingClientRect  原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150p">
+<meta name="twitter:image" content="http://liruonan.tech/2018/05/30/01height/1.png">
+    
+    
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Li RUONAN</a></h1>
+        <hr class="panel-cover__divider" />
+        
+        
+        <p class="panel-cover__description">
+          一枚行走在前端道路上的程序媛 ~~
+        </p>
+        <br/>
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/algorithm" title="" class="">算法</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/Sai0514" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Height</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-05-30" class="post-meta__date date">2018-05-30</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>This is an example about innerHeight、offsetHeight、getBoundingClientRect</p>
+<ul>
+<li><p>原图片：</p>
+<p><img src="1.png" alt="原图片"></p>
+</li>
+<li><p>修改后图片： </p>
+</li>
+</ul>
+<p><img src="2.png" alt="新图片"></p>
+<p>下面说说修改的内容和方法：</p>
+<ol>
+<li>原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150px左右的位置。那么？这个150px是怎么计算得到的呢？为什么只与当前tab位置有关？于是，关于这部分我看了下项目的源码，对此进行了简单的计算，并尝试修改算法。</li>
+</ol>
+<p>源码中的计算： </p>
+<ul>
+<li>top = targetOffset.top + windowScrollTop + targetOuterHeight;</li>
+</ul>
+<p>修改后的计算：</p>
+<ul>
+<li>top = targetOffset.top + windowScrollTop - targetOuterHeight*6;  </li>
+</ul>
+<pre><code>// target: 点击的当前元素(即：上图中带有三个点的icon)
+let targetOffset = target.getBoundingClientRect();
+let windowScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+let targetOuterHeight = target.offsetHeight;
+</code></pre><p>好的，接下来我们分析一下，这三个属性分别是什么，为什么要用这三个属性？</p>
+<ol>
+<li>targetOffset.top： 当前DOM元素到浏览器可视区的距离（不包含文档卷起的部分)</li>
+<li>windowScrollTop: 滚动条顶部到网页顶部的距离</li>
+<li>target.offsetHeight： 元素CSS高度的衡量标准，包括元素的边框、内边距和元素的水平滚动条。</li>
+</ol>
+<p>实际上，这里的 targetOffset.top + windowScrollTop 是一个相对高度，受滚动条位置影响，而 targetOuterHeight 是 target 元素的CSS高度。因此，点击icon时，dialog实际上位于 targetOffset.top + windowScrollTop + targetOuterHeight 这样的距离下方。</p>
+<p>PM提出的需求是，要求：dialog对话框紧跟在icon下方。于是，我开始研究这部分距离。实际上经过多次测试，这段距离确实是固定值，并不受 target 位置影响，恰好约等于(整个文档高度 - 滚动条竖值长度)，那么这段距离目的何在？既然是相对位置，那dialog弹出的位置应该会受滚动条位置影响呢？</p>
+<p>既然要求弹窗需要受滚动条位置的影响，那么 windowScrollTop 的距离是一定要有的，但是 targetOffset.top 也必须考虑，因为不同的icon受其父元素影响，CSS样式决定了其实际height，因此这两个数据不改动，不修改其计算方式，以免影响其他元素位置。</p>
+<p>于是，我想到了别的方法去修改这段距离的计算。于是，我的思路改成，用什么样的计算值，代替这部分空白的距离，将其直接减掉，不是更好吗？ 于是，计算了target，container 等多个dom元素的offset 相对高度，发现 targetOuterHeight (即 target.offsetHeight)是一个固定值24px， 就是icon的实际CSS高度。那么我通过计算和估算，大概确定了 这部分空白值 约等于 6个icon的高度。 因此，修改后的代码逻辑变成： targetOffset.top + windowScrollTop - targetOuterHeight*6; 这样 element.style.top = top + ‘px’，即 dialog位置的实际top受滚动条的位置而变动，但不受整个文档的大小而偏移，效果如图2所示。</p>
+<p>PS: 水平偏移位置此处未做修改，主要还是需要搞清楚 视口宽高、位置与滚动高度。即：window.innerHeight、 target.offsetHeight、getBoundingClientRect() 这几个属性的计算方式。</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+    
+    <span class="footer__copyright">&copy; 2018 <a href="https://github.com/Sai0514">Li RuoNan</a> | 主题<a href="https://github.com/someus/huno"> Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+                autoDetectHeadings: true,
+                enableToTopButton: true,
+            });
+        });
+    </script>
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?eafb71e52c7d49e6e0a7be42e10d184f";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
