@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="Li RUONAN">
 <meta property="og:description" content="今天写代码没有考虑版本，直接 npm install webpack 之后，发现webpack最近又update 了，并且4.x更新了很多语法，于是开启了填坑之旅。哈哈~~1234567891011&amp;quot;devDependencies&amp;quot;: &amp;#123;    &amp;quot;css-loader&amp;quot;: &amp;quot;^0.28.11&amp;quot;,    &amp;quot;style-l">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-08T08:36:34.000Z">
+<meta property="og:updated_time" content="2018-06-08T08:38:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack4.x | Li RUONAN">
 <meta name="twitter:description" content="今天写代码没有考虑版本，直接 npm install webpack 之后，发现webpack最近又update 了，并且4.x更新了很多语法，于是开启了填坑之旅。哈哈~~1234567891011&amp;quot;devDependencies&amp;quot;: &amp;#123;    &amp;quot;css-loader&amp;quot;: &amp;quot;^0.28.11&amp;quot;,    &amp;quot;style-l">
@@ -221,8 +221,11 @@ classes that you can use:
 <li>mode： 以前的版本并没有显式要求必须声明 mode: ‘development’ or mode: ‘production’。好吧，4.x中会提示warning 要求配置。那么在 webpack.config.js 配置好即可~</li>
 <li><p>遇到的一个神坑 – VueLoaderPlugin。基于 webpack4.x + vue2.x 创建工程的时候，始终编译不通过.vue文件，研究了很久，loader都加载成功了，语法也没有问题，但是一直提示 You may need an appropriate loader to handle this file type. 于是猜测是不是版本的问题，发现 webpack4.x 对于 vue-loader-plugin 有一些兼容性问题，比如： </p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">if (compiler.hooks) &#123;</span><br><span class="line">    // webpack 4</span><br><span class="line">    compiler.hooks.compilation.tap(id, compilation =&gt; &#123;</span><br><span class="line">    compilation.hooks.normalModuleLoader.tap(id, loaderContext =&gt; &#123;</span><br><span class="line">        loaderContext[NS] = true</span><br><span class="line">    &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    // webpack &lt; 4</span><br><span class="line">    compiler.plugin(&apos;compilation&apos;, compilation =&gt; &#123;</span><br><span class="line">    compilation.plugin(&apos;normal-module-loader&apos;, loaderContext =&gt; &#123;</span><br><span class="line">        loaderContext[NS] = true</span><br><span class="line">    &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> 于是找到了解决办法，在 webpack.config.js 文件中引入 VueLoaderPlugin = require(‘vue-loader/lib/plugin’);同时，在 plugins 添加实例化VueLoaderPlugin的配置： <code>plugins: [ new VueLoaderPlugin() ],</code></p>
+<p> 于是找到了解决办法，在 webpack.config.js 文件中引入 VueLoaderPlugin = require(‘vue-loader/lib/plugin’);同时，在 plugins 添加实例化VueLoaderPlugin的配置： </p>
+ <figure class="highlight plain"><figcaption><span>[ </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	new VueLoaderPlugin() </span><br><span class="line">],</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<ol start="4">
 <li><p>这是个老生常谈的问题，倒也不是webpack4.x的问题，只是今天遇到了就一起记录下。在编译.vue文件时候，style标签里的css样式不识别，原因其实就是 css-loader 和 style-loader 的原因啦，所以，在 webpack.config.js 文件中配置：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> test: /\.css$/,</span><br><span class="line"> use: [&#123; loader: &apos;style-loader&apos; &#125;, &#123; loader: &apos;css-loader&apos; &#125;]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <p> 这里主要是想要强调一下，这两个loader的顺序，一定不能放错咯！</p>
