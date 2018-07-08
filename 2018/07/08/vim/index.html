@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      Linux &amp;&amp; Vim | Li RUONAN 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+      <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
+    
+
+    <meta name="description" content="最近部署agent代理和nginx转发，经常性使用linux命令、vim编辑linux文件，真是学到了不少哎。1. 先总结一波Linux命令吧：   查看系统信息  查看系统内核版本：uname -a   // -r 是系统的发行版本；-m 是主机类型 查看主机名： uname -n   查看CPU的相关信息：cat /proc/cpuinfo   查看内存的相关信息：cat /proc/memi">
+<meta name="keywords" content="前端，可视化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux &amp;&amp; Vim | Li RUONAN">
+<meta property="og:url" content="http://liruonan.tech/2018/07/08/vim/index.html">
+<meta property="og:site_name" content="Li RUONAN">
+<meta property="og:description" content="最近部署agent代理和nginx转发，经常性使用linux命令、vim编辑linux文件，真是学到了不少哎。1. 先总结一波Linux命令吧：   查看系统信息  查看系统内核版本：uname -a   // -r 是系统的发行版本；-m 是主机类型 查看主机名： uname -n   查看CPU的相关信息：cat /proc/cpuinfo   查看内存的相关信息：cat /proc/memi">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-08T15:34:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux &amp;&amp; Vim | Li RUONAN">
+<meta name="twitter:description" content="最近部署agent代理和nginx转发，经常性使用linux命令、vim编辑linux文件，真是学到了不少哎。1. 先总结一波Linux命令吧：   查看系统信息  查看系统内核版本：uname -a   // -r 是系统的发行版本；-m 是主机类型 查看主机名： uname -n   查看CPU的相关信息：cat /proc/cpuinfo   查看内存的相关信息：cat /proc/memi">
+    
+    
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Li RUONAN</a></h1>
+        <hr class="panel-cover__divider" />
+        
+        
+        <p class="panel-cover__description">
+          一枚行走在前端道路上的程序媛 ~~
+        </p>
+        <br/>
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/Sai0514" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">Linux &amp;&amp; Vim</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-07-08" class="post-meta__date date">2018-07-08</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="最近部署agent代理和nginx转发，经常性使用linux命令、vim编辑linux文件，真是学到了不少哎。"><a href="#最近部署agent代理和nginx转发，经常性使用linux命令、vim编辑linux文件，真是学到了不少哎。" class="headerlink" title="最近部署agent代理和nginx转发，经常性使用linux命令、vim编辑linux文件，真是学到了不少哎。"></a>最近部署agent代理和nginx转发，经常性使用linux命令、vim编辑linux文件，真是学到了不少哎。</h3><h4 id="1-先总结一波Linux命令吧："><a href="#1-先总结一波Linux命令吧：" class="headerlink" title="1. 先总结一波Linux命令吧："></a>1. 先总结一波Linux命令吧：</h4><blockquote>
+</blockquote>
+<ul>
+<li><p>查看系统信息</p>
+<ol>
+<li>查看系统内核版本：uname -a   // -r 是系统的发行版本；-m 是主机类型</li>
+<li>查看主机名： uname -n  </li>
+<li>查看CPU的相关信息：cat /proc/cpuinfo  </li>
+<li>查看内存的相关信息：cat /proc/meminfo </li>
+</ol>
+</li>
+<li><p>查看磁盘空间使用情况</p>
+<ul>
+<li>格式: df -h</li>
+</ul>
+</li>
+<li><p>查看哪个程序在用特定端口</p>
+<ul>
+<li>格式: netstat  -apen | grep 端口号</li>
+<li>范例: netstat  -apen | grep 8080</li>
+<li>*说明：netstat [-a][-e][-n][-o][-p Protocol][-r][-s][Interval]<ul>
+<li>补充：-a 显示所有socket，包括正在监听的；-p 显示建立相关连接的程序名和PID；-e 显示以太网统计。此选项可以与 -s 选项结合使用；-n 以网络IP地址代替名称，显示出网络连接情形。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>查看当前路径下的文件/文件夹大小</p>
+<ul>
+<li>格式: du -shc 文件名/文件夹名</li>
+</ul>
+</li>
+<li><p>更改为其它使用者的身份</p>
+<ul>
+<li>格式: su 使用者帐号</li>
+<li>范例: su work</li>
+</ul>
+</li>
+<li><p>改变文件夹的权限</p>
+<ul>
+<li>格式：sudo chmod a+w -R app/</li>
+<li>说明：a+w 读写权限；-R 递归遍历</li>
+</ul>
+</li>
+<li><p>远程登陆</p>
+<ul>
+<li>格式: ssh 用户名@机器名</li>
+<li>范例: ssh <a href="mailto:rd@example.com" target="_blank" rel="noopener">rd@example.com</a></li>
+</ul>
+</li>
+<li><p>查看文件的行数</p>
+<ul>
+<li>格式: wc -l 文件名</li>
+<li>范例: wc -l web.conf</li>
+</ul>
+</li>
+<li><p>比较两个文件的不同之处</p>
+<ul>
+<li>格式: diff 文件1 文件2</li>
+<li>范例: diff a.js b.js </li>
+</ul>
+</li>
+<li><p>从本地上传文件到服务器</p>
+<ul>
+<li>格式: rz -be</li>
+<li>*说明：若要保证上传的文件内容在服务器端保存之后与原始文件一致，最好同时设置这两个标志：<br>-b 以二进制方式，默认为文本方式。-e 对所有控制字符转义。</li>
+</ul>
+</li>
+<li><p>从其他机器拷贝文件夹</p>
+<ul>
+<li>格式: scp -r 文件夹名 用户名@机器名:/路径</li>
+<li>范例: scp -r logs liruonan:/home/www</li>
+</ul>
+</li>
+<li><p>实时监控日志文件内容</p>
+<ul>
+<li>格式: tail -f 日志文件名</li>
+<li>范例: tail -f app.log</li>
+</ul>
+</li>
+<li><p>查找某文件中出现指定字符串的行</p>
+<ul>
+<li>格式: grep 指定字符串 文件名</li>
+<li>范例: grep ‘812560550’ qq.log</li>
+<li>*说明：找出日志文件 qq.log中包含‘812560550’的行<ul>
+<li>补充：’-A n’显示匹配行和其之后的n行；’-B n’显示匹配行和之后的n行；’-C n’显示匹配行和其前和其后的各n行；-o只显示匹配项，以行分割；–color将显示中的匹配项显示为红色；-E使用正则表达式进行匹配；-c输出匹配的行数；-i 忽略大小写的方式进行匹配；-v只显示不匹配的行；-r/-R递归搜索当前目录的文件。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-Vim文本编辑器"><a href="#2-Vim文本编辑器" class="headerlink" title="2. Vim文本编辑器"></a>2. Vim文本编辑器</h4><ol>
+<li>命令行模式下，按下i, o, a 等字符进入编辑模式</li>
+<li>编辑模式下，按下ESC，回到一般模式</li>
+<li>一般模式下，输入:wq 即可保存离开</li>
+<li>常用命令：<ul>
+<li>[Ctrl] + [f]： 屏幕『向下』移动一页</li>
+<li>[Ctrl] + [b]： 屏幕『向上』移动一页</li>
+<li>0 或功能键[Home]：移动到这一行的最前面字符处</li>
+<li>$ 或功能键[End]： 移动到这一行的最后面字符处</li>
+<li>G：移动到这个档案的最后一行(复制、粘贴、删除中常用)</li>
+<li>gg：移动到这个档案的第一行，相当于 1G</li>
+<li>n<enter>：光标向下移动 n 行</enter></li>
+<li>dd：删除游标所在的那一整行</li>
+<li>:set nu：显示行号，设定之后，会在每一行的前缀显示该行的行号</li>
+</ul>
+</li>
+</ol>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+    
+    <span class="footer__copyright">&copy; 2018 <a href="https://github.com/Sai0514">Li RuoNan</a> | 主题<a href="https://github.com/someus/huno"> Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+                autoDetectHeadings: true,
+                enableToTopButton: true,
+            });
+        });
+    </script>
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?eafb71e52c7d49e6e0a7be42e10d184f";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
