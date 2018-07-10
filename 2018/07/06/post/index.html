@@ -7,7 +7,7 @@
     
 
     <title>
-      request请求：form or json | Li RUONAN 
+      Tornado request请求：form &amp;&amp; json | Li RUONAN 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,18 +16,18 @@
       <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
     
 
-    <meta name="description" content="form表单提交request   header配置如下：Content-Type:application/x-www-form-urlencoded;charset=UTF-8 form的数据格式， 例如：a=1&amp;amp;b=2&amp;amp;c=3    json提交request   header配置如下：Content-Type:application/json;charset=UTF-8  j">
+    <meta name="description" content="最近在定位一个棘手的bug，遇到了不同的request请求提交方式，于是在这里写写两种方式的区别： form表单提交request   header配置如下：Content-Type:application/x-www-form-urlencoded;charset=UTF-8 form的数据格式， 例如：a=1&amp;amp;b=2&amp;amp;c=3    json提交request   header配">
 <meta name="keywords" content="前端，可视化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="request请求：form or json | Li RUONAN">
+<meta property="og:title" content="Tornado request请求：form &amp;&amp; json | Li RUONAN">
 <meta property="og:url" content="http://liruonan.tech/2018/07/06/post/index.html">
 <meta property="og:site_name" content="Li RUONAN">
-<meta property="og:description" content="form表单提交request   header配置如下：Content-Type:application/x-www-form-urlencoded;charset=UTF-8 form的数据格式， 例如：a=1&amp;amp;b=2&amp;amp;c=3    json提交request   header配置如下：Content-Type:application/json;charset=UTF-8  j">
+<meta property="og:description" content="最近在定位一个棘手的bug，遇到了不同的request请求提交方式，于是在这里写写两种方式的区别： form表单提交request   header配置如下：Content-Type:application/x-www-form-urlencoded;charset=UTF-8 form的数据格式， 例如：a=1&amp;amp;b=2&amp;amp;c=3    json提交request   header配">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-08T14:58:25.000Z">
+<meta property="og:updated_time" content="2018-07-10T15:45:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="request请求：form or json | Li RUONAN">
-<meta name="twitter:description" content="form表单提交request   header配置如下：Content-Type:application/x-www-form-urlencoded;charset=UTF-8 form的数据格式， 例如：a=1&amp;amp;b=2&amp;amp;c=3    json提交request   header配置如下：Content-Type:application/json;charset=UTF-8  j">
+<meta name="twitter:title" content="Tornado request请求：form &amp;&amp; json | Li RUONAN">
+<meta name="twitter:description" content="最近在定位一个棘手的bug，遇到了不同的request请求提交方式，于是在这里写写两种方式的区别： form表单提交request   header配置如下：Content-Type:application/x-www-form-urlencoded;charset=UTF-8 form的数据格式， 例如：a=1&amp;amp;b=2&amp;amp;c=3    json提交request   header配">
     
     
     
@@ -193,7 +193,7 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">request请求：form or json</h1>
+    <h1 class="post-title">Tornado request请求：form &amp;&amp; json</h1>
 
     
 
@@ -214,7 +214,8 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p>form表单提交request</p>
+    <p>最近在定位一个棘手的bug，遇到了不同的request请求提交方式，于是在这里写写两种方式的区别：</p>
+<p>form表单提交request</p>
 <blockquote>
 <ol>
 <li>header配置如下：Content-Type:application/x-www-form-urlencoded;charset=UTF-8</li>
@@ -228,8 +229,31 @@ classes that you can use:
 <li>json的数据格式， 例如：{“a”:1,”b”:2,”c”:3}</li>
 </ol>
 </blockquote>
-<p>最近在定位一个棘手的bug，遇到了不同的request请求的提交方式，于是在这里写写两种方式的区别：</p>
+<p>背景：UI自动化Agent服务框架Tornado(Python2.7)</p>
+<blockquote>
+<ul>
+<li>Tornado框架默认采用 application/x-www-form-urlencoded 数据编码格式提交request请求，由于部分场景的数据用json传递，于是公司的agent服务代码无法解析request.body，导致报错。</li>
+<li>猜测到这个原因之后，没有着急去改bug，而是先去排查了环境因素。极路由上的Nginx转发有没有导致丢数据，agent服务在beta环境和mock环境都是这样吗？首先，使用fiddler(Charles)在不同环境抓包，查看了post请求的request和response，排除了环境因素；其次，Nginx也只是做了最简单的通配符location的设计，排除了极路由因素。最终，确定bug的产生与headers参数有关。</li>
+</ul>
+</blockquote>
+<p>修复bug：</p>
+<pre><code>1. 将代码中的post函数单独拿出来，对其request，response参数进行debug。
+    当agent请求beta环境时,若headers参数Content-Type：application/json，
+    agent服务仍然采用form的解析方式，因此对resquest.body解析不对。
+    于是，我添加了初始化body参数的方法。
 
+2. 方法如下：
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 初始化body参数 #</span><br><span class="line">def init_body_params(self):</span><br><span class="line">    body = dict()</span><br><span class="line">    bodys = self.request.body</span><br><span class="line">    self.flag = 1 </span><br><span class="line">    if bodys.startwith(&quot;&#123;&quot;):</span><br><span class="line">        self.flag = 0   # 此处作标记，send_post时需要继续判断json</span><br><span class="line">        body = json.loads(bodys.decode(&apos;utf-8&apos;))</span><br><span class="line">    else:</span><br><span class="line">        for k in self.request.body_arguments:</span><br><span class="line">            body[k] = self.request.body_arguments[k][0]</span><br><span class="line">    return body</span><br></pre></td></tr></table></figure>
+
+
+3. 在send_post方法中针对不同headers情况，body做封装后再发post请求
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def send_post(self, body)：</span><br><span class="line">    for x in self.request.headers:</span><br><span class="line">        print &quot;header %s: %s&quot; % (x, self.request.headers.get(x))</span><br><span class="line"></span><br><span class="line">    if self.flag == 0:</span><br><span class="line">        body  = self.request.body</span><br><span class="line">    else:</span><br><span class="line">        body = urllib.urlencode(body)</span><br><span class="line"></span><br><span class="line">    # self.url, self.headers, handleReponse 省略</span><br><span class="line">    http_client = tornado.httpclient.AsyncHTTPClient()</span><br><span class="line">    request = tornado.httpclient.HTTPRequest(self.url, method = &apos;POST&apos;, headers = self.headers, body = body)</span><br><span class="line">    http_client = http_client.fetch(request, callback = handlResponse)</span><br></pre></td></tr></table></figure>
+
+
+4. 简要说明一下， fetch请求。
+    * AsyncHTTPClient()  # tornado的优势，异步HTTP客户端; 
+    * 一般地，先使用HTTPRequest封装好一个request主体，再使用fetch发送post请求。
+</code></pre>
   </section>
 
   <section class="post-comments">
