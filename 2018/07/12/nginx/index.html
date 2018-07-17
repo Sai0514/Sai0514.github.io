@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="Li RUONAN">
 <meta property="og:description" content="最近在排查bug的过程中，由于需要排除一些环境及转发因素，因此重新搭建了一套agent服务，用Nginx做转发。虽然一直在做前端，但计算机如此有趣不管学到什么，都要坚持记录下来。先写点皮毛，后续补充更有深度的内容。 Nginx是一款轻量级的高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。其特点是占有内存少，并发能力强。官网 介绍了太多功能，我目前只用过反向代理，这里简">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-17T15:39:58.000Z">
+<meta property="og:updated_time" content="2018-07-17T15:48:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx | Li RUONAN">
 <meta name="twitter:description" content="最近在排查bug的过程中，由于需要排除一些环境及转发因素，因此重新搭建了一套agent服务，用Nginx做转发。虽然一直在做前端，但计算机如此有趣不管学到什么，都要坚持记录下来。先写点皮毛，后续补充更有深度的内容。 Nginx是一款轻量级的高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。其特点是占有内存少，并发能力强。官网 介绍了太多功能，我目前只用过反向代理，这里简">
@@ -227,7 +227,14 @@ classes that you can use:
 <blockquote>
 <p>例如： `server agent {</p>
 <pre><code>10.192.168.132}`
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    proxy_pass 需要代理的网址; //反向代理站。</span><br><span class="line">    /*</span><br><span class="line">    ...</span><br><span class="line">    .. 这里还可以加很多其他配置，详见官方文档</span><br><span class="line">    ...</span><br><span class="line">    */</span><br><span class="line">&#125;</span><br><span class="line">例如： </span><br><span class="line">location ~\.do$/ &#123;</span><br><span class="line">    proxy_pass http://agent; //反向代理站。</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre></blockquote>
+<blockquote>
+<p>正则匹配</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">    proxy_pass 需要代理的网址; //反向代理站。</span><br><span class="line">    /*</span><br><span class="line">    ...</span><br><span class="line">    .. 这里还可以加很多其他配置，详见官方文档</span><br><span class="line">    ...</span><br><span class="line">    */</span><br><span class="line">&#125;</span><br><span class="line">例如： </span><br><span class="line">location ~\.do$/ &#123;</span><br><span class="line">    proxy_pass http://agent; //反向代理站。</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>域名跳转</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server  &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  server.example.com;</span><br><span class="line">    index index.html index.htm index.php;</span><br><span class="line">    root  /opt/lampp/htdocs/www;</span><br><span class="line">    rewrite ^/ http://www.example.com/;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
 <li><p>启动过程： <code>nginx -S reload</code></p>
