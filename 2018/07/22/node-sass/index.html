@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="Li RUONAN">
 <meta property="og:description" content="最近在部署代码过程中，遇到 npm start 编译失败的问题，具体且听以下详解：  git clone 新项目代码之后  npm run start提示： node-sass 不支持当前操作系统 于是重新安琥 node-sass， npm install node-sass提示： not pemission 猜测是权限不够，sudo npm install node-sass提示： not pe">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-26T15:42:38.000Z">
+<meta property="og:updated_time" content="2018-07-26T15:43:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node-sass | Li RUONAN">
 <meta name="twitter:description" content="最近在部署代码过程中，遇到 npm start 编译失败的问题，具体且听以下详解：  git clone 新项目代码之后  npm run start提示： node-sass 不支持当前操作系统 于是重新安琥 node-sass， npm install node-sass提示： not pemission 猜测是权限不够，sudo npm install node-sass提示： not pe">
@@ -238,15 +238,12 @@ classes that you can use:
 </li>
 </ol>
 </li>
-<li><ol start="2">
-<li>修改配置文件 ng.md(–max_old_space_size=8192)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">      @IF EXIST &quot;%~dp0\node.exe&quot; (</span><br><span class="line">    &quot;%~dp0\node.exe&quot; --max_old_space_size=8192  &quot;%~dp0\..\._@angular_cli@1.0.0@@angular\cli\bin\ng&quot; %*</span><br><span class="line">) ELSE (</span><br><span class="line">    @SETLOCAL</span><br><span class="line">    @SET PATHEXT=%PATHEXT:;.JS;=;%</span><br><span class="line">    node --max_old_space_size=8192  &quot;%~dp0\..\._@angular_cli@1.0.0@@angular\cli\bin\ng&quot; %*</span><br><span class="line">   )</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
 </ul>
 </li>
 </ol>
-
+<pre><code>- 2. 修改配置文件 ng.md(--max_old_space_size=8192)
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">      @IF EXIST &quot;%~dp0\node.exe&quot; (</span><br><span class="line">    &quot;%~dp0\node.exe&quot; --max_old_space_size=8192  &quot;%~dp0\..\._@angular_cli@1.0.0@@angular\cli\bin\ng&quot; %*</span><br><span class="line">) ELSE (</span><br><span class="line">    @SETLOCAL</span><br><span class="line">    @SET PATHEXT=%PATHEXT:;.JS;=;%</span><br><span class="line">    node --max_old_space_size=8192  &quot;%~dp0\..\._@angular_cli@1.0.0@@angular\cli\bin\ng&quot; %*</span><br><span class="line">   )</span><br></pre></td></tr></table></figure>
+</code></pre>
   </section>
 
   <section class="post-comments">
