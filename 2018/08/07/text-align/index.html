@@ -16,18 +16,18 @@
       <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
     
 
-    <meta name="description" content="PM要求实现–两端对齐，我想这还不简单，text-align:justify 不就可以了麽，事实证明我失败了。 那么，今天我们就来聊聊 怎么做到“两端对齐”？">
+    <meta name="description" content="PM要求实现–两端对齐，我想这还不简单，text-align:justify 不就可以了麽，事实证明我失败了。 那么，今天我们就来聊聊 怎么做到“两端对齐”？  方法一：1234567891011121314151617181920212223242526&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;    &amp;lt;span&amp;gt;城市列表:&amp;lt;span&amp;gt;    &amp;lt;u">
 <meta name="keywords" content="前端，可视化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="text-align | Li RUONAN">
 <meta property="og:url" content="http://liruonan.tech/2018/08/07/text-align/index.html">
 <meta property="og:site_name" content="Li RUONAN">
-<meta property="og:description" content="PM要求实现–两端对齐，我想这还不简单，text-align:justify 不就可以了麽，事实证明我失败了。 那么，今天我们就来聊聊 怎么做到“两端对齐”？">
+<meta property="og:description" content="PM要求实现–两端对齐，我想这还不简单，text-align:justify 不就可以了麽，事实证明我失败了。 那么，今天我们就来聊聊 怎么做到“两端对齐”？  方法一：1234567891011121314151617181920212223242526&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;    &amp;lt;span&amp;gt;城市列表:&amp;lt;span&amp;gt;    &amp;lt;u">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-12T07:08:25.000Z">
+<meta property="og:updated_time" content="2018-08-12T08:47:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="text-align | Li RUONAN">
-<meta name="twitter:description" content="PM要求实现–两端对齐，我想这还不简单，text-align:justify 不就可以了麽，事实证明我失败了。 那么，今天我们就来聊聊 怎么做到“两端对齐”？">
+<meta name="twitter:description" content="PM要求实现–两端对齐，我想这还不简单，text-align:justify 不就可以了麽，事实证明我失败了。 那么，今天我们就来聊聊 怎么做到“两端对齐”？  方法一：1234567891011121314151617181920212223242526&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;    &amp;lt;span&amp;gt;城市列表:&amp;lt;span&amp;gt;    &amp;lt;u">
     
     
     
@@ -219,6 +219,17 @@ classes that you can use:
   <section id="post-content" class="article-content post">
     <p>PM要求实现–两端对齐，我想这还不简单，text-align:justify 不就可以了麽，事实证明我失败了。</p>
 <p>那么，今天我们就来聊聊 怎么做到“两端对齐”？</p>
+<blockquote>
+<p>方法一：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;span&gt;城市列表:&lt;span&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li class=&quot;list&quot;&gt;北京&lt;/li&gt;</span><br><span class="line">        &lt;li class=&quot;list&quot;&gt;上海&lt;/li&gt;</span><br><span class="line">        &lt;li class=&quot;list&quot;&gt;哈尔滨&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    #app ul &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 60px;</span><br><span class="line">        backgroud-color: red;</span><br><span class="line">        text-align: justify;</span><br><span class="line">    &#125;</span><br><span class="line">    .list &#123;</span><br><span class="line">        list-style: none;</span><br><span class="line">    &#125;</span><br><span class="line">    .list:after &#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 100%;</span><br><span class="line">        height: 0;</span><br><span class="line">        content: &apos;&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>说起两端对齐，第一个想到的就是 text-align: justify. 没想到这个属性还挺有趣，text-align: center; text-align: right; 都没问题，偏偏 text-align:justify 无效。最后，发现这个属性确实有一些不足：</p>
+</blockquote>
+<pre><code>1. 在单行文本下，无法实现两端对齐效果。
+2. 在多行文本下，无法实现最后一行文本的两端对齐效果。
+</code></pre><blockquote>
+<p>说说原理，首先：两端对齐的思想会让我们想到word里面的两端对齐，其实是一样的，就是标签inline化，对每一行做布局的时候，让文字在行内实现两端对齐。其次，我们可以在元素的最后一行添加新元素，这样的话，就可以保证单行文本和多行文本字体两端对齐。当然，多了一行的结构，肯定是不好的，所有最好给最后一行添加样式，隐藏下去。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.list &#123;</span><br><span class="line">    text-align: justify;</span><br><span class="line">&#125;</span><br><span class="line">.list:after &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    width: 100%;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 
   </section>
 
