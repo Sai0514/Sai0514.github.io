@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="Li RUONAN">
 <meta property="og:description" content="angular2 其实是比较老的框架了。这次写需求，也只是个学了皮毛，希望后期能把rxjs也用上。   首先写的是新组件，我们创建组件 ng generate component myapp 创建完之后，新组件目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts（新版本脚手架 angular-cli 应该还会">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-20T14:37:49.000Z">
+<meta property="og:updated_time" content="2018-08-20T14:47:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angular2 | Li RUONAN">
 <meta name="twitter:description" content="angular2 其实是比较老的框架了。这次写需求，也只是个学了皮毛，希望后期能把rxjs也用上。   首先写的是新组件，我们创建组件 ng generate component myapp 创建完之后，新组件目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts（新版本脚手架 angular-cli 应该还会">
@@ -225,7 +225,7 @@ classes that you can use:
 <li>创建完之后，新组件目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts（新版本脚手架 angular-cli 应该还会生成其他文件 myapp.module.ts、myapp.component.spec.ts，主要是为了更好地管理代码。）</li>
 <li><p>对于component组件，这里有的说：</p>
 <ul>
-<li>首先，我们都有一个根组件app，如果我们的组件需要在app根组件引用，那么必须在app.module.ts 中引入。</li>
+<li>首先，项目都有一个根组件app，如果我们的组件需要在app根组件引用，那么必须在app.module.ts 中引入。本项目中，为了叙述简单，直接采用根组件作为父组件。</li>
 <li>其次，我们介绍 myapp 组件，这个组件我主要是请求接口，访问并显示数据，生成定制化的业务组件。</li>
 <li><p>接下来，我们详细说 myapp 组件： </p>
 <ol>
@@ -241,6 +241,8 @@ classes that you can use:
 </blockquote>
 </li>
 </ol>
+</li>
+<li><p>最后，我们再说说请求接口： angular2 对于接口服务，单独拿出来做处理，在 app.component.spec.ts 中写好接口，并对外抛出来。 在 app.component.ts 中引入service服务，在构造函数 <code>contructor(/* 注册服务，声明service */)</code>，这样便可以引用 service 里面的接口方法了。</p>
 </li>
 </ul>
 </li>
