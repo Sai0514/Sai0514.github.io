@@ -16,18 +16,18 @@
       <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
     
 
-    <meta name="description" content="angular2 其实是比较老的框架了。这次写需求，也只是学了皮毛，希望后期能把rxjs也用上。   首先写的是新组件，我们创建组件 ng generate component myapp 创建完之后，新组件目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts(新版本脚手架 angular-cli 应该还会生">
+    <meta name="description" content="angular2 其实是比较老的框架了。这次写需求，也只是学了皮毛，希望后期能把rxjs也用上。   首先写的是新组件，我们创建组件 ng generate component myapp 创建完新组件之后，该组件的目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts(新版本脚手架 angular-cli 应">
 <meta name="keywords" content="前端，可视化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="angular2 | Li RUONAN">
 <meta property="og:url" content="http://liruonan.tech/2018/08/20/angular2/index.html">
 <meta property="og:site_name" content="Li RUONAN">
-<meta property="og:description" content="angular2 其实是比较老的框架了。这次写需求，也只是学了皮毛，希望后期能把rxjs也用上。   首先写的是新组件，我们创建组件 ng generate component myapp 创建完之后，新组件目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts(新版本脚手架 angular-cli 应该还会生">
+<meta property="og:description" content="angular2 其实是比较老的框架了。这次写需求，也只是学了皮毛，希望后期能把rxjs也用上。   首先写的是新组件，我们创建组件 ng generate component myapp 创建完新组件之后，该组件的目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts(新版本脚手架 angular-cli 应">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-20T14:54:03.000Z">
+<meta property="og:updated_time" content="2018-08-20T14:57:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angular2 | Li RUONAN">
-<meta name="twitter:description" content="angular2 其实是比较老的框架了。这次写需求，也只是学了皮毛，希望后期能把rxjs也用上。   首先写的是新组件，我们创建组件 ng generate component myapp 创建完之后，新组件目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts(新版本脚手架 angular-cli 应该还会生">
+<meta name="twitter:description" content="angular2 其实是比较老的框架了。这次写需求，也只是学了皮毛，希望后期能把rxjs也用上。   首先写的是新组件，我们创建组件 ng generate component myapp 创建完新组件之后，该组件的目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts(新版本脚手架 angular-cli 应">
     
     
     
@@ -222,7 +222,7 @@ classes that you can use:
 </blockquote>
 <ol>
 <li>首先写的是新组件，我们创建组件 ng generate component myapp</li>
-<li>创建完之后，新组件目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts(新版本脚手架 angular-cli 应该还会生成其他文件 myapp.module.ts、myapp.component.spec.ts，主要是为了更好地管理代码.)</li>
+<li>创建完新组件之后，该组件的目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts(新版本脚手架 angular-cli 应该还会生成其他文件 myapp.module.ts、myapp.component.spec.ts，主要是为了更好地管理代码.)</li>
 <li><p>对于component组件，这里有的说：</p>
 <ul>
 <li>首先，项目都有一个根组件app，如果我们的组件需要在app根组件引用，那么必须在app.module.ts 中引入。本项目为叙述简单，直接采用根组件作为父组件。</li>
@@ -237,7 +237,7 @@ classes that you can use:
 </li>
 <li><p>第三，我们需要做处理： 例如， 我这个组件是需要父子组件的传递的。首先，我开放了两个接口，也是两类方法。</p>
 <blockquote>
-<p>(一) 父组件传递给子组件数据，在子组件显示。这个比较简单，在父组件 app.component.html 加入子组件<code>&lt;my-app [child_data]=&#39;parent_data&#39;&gt;&lt;/my-app&gt;</code>在子组件 myapp.component.ts 的构造函数之前 @Input child_data: child_data 引入传递的数据；在 ngOnChanges 生命周期钩子函数里面可以监测出这个数据的变化。<br>(二) 子组件给父组件传递数据，在父组件 app.component.ts 中引入子组件，并且@ViewChild(MyAppComponent) MyAppComponent, 之后可以在 ngOnInit 生命周期钩子函数里初始化子组件的方法。</p>
+<p>(一) 父组件传递给子组件数据，在子组件显示。这个比较简单，在父组件 app.component.html 加入子组件<code>&lt;my-app [child_data]=&#39;parent_data&#39;&gt;&lt;/my-app&gt;</code>在子组件 myapp.component.ts 的构造函数之前 @Input child_data: child_data 引入传递的数据；在 ngOnChanges 生命周期钩子函数里面可以监测出这个数据的变化。<br>(二) 子组件给父组件传递数据，可在父组件调用子组件方法。在父组件 app.component.ts 中引入子组件，并且@ViewChild(MyAppComponent) MyAppComponent, 之后可以在 ngOnInit 生命周期钩子函数里初始化子组件的方法。</p>
 </blockquote>
 </li>
 </ol>
