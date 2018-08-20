@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      angular2 | Li RUONAN 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+      <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
+    
+
+    <meta name="description" content="angular2 其实是比较老的框架了。这次写需求，也只是个学了皮毛，希望后期能把rxjs也用上。   首先写的是新组件，我们创建组件 ng generate component myapp 创建完之后，新组件目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts（新版本脚手架 angular-cli 应该还会">
+<meta name="keywords" content="前端，可视化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular2 | Li RUONAN">
+<meta property="og:url" content="http://liruonan.tech/2018/08/20/angular2/index.html">
+<meta property="og:site_name" content="Li RUONAN">
+<meta property="og:description" content="angular2 其实是比较老的框架了。这次写需求，也只是个学了皮毛，希望后期能把rxjs也用上。   首先写的是新组件，我们创建组件 ng generate component myapp 创建完之后，新组件目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts（新版本脚手架 angular-cli 应该还会">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-20T14:37:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angular2 | Li RUONAN">
+<meta name="twitter:description" content="angular2 其实是比较老的框架了。这次写需求，也只是个学了皮毛，希望后期能把rxjs也用上。   首先写的是新组件，我们创建组件 ng generate component myapp 创建完之后，新组件目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts（新版本脚手架 angular-cli 应该还会">
+    
+    
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Li RUONAN</a></h1>
+        <hr class="panel-cover__divider" />
+        
+        
+        <p class="panel-cover__description">
+          一枚行走在前端道路上的程序媛 ~~
+        </p>
+        <br/>
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/links" title="" class="">友链</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于我</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/Sai0514" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">angular2</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-08-20" class="post-meta__date date">2018-08-20</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <blockquote>
+<p>angular2 其实是比较老的框架了。这次写需求，也只是个学了皮毛，希望后期能把rxjs也用上。</p>
+</blockquote>
+<ol>
+<li>首先写的是新组件，我们创建组件 ng generate component myapp</li>
+<li>创建完之后，新组件目录下有三个文件 myapp.component.html, myapp.component.css, myapp.component.ts（新版本脚手架 angular-cli 应该还会生成其他文件 myapp.module.ts、myapp.component.spec.ts，主要是为了更好地管理代码。）</li>
+<li><p>对于component组件，这里有的说：</p>
+<ul>
+<li>首先，我们都有一个根组件app，如果我们的组件需要在app根组件引用，那么必须在app.module.ts 中引入。</li>
+<li>其次，我们介绍 myapp 组件，这个组件我主要是请求接口，访问并显示数据，生成定制化的业务组件。</li>
+<li><p>接下来，我们详细说 myapp 组件： </p>
+<ol>
+<li><p>第一，我们需要做引入： 在父组件(此处是根组件app) app.component.ts <code>import { MyAppComponent } from &#39;./myapp/myapp.component&#39;；</code>，在 app.module.ts 引入模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import &#123; MyAppModule &#125; from &apos;./myapp/myapp.module&apos;;</span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    declarations: [</span><br><span class="line">        AppComponent</span><br><span class="line">    ],</span><br><span class="line">    imports: [</span><br><span class="line">        BrowserModule,</span><br><span class="line">        FormsModule,</span><br><span class="line">        HttpModule,</span><br><span class="line">        MyAppModule</span><br><span class="line">    ],</span><br><span class="line">    providers: [],</span><br><span class="line">    bootstrap: [AppComponent]</span><br><span class="line">&#125;)</span><br><span class="line">export class AppModule &#123;&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二，我们需要做输出： 在子组件(此处是业务组件myapp) myapp.component.ts <code>export class MyAppComponent { /* 此处可以做数据传输 */};</code>，在 myapp.module.ts 模块引入代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import &#123; MyAppComponent &#125; from &apos;./myapp.component&apos;;//自己创建的组件</span><br><span class="line">@NgModule(&#123;</span><br><span class="line">    declarations: [</span><br><span class="line">        MyAppComponent</span><br><span class="line">    ],</span><br><span class="line">    imports: [</span><br><span class="line">        CommonModule,</span><br><span class="line">        FormsModule,</span><br><span class="line">        HttpModule</span><br><span class="line">    ],</span><br><span class="line">    providers: [],</span><br><span class="line">&#125;)</span><br><span class="line">export class MyAppModule &#123;&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第三，我们需要做处理： 例如， 我这个组件是需要父子组件的传递的。首先，我开放了两个接口，也是两类方法。</p>
+<blockquote>
+<p>(一) 父组件传递给子组件数据，在子组件显示。这个比较简单，在父组件 app.component.html 加入子组件<code>&lt;my-app [child_data]=&#39;parent_data&#39;&gt;&lt;/my-app&gt;</code>在子组件 myapp.component.ts 的构造函数之前 @Input child_data: child_data 引入传递的数据；在ngOnChanges生命周期钩子函数里面可以监测出这个数据的变化。<br>(二) 子组件给父组件传递数据，在父组件 app.component.ts 中引入子组件，并且@ViewChild(MyAppComponent) MyAppComponent, 之后可以在 ngOnInit 生命周期钩子函数里初始化子组件的方法。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+    
+    <span class="footer__copyright">&copy; 2018 <a href="https://github.com/Sai0514">Li RuoNan</a> | 主题<a href="https://github.com/someus/huno"> Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+                autoDetectHeadings: true,
+                enableToTopButton: true,
+            });
+        });
+    </script>
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?eafb71e52c7d49e6e0a7be42e10d184f";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
