@@ -7,7 +7,7 @@
     
 
     <title>
-      git &amp;&amp; git pull --rebase | Li RUONAN 
+      innerHeight、offsetHeight、getBoundingClientRect() | Li RUONAN 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,18 +16,21 @@
       <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
     
 
-    <meta name="description" content="1、 遇到的问题： modified: xxx(modified content, untracked content)  意思是：目录没有被跟踪   解决办法：  cd new-directories/sub-directories (切换至新加目录或子目录) rm -rf .git (删除新加目录或子目录下的.git) cd main-direactory (返回到项目主目录) git rm">
+    <meta name="description" content="原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150px左右的位置。那么？这个150px是怎么计算得到的呢？为什么只与当前tab位置有关？于是，关于这部分我看了下项目的源码，对此进行了简单的计算，并">
 <meta name="keywords" content="前端，可视化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git &amp;&amp; git pull --rebase | Li RUONAN">
-<meta property="og:url" content="http://liruonan.tech/2018/05/30/02git/index.html">
+<meta property="og:title" content="innerHeight、offsetHeight、getBoundingClientRect() | Li RUONAN">
+<meta property="og:url" content="http://liruonan.tech/2018/05/30/height/index.html">
 <meta property="og:site_name" content="Li RUONAN">
-<meta property="og:description" content="1、 遇到的问题： modified: xxx(modified content, untracked content)  意思是：目录没有被跟踪   解决办法：  cd new-directories/sub-directories (切换至新加目录或子目录) rm -rf .git (删除新加目录或子目录下的.git) cd main-direactory (返回到项目主目录) git rm">
+<meta property="og:description" content="原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150px左右的位置。那么？这个150px是怎么计算得到的呢？为什么只与当前tab位置有关？于是，关于这部分我看了下项目的源码，对此进行了简单的计算，并">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-05T05:35:31.000Z">
+<meta property="og:image" content="http://liruonan.tech/2018/05/30/height/img/height-1.png">
+<meta property="og:image" content="http://liruonan.tech/2018/05/30/height/img/height-2.png">
+<meta property="og:updated_time" content="2018-10-30T14:57:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git &amp;&amp; git pull --rebase | Li RUONAN">
-<meta name="twitter:description" content="1、 遇到的问题： modified: xxx(modified content, untracked content)  意思是：目录没有被跟踪   解决办法：  cd new-directories/sub-directories (切换至新加目录或子目录) rm -rf .git (删除新加目录或子目录下的.git) cd main-direactory (返回到项目主目录) git rm">
+<meta name="twitter:title" content="innerHeight、offsetHeight、getBoundingClientRect() | Li RUONAN">
+<meta name="twitter:description" content="原图片：   修改后图片：     下面说说修改的内容和方法：  原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150px左右的位置。那么？这个150px是怎么计算得到的呢？为什么只与当前tab位置有关？于是，关于这部分我看了下项目的源码，对此进行了简单的计算，并">
+<meta name="twitter:image" content="http://liruonan.tech/2018/05/30/height/img/height-1.png">
     
     
     
@@ -80,7 +83,10 @@
                 <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
               
                 
-                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+                <li class="navigation__item"><a href="/links" title="" class="">友链</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于我</a></li>
               
 
             </ul>
@@ -193,7 +199,7 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">git &amp;&amp; git pull --rebase</h1>
+    <h1 class="post-title">innerHeight、offsetHeight、getBoundingClientRect()</h1>
 
     
 
@@ -214,26 +220,48 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <h3 id="1、-遇到的问题："><a href="#1、-遇到的问题：" class="headerlink" title="1、 遇到的问题："></a>1、 遇到的问题：</h3><blockquote>
-<p>modified: xxx(modified content, untracked content) </p>
-<p>意思是：目录没有被跟踪 </p>
-</blockquote>
-<p>解决办法：</p>
+    <ul>
+<li><p>原图片：</p>
+<p><img src="./img/height-1.png" alt="原图片"></p>
+</li>
+<li><p>修改后图片： </p>
+<p><img src="./img/height-2.png" alt="新图片"></p>
+</li>
+</ul>
+<p>下面说说修改的内容和方法：</p>
 <ol>
-<li>cd new-directories/sub-directories (切换至新加目录或子目录)</li>
-<li>rm -rf .git (删除新加目录或子目录下的.git)</li>
-<li>cd main-direactory (返回到项目主目录)</li>
-<li>git rm -rf –cached new-directories/sub-directories (删除缓存)</li>
-<li>git add . (重新add，commit，pull，push)</li>
+<li>原图片中显示：点击稿件分类，弹窗的位置是在这个tab下方近150px。事实上，不管点击 作者、编辑者、稿源还是稿件分类这几个tab最右边的icon时，弹窗都是在这个tab下方近似于150px左右的位置。那么？这个150px是怎么计算得到的呢？为什么只与当前tab位置有关？于是，关于这部分我看了下项目的源码，对此进行了简单的计算，并尝试修改算法。</li>
 </ol>
-<h3 id="2、-git-pull-–rebase"><a href="#2、-git-pull-–rebase" class="headerlink" title="2、 git pull –rebase"></a>2、 git pull –rebase</h3><p>开发过程中，大家一般都会基于dev分支并行开发。然后在开发过程中，需要经常拉取dev分支上的代码以便及时更新。<br>—- rebase 并不会产生一个commit提交，而是会将你的commit附加到上一个commit的结尾处。在看commit log时，就不会多出你所不知道的commit出来。因此，git pull –rebase可以让你的代码提交看起来更加的流畅干净。</p>
+<p>源码中的计算： </p>
+<ul>
+<li>top = targetOffset.top + windowScrollTop + targetOuterHeight;</li>
+</ul>
+<p>修改后的计算：</p>
+<ul>
+<li>top = targetOffset.top + windowScrollTop - targetOuterHeight*6;  </li>
+</ul>
+<pre><code>// target: 点击的当前元素(即：上图中带有三个点的icon)
+let targetOffset = target.getBoundingClientRect();
+let windowScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+let targetOuterHeight = target.offsetHeight;
+</code></pre><p>好的，接下来我们分析一下，这三个属性分别是什么，为什么要用这三个属性？</p>
+<ol>
+<li>targetOffset.top： 当前DOM元素到浏览器可视区的距离（不包含文档卷起的部分)</li>
+<li>windowScrollTop: 滚动条顶部到网页顶部的距离</li>
+<li>target.offsetHeight： 元素CSS高度的衡量标准，包括元素的边框、内边距和元素的水平滚动条。</li>
+</ol>
+<p>实际上，这里的 targetOffset.top + windowScrollTop 是一个相对高度，受滚动条位置影响，而 targetOuterHeight 是 target 元素的CSS高度。因此，点击icon时，dialog实际上位于 targetOffset.top + windowScrollTop + targetOuterHeight 这样的距离下方。</p>
+<p>PM提出的需求是，要求：dialog对话框紧跟在icon下方。于是，我开始研究这部分距离。实际上经过多次测试，这段距离确实是固定值，并不受 target 位置影响，恰好约等于(整个文档高度 - 滚动条竖值长度)，那么这段距离目的何在？既然是相对位置，那dialog弹出的位置应该会受滚动条位置影响呢？</p>
+<p>既然要求弹窗需要受滚动条位置的影响，那么 windowScrollTop 的距离是一定要有的，但是 targetOffset.top 也必须考虑，因为不同的icon受其父元素影响，CSS样式决定了其实际height，因此这两个数据不改动，不修改其计算方式，以免影响其他元素位置。</p>
+<p>于是，我想到了别的方法去修改这段距离的计算。于是，我的思路改成，用什么样的计算值，代替这部分空白的距离，将其直接减掉，不是更好吗？ 于是，计算了target，container 等多个dom元素的offset 相对高度，发现 targetOuterHeight (即 target.offsetHeight)是一个固定值24px， 就是icon的实际CSS高度。那么我通过计算和估算，大概确定了 这部分空白值 约等于 6个icon的高度。 因此，修改后的代码逻辑变成： targetOffset.top + windowScrollTop - targetOuterHeight*6; 这样 element.style.top = top + ‘px’，即 dialog位置的实际top受滚动条的位置而变动，但不受整个文档的大小而偏移，效果如图2所示。</p>
+<p>PS: 水平偏移位置此处未做修改，主要还是需要搞清楚 视口宽高、位置与滚动高度。即：window.innerHeight、 target.offsetHeight、getBoundingClientRect() 这几个属性的计算方式。</p>
 
   </section>
 
   <section class="post-comments">
 
     <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
-    
+
 </section>
 
 
@@ -293,6 +321,10 @@ classes that you can use:
 
     
     
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
     <!--kill ie6 -->
 <!--[if IE 6]>
   <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
