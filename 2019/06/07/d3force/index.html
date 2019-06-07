@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      d3force | Li RUONAN 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+      <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
+    
+
+    <meta name="description" content="既然立了flag，每周更新一篇博客，那么就从端午节开启~~  不知不觉，我成了部门专业写大屏代码的程序媛。于是，不得不经常与ECharts、D3、Mapbox打交道。Mapbox还未开始用，但之前了解到是做3D地图的框架。下次再画地图的时候，可以学习并玩玩啦。  Echarts比较简单，大部分情况都很容易满足需求。记得三月份要做个可视化作品，当时用矩形树图去实现产品的要求，看了官网的demo和g">
+<meta name="keywords" content="前端，可视化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="d3force | Li RUONAN">
+<meta property="og:url" content="http://liruonan.tech/2019/06/07/d3force/index.html">
+<meta property="og:site_name" content="Li RUONAN">
+<meta property="og:description" content="既然立了flag，每周更新一篇博客，那么就从端午节开启~~  不知不觉，我成了部门专业写大屏代码的程序媛。于是，不得不经常与ECharts、D3、Mapbox打交道。Mapbox还未开始用，但之前了解到是做3D地图的框架。下次再画地图的时候，可以学习并玩玩啦。  Echarts比较简单，大部分情况都很容易满足需求。记得三月份要做个可视化作品，当时用矩形树图去实现产品的要求，看了官网的demo和g">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-07T09:14:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="d3force | Li RUONAN">
+<meta name="twitter:description" content="既然立了flag，每周更新一篇博客，那么就从端午节开启~~  不知不觉，我成了部门专业写大屏代码的程序媛。于是，不得不经常与ECharts、D3、Mapbox打交道。Mapbox还未开始用，但之前了解到是做3D地图的框架。下次再画地图的时候，可以学习并玩玩啦。  Echarts比较简单，大部分情况都很容易满足需求。记得三月份要做个可视化作品，当时用矩形树图去实现产品的要求，看了官网的demo和g">
+    
+    
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Li RUONAN</a></h1>
+        <hr class="panel-cover__divider" />
+        
+        
+        <p class="panel-cover__description">
+          一枚行走在前端道路上的程序媛 ~~
+        </p>
+        <br/>
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/links" title="" class="">友链</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于我</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/Sai0514" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">d3force</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2019-06-07" class="post-meta__date date">2019-06-07</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <blockquote>
+<p>既然立了flag，每周更新一篇博客，那么就从端午节开启~~</p>
+</blockquote>
+<p>不知不觉，我成了部门专业写大屏代码的程序媛。于是，不得不经常与ECharts、D3、Mapbox打交道。Mapbox还未开始用，但之前了解到是做3D地图的框架。下次再画地图的时候，可以学习并玩玩啦。</p>
+<ol>
+<li><p>Echarts比较简单，大部分情况都很容易满足需求。记得三月份要做个可视化作品，当时用矩形树图去实现产品的要求，看了官网的demo和gallery，依然有个小功能无法实现，通读了几遍api文档，发现了link参数，这个参数就比较强大了，就意味着你可以对链接之后的对象做各种自定义操作，并且新的页面可以按需定制化。由于涉及敏感信息，此处就不贴项目demo和source了。感触就是，多看别人的项目，但是如果想要深入做项目，一定一定要多读文档，多思考多尝试。</p>
+</li>
+<li><p>说完ECharts，咱们说D3。D3其实我是不敢讲话的，毕竟这实在是万本（可视化）之源。D3的原理就是操作dom，所以对底层的开发要求比较高，并且全英文文档读起来确实困难些。浮躁如我，其实很早之前就知道D3，但也没能坚持读读官方文档。这次实在是需求导致不得不用D3去实现。</p>
+</li>
+</ol>
+<p>说正题~~</p>
+<p>需求：基于D3实现消息传播路径图。<br>数据：nodes，links。nodes关键字段：id,name,group，links关键字段：source,target,value<br>看到links的字段太过于熟悉，做通信研究的时候，经常提到源节点和目的节点，所以用来做路径图是可行的。nodes的group字段一般是用来做节点分类的，比如：图例、颜色等。</p>
+<p>问题：</p>
+<ol>
+<li>如何画力导向图？<br>力导向图，顾名思义，就是画受力分析图。做力导向图的时候，自己选择了随机分布，因此节点会自己找到力的平衡点。每一个节点的计算，都是在ticked回调函数中计算，每一步的算法可以依据当前画布的大小做适当调整。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 在svg标签，先构建画布 #</span><br><span class="line">const svg = d3</span><br><span class="line">  .select(&apos;svg&apos;)</span><br><span class="line">  .call(zoom)</span><br><span class="line">  .attr(&apos;width&apos;, width)</span><br><span class="line">  .attr(&apos;height&apos;, height)</span><br><span class="line">  .append(&apos;g&apos;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 然后创建一个力导向模型，给定作用力中心#</span><br><span class="line">let simulation = d3</span><br><span class="line">    .forceSimulation()</span><br><span class="line">    .force(&apos;link&apos;, d3.forceLink().id(d =&gt; d.id))</span><br><span class="line">    .force(&apos;center&apos;, d3.forceCenter(width / 2, height / 2));</span><br><span class="line"></span><br><span class="line">  # 给作用力赋值（引力or斥力），此处全部用斥力做处理，并且按照不同的节点数，分别给定不同大小的斥力和最大距离。</span><br><span class="line">  if (graph.nodes.length &gt; 300) &#123;</span><br><span class="line">    simulation.force(&apos;charge&apos;, d3.forceManyBody().strength(-100).distanceMax(250));</span><br><span class="line">  &#125;</span><br><span class="line">  else if (graph.nodes.length &gt; 200) &#123;</span><br><span class="line">    simulation.force(&apos;charge&apos;, d3.forceManyBody().strength(-200).distanceMax(150));</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    simulation.force(&apos;charge&apos;, d3.forceManyBody().strength(-300).distanceMax(150));</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>…此处省略svg画节点和边的过程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"># 计算节点，构建力图 #</span><br><span class="line">simulation.nodes(graph.nodes).on(&apos;tick&apos;, ticked);</span><br><span class="line">simulation.force(&apos;link&apos;).links(graph.links).distance(20);</span><br><span class="line"></span><br><span class="line">  /** 更新连线坐标，对于每一个时间间隔 */</span><br><span class="line">  function ticked () &#123;</span><br><span class="line">    link</span><br><span class="line">      .attr(&apos;x1&apos;, d =&gt; d.source.x)</span><br><span class="line">      .attr(&apos;y1&apos;, d =&gt; d.source.y)</span><br><span class="line">      .attr(&apos;x2&apos;, d =&gt; d.target.x)</span><br><span class="line">      .attr(&apos;y2&apos;, d =&gt; d.target.y);</span><br><span class="line"></span><br><span class="line">    node</span><br><span class="line">      .attr(&apos;cx&apos;, d =&gt; d.x)</span><br><span class="line">      .attr(&apos;cy&apos;, d =&gt; d.y);</span><br><span class="line"></span><br><span class="line">    graph.nodes.forEach(function (d, i) &#123;</span><br><span class="line">      d.x = d.x - 20 / 2 &lt; 0 ? 20 / 2 : d.x;</span><br><span class="line">      d.x = d.x + 20 / 2 &gt; width ? width - 20 / 2 : d.x;</span><br><span class="line">      d.y = d.y - 20 / 2 &lt; 0 ? 20 / 2 : d.y;</span><br><span class="line">      d.y = d.y + 20 / 2 &gt; height ? height - 20 / 2 : d.y;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">/** 绘制结束 */</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>如何处理细节问题？</li>
+</ol>
+<ul>
+<li>由于要限制于固定容器内，所以对不同节点数给了不同大小的斥力和最大距离，同时也应该设置不同scale，此处我的局部scale失效了，所以给了一个全局的scale。如果有朋友愿意交流细节，非常希望能够优化这部分功能。</li>
+<li>因为自己撒了个懒，对于异步请求的数据没有本地化保存，导致给领导演示的时候，路径图没有绘制出来，也是醉了。另外，因为我的路径图每隔10秒钟会重绘一遍，还好数据量不是很大。否则页面早就崩了。于是，赶紧做了状态保存，将异步请求的数据在sessionStorage保存了，这样一来，防止轮播过程中导致数据没有请求到无法绘制力图问题，同时也避免了多次请求导致页面崩溃。这个问题一开始写代码的时候就应该做好，当时因为将焦点集中于画图方面，忽略了此细节。无论何时，性能优化都很重要！！！</li>
+<li><p>为了防止下次绘图的时候，与前一个图表重叠，每次画之前，对当前画布进行清除。第一次渲染的时候，建议也保证svg不存在。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 移除dom节点，清除svg标签 #</span><br><span class="line">removeRender () &#123;</span><br><span class="line">  const svg = d3.select(&apos;svg&apos;);</span><br><span class="line">  svg.selectAll(&apos;*&apos;).remove();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>做设计的同事强烈要求，节点必须用渐变色，理由就是：渐变色有立体感，好看。这么喜欢渐变色的小哥哥我真的是第一次遇到，还这么强硬，对于强需求，作为“乙方”的“甲方”，我只能默默去实现了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 其实就是在svg上画linearGradient标签，通过id与节点绑定。每组渐变色都需要包含在defs #</span><br><span class="line">const linearColor1 = svg</span><br><span class="line">  .append(&apos;defs&apos;)</span><br><span class="line">  .append(&apos;linearGradient&apos;)</span><br><span class="line">  .attr(&apos;id&apos;, &apos;blue&apos;)</span><br><span class="line">  .attr(&apos;x1&apos;, &apos;0%&apos;)</span><br><span class="line">  .attr(&apos;y1&apos;, &apos;0%&apos;)</span><br><span class="line">  .attr(&apos;x2&apos;, &apos;100%&apos;)</span><br><span class="line">  .attr(&apos;y2&apos;, &apos;100%&apos;);</span><br><span class="line">linearColor1.append(&apos;stop&apos;)</span><br><span class="line">  .attr(&apos;offset&apos;, &apos;0%&apos;)</span><br><span class="line">  .style(&apos;stop-color&apos;, &apos;#24b9ff&apos;);</span><br><span class="line">linearColor1.append(&apos;stop&apos;)</span><br><span class="line">  .attr(&apos;offset&apos;, &apos;100%&apos;)</span><br><span class="line">  .style(&apos;stop-color&apos;, &apos;#0b597d&apos;);</span><br><span class="line"># 对于多个节点，此处可以用函数封装起来。不做过多解释 #</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+    
+    <span class="footer__copyright">&copy; 2018 <a href="https://github.com/Sai0514">Li RuoNan</a> | 主题<a href="https://github.com/someus/huno"> Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+                autoDetectHeadings: true,
+                enableToTopButton: true,
+            });
+        });
+    </script>
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?eafb71e52c7d49e6e0a7be42e10d184f";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
