@@ -24,7 +24,7 @@
 <meta property="og:site_name" content="Li RUONAN">
 <meta property="og:description" content="项目中需要基于elementUI封装一个组件库，由于自己的开发水平有限，于是借助table组件去封装了一层，支持可配置的ui-table组件。后来在GitHub上看到类似的demo，就拿这个组件跟大家共同学习~   基于elementUI封装，那么element/table组件支持的功能都得支持   v-bind=”$attrs” 在创建高级组件时，vue支持通过$attrs将父组件的所有属性通过">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-30T13:16:26.000Z">
+<meta property="og:updated_time" content="2019-06-30T13:18:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="table component | Li RUONAN">
 <meta name="twitter:description" content="项目中需要基于elementUI封装一个组件库，由于自己的开发水平有限，于是借助table组件去封装了一层，支持可配置的ui-table组件。后来在GitHub上看到类似的demo，就拿这个组件跟大家共同学习~   基于elementUI封装，那么element/table组件支持的功能都得支持   v-bind=”$attrs” 在创建高级组件时，vue支持通过$attrs将父组件的所有属性通过">
@@ -260,7 +260,7 @@ classes that you can use:
 <li>做tab组件切换的时候，经常需要渲染不同的详情组件。这个时候最需要用到的就是动态组件<code>&lt;component :is=&quot;col.component&quot;&gt;&lt;/component&gt;</code>。demo中是每次for循环，传入不同对象的属性compnent，存储各自的组件，实现个性化渲染组件效果。我们可以看到，又一次通过 v-bind:$attrs,v-on=”$listeners’ 绑定父级组件的属性和方法。<br>文档中有个地方还需要注意，那就是组件缓存问题，是否需要存活。具体看产品设计需求具体分析：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 失活的组件将会被缓存！--&gt;</span><br><span class="line">&lt;keep-alive&gt;</span><br><span class="line">  &lt;component v-bind:is=&quot;currentTabComponent&quot;&gt;&lt;/component&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>回顾了自己曾经封装组件的过程，不禁意识到 vue 一直在不断地更新。实际上，自己对于 vue 真正是还不熟悉，有很多强大的属性、方法、事件、还有全局指令、全局组件等太多API。真是需要沉下来，认真阅读文档多多尝试实践！<br><strong> VueConf 2019 </strong> 关注 vue3.0 新特性~ 加油(๑•̀ㅂ•́)و✧加油</p>
+<p>回顾了自己曾经封装组件的过程，不禁意识到 vue 一直在不断地更新。实际上，自己对于 vue 真是一点儿都不熟悉，这么多强大的属性、方法、事件、还有全局指令、全局组件功能。真是需要沉下来，认真阅读文档多多尝试实践！<br><strong> VueConf 2019 </strong> 关注 vue3.0 新特性~ 加油(๑•̀ㅂ•́)و✧加油</p>
 
   </section>
 
