@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      table component | Li RUONAN 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+    
+      <meta name="description" content="一枚行走在前端道路上的程序媛 ~~">
+    
+
+    <meta name="description" content="项目中需要基于elementUI封装一个组件库，由于自己的开发水平有限，于是借助table组件去封装了一层，支持可配置的ui-table组件。后来在GitHub上看到类似的demo，就拿这个组件跟大家共同学习~   基于elementUI封装，那么element/table组件支持的功能都得支持   v-bind=”$attrs” 在创建高级组件时，vue支持通过$attrs将父组件的所有属性通过">
+<meta name="keywords" content="前端，可视化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="table component | Li RUONAN">
+<meta property="og:url" content="http://liruonan.tech/2019/06/30/table/index.html">
+<meta property="og:site_name" content="Li RUONAN">
+<meta property="og:description" content="项目中需要基于elementUI封装一个组件库，由于自己的开发水平有限，于是借助table组件去封装了一层，支持可配置的ui-table组件。后来在GitHub上看到类似的demo，就拿这个组件跟大家共同学习~   基于elementUI封装，那么element/table组件支持的功能都得支持   v-bind=”$attrs” 在创建高级组件时，vue支持通过$attrs将父组件的所有属性通过">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-30T13:16:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="table component | Li RUONAN">
+<meta name="twitter:description" content="项目中需要基于elementUI封装一个组件库，由于自己的开发水平有限，于是借助table组件去封装了一层，支持可配置的ui-table组件。后来在GitHub上看到类似的demo，就拿这个组件跟大家共同学习~   基于elementUI封装，那么element/table组件支持的功能都得支持   v-bind=”$attrs” 在创建高级组件时，vue支持通过$attrs将父组件的所有属性通过">
+    
+    
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Li RUONAN</a></h1>
+        <hr class="panel-cover__divider" />
+        
+        
+        <p class="panel-cover__description">
+          一枚行走在前端道路上的程序媛 ~~
+        </p>
+        <br/>
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+                
+                <li class="navigation__item"><a href="/links" title="" class="">友链</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于我</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/Sai0514" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">table component</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2019-06-30" class="post-meta__date date">2019-06-30</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>项目中需要基于elementUI封装一个组件库，由于自己的开发水平有限，于是借助table组件去封装了一层，支持可配置的ui-table组件。后来在GitHub上看到类似的<a href="https://github.com/kinglisky/egrid/" target="_blank" rel="noopener">demo</a>，就拿这个组件跟大家共同学习~ </p>
+<ol>
+<li>基于elementUI封装，那么element/table组件支持的功能都得支持</li>
+</ol>
+<ul>
+<li>v-bind=”$attrs” 在创建高级组件时，vue支持通过$attrs将父组件的所有属性通过prop传过来</li>
+<li>v-on=”$listeners” 创建高级组件时，vue支持通过$listeners将父组件的事件监听器传入子组件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-table class=&quot;egrid&quot; ref=&quot;grid&quot;</span><br><span class="line">    :data=&quot;data&quot; </span><br><span class="line">    v-bind=&quot;$attrs&quot;</span><br><span class="line">    v-on=&quot;$listeners&quot;&gt;</span><br><span class="line">&lt;/el-table&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="2">
+<li>通过插槽分发内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-table-column </span><br><span class="line">  v-if=&quot;tp.type === &apos;expand&apos;&quot;</span><br><span class="line">  v-bind=&quot;tp.props&quot;</span><br><span class="line">  type=&quot;expand&quot;</span><br><span class="line">  :key=&quot;tp.type&quot;&gt;</span><br><span class="line">  &lt;template slot-scope=&quot;props&quot;&gt;</span><br><span class="line">    &lt;slot name=&quot;expand&quot; v-bind=&quot;props&quot;&gt;&lt;/slot&gt;</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/el-table-column&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>先讲讲插槽的使用~~</p>
+<blockquote>
+<ol>
+<li><code>&lt;slot&gt;</code>作为承载内容分发的出口，也就是需要渲染的子组件与父组件之间，通过slot标签识别。通过name属性，可以访问特定的插槽；同时，在 template 元素上使用 v-slot 指令，可以通过参数的形式提供名称。例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;</span><br><span class="line">&lt;template v-slot:header&gt;</span><br><span class="line">  &lt;h1&gt;Here might be a page title&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>那么接下来就是编译绑定作用域问题了~~</p>
+<blockquote>
+<ol start="2">
+<li>既然父子组件需要交互，势必要有数据传递，然而<code>父级模板里的所有内容都在父级作用域中编译；子模板里的所有内容都在子作用域中编译。</code>因此slot、slotProps、slot-scope的使用，都是为将绑定的属性传给插槽作用域，使得能够在父级渲染。</li>
+</ol>
+<ul>
+<li>虽然 slot-scope 已废除，但设计思想是差不多的。这里按照最新语法分析：通过<code>&lt;slot v-bind:prop=&quot;props&quot;&gt;</code>,<code>v-slot:default=&quot;slotProps&quot;</code>，将props通过v-bind:prop绑定到父组件的prop属性，通过定义v-slot:default=”slotProps”定义了父组件的作用域slotProps。这样可以通过父级作用域读取插槽传过来的数据。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;slot v-bind:prop=&quot;props&quot;&gt;&#123;&#123; prop.title &#125;&#125;&lt;/slot&gt;</span><br><span class="line">## 默认插槽情况</span><br><span class="line">&lt;template v-slot=&quot;slotProps&quot;&gt;</span><br><span class="line">&#123;&#123; slotProps.prop.id &#125;&#125;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">## 多个插槽情况</span><br><span class="line">&lt;template v-slot:default=&quot;slotProps&quot;&gt;</span><br><span class="line">  &#123;&#123; slotProps.user.firstName &#125;&#125;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;template v-slot:other=&quot;otherSlotProps&quot;&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p><strong> 特此说明： </strong> v-slot 切记勿将具名 v-slot:header 及作用域插槽 v-slot:header=”slotProps” 混淆。</p>
+</li>
+</ul>
+<ol start="3">
+<li>动态组件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;component :is=&quot;col.component&quot;</span><br><span class="line">  v-bind=&quot;getCptBind(scope, col)&quot;</span><br><span class="line">  v-on=&quot;col.listeners&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>做tab组件切换的时候，经常需要渲染不同的详情组件。这个时候最需要用到的就是动态组件<code>&lt;component :is=&quot;col.component&quot;&gt;&lt;/component&gt;</code>。demo中是每次for循环，传入不同对象的属性compnent，存储各自的组件，实现个性化渲染组件效果。我们可以看到，又一次通过 v-bind:$attrs,v-on=”$listeners’ 绑定父级组件的属性和方法。<br>文档中有个地方还需要注意，那就是组件缓存问题，是否需要存活。具体看产品设计需求具体分析：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 失活的组件将会被缓存！--&gt;</span><br><span class="line">&lt;keep-alive&gt;</span><br><span class="line">  &lt;component v-bind:is=&quot;currentTabComponent&quot;&gt;&lt;/component&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>回顾了自己曾经封装组件的过程，不禁意识到 vue 一直在不断地更新。实际上，自己对于 vue 真正是还不熟悉，有很多强大的属性、方法、事件、还有全局指令、全局组件等太多API。真是需要沉下来，认真阅读文档多多尝试实践！<br><strong> VueConf 2019 </strong> 关注 vue3.0 新特性~ 加油(๑•̀ㅂ•́)و✧加油</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+    
+    <span class="footer__copyright">&copy; 2018 <a href="https://github.com/Sai0514">Li RuoNan</a> | 主题<a href="https://github.com/someus/huno"> Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+                autoDetectHeadings: true,
+                enableToTopButton: true,
+            });
+        });
+    </script>
+
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?eafb71e52c7d49e6e0a7be42e10d184f";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+    
+    
+
+    <script src="/js/jquery.githubRepoWidget.min.js"></script>
+
+
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
