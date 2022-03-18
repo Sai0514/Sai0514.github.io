@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Holograms</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <link type="text/css" rel="stylesheet" href="main.css">
-        
-        <!-- Load TensorFlow.js -->
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
-        <!-- Load BodyPix -->
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
 
-    </head>
-    
-    
-   
+<head>
+    <title>Holograms</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
 
-  
-    <body>  
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.2"></script>
+    <!-- Load BodyPix -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix@2.0"></script>
+    <script src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+    <script type="text/JavaScript"> var vConsole = new VConsole(); </script>
+</head>
 
-        <div class="containerV">
-            <video video autoplay playsinline class="hidden">
-            </video>
-            <div class="red-square">
-                <div class="overlay">
-                    <label for="videoSource">Choose your camera: </label><select id="videoSource"></select>
-                    <p>When in AR mode, create an hologram by looking at a person/face/photo and tap on the screen, it should appear gently. (Beware of camera framing, not too close)</p>
-                    <div class="linkG"><p><b><a href="https://github.com/nosy-b/holography">https://github.com/nosy-b/holography</a></b></p></div>
+
+
+<body>
+
+    <div class="containerV">
+        <video video autoplay playsinline class="hidden">
+        </video>
+        <div class="red-square">
+            <div class="overlay">
+                <label for="videoSource">Choose your camera: </label><select id="videoSource"></select>
+                <p>When in AR mode, create an hologram by looking at a person/face/photo and tap on the screen, it
+                    should appear gently. (Beware of camera framing, not too close)</p>
+                <div class="linkG">
+                    <p><b><a href="https://github.com/nosy-b/holography">https://github.com/nosy-b/holography</a></b>
+                    </p>
                 </div>
             </div>
-           
         </div>
-        <div id="container"></div>
 
-        <script type="x-shader/x-vertex" id="vertexshaderParticle">
-            uniform sampler2D originalImage;
+    </div>
+    <div id="container"></div>
+
+    <script type="x-shader/x-vertex" id="vertexshaderParticle">
+        uniform sampler2D originalImage;
             uniform sampler2D depthMap;
             uniform float time;
             uniform vec3 userPos;
@@ -92,8 +96,8 @@
 
         </script>
 
-        <script type="x-shader/x-fragment" id="fragmentshaderParticle">
-            #extension GL_EXT_shader_texture_lod : enable
+    <script type="x-shader/x-fragment" id="fragmentshaderParticle">
+        #extension GL_EXT_shader_texture_lod : enable
             #extension GL_OES_standard_derivatives : enable
 
             uniform float time;
@@ -125,9 +129,9 @@
 
         </script>
 
-        <script type="module">
+    <script type="module">
 
-            import * as THREE from './three.module.js';
+        import * as THREE from './three.module.js';
             import { ARButton } from './ARButton.js';
             //import { OrbitControls } from './controls/OrbitControls.js';
             var renderer, scene, camera, controls;
@@ -556,5 +560,6 @@
         </script>
 
 
-    </body>
+</body>
+
 </html>
